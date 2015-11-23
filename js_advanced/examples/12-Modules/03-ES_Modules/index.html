@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Todo ES Modules</title>
+</head>
+<body>
+<h3>Add Todo</h3>
+<input id="inputField" type="text"/>
+<button id="addButton" type="button">Add</button>
+
+<h3>Todos List</h3>
+<ul id="todosList"></ul>
+
+<script src="node_modules/requirejs/require.js"></script>
+<script>
+  require.config({
+    baseUrl: 'dist/'
+  });
+  require(['main']);
+</script>
+</body>
+</html>

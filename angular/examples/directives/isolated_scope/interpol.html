@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="interpolatedScopeTestApp">
+<head>
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Interpolated Scope</title>
+</head>
+<body ng-controller="MainCtrl as main">
+<h3>Controller</h3>
+<p>Name: <input ng-model="main.name"/></p>
+<h3>Direktive</h3>
+<gts-name-dir gts-name="Hallo: {{main.name}}">
+</gts-name-dir>
+<script src="interpol.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Small JavaScript calculator",
+  "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "3.3.5"
+  },
+  "private": "true"
+}

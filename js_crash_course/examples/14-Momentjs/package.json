@@ -1,0 +1,10 @@
+{
+  "name": "moment-examples",
+  "version": "0.0.1",
+  "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "2.10.3"
+  },
+  "private": "true"
+}

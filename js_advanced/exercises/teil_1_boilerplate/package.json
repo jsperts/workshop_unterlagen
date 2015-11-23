@@ -1,0 +1,20 @@
+{
+  "name": "js-advanced",
+  "version": "0.0.1",
+  "description": "Boilerplate fuer den ersten Teil des JS-Advanced Workshops",
+  "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-jshint": "0.11.3",
+    "grunt-jscs": "2.1.0",
+    "http-server": "0.8.0"
+  },
+  "scripts": {
+    "start": "http-server -c-1 -p 8081",
+    "check": "grunt"
+  },
+  "engine": "node >= 0.12.0",
+  "private": "true"
+}

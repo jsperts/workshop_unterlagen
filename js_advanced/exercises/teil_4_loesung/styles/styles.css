@@ -1,0 +1,166 @@
+/* reset: start */
+ul li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+/* reset: end */
+
+/* JS Styles: start */
+.js_hidden {
+  visibility: hidden;
+}
+
+.js_bold {
+  font-weight: bold;
+}
+/* JS Styles: end */
+
+@media (max-width: 1119px) {
+  body {
+    width: 98%;
+  }
+}
+
+@media (min-width: 1120px) {
+  body {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
+
+/* header: start */
+.banner {
+  width: 100%;
+}
+
+.main-header {
+  height: 60px;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: #f0f0f0;
+}
+
+.main-header-scroll {
+  position: fixed;
+}
+
+.main-header h1 {
+  margin: 2px;
+}
+/* header: end */
+
+/* city list element: start */
+.city-element {
+  box-sizing: border-box;
+  margin: 1%;
+  width: 98%;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.city-element-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.city-element > header > h1 {
+  padding-left: 4px;
+}
+
+.city-element-description {
+  display: inline-block;
+  padding: 4px;
+}
+/* city list element: end */
+
+/* city-details: start */
+.city-details {
+  top: 0;
+  left: 100%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.08), 0 2px 7px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 3s linear;
+}
+
+@media (max-width: 1119px) {
+  .city-details-image {
+    margin-left: 10px;
+    width: 80%;
+    height: auto;
+    border: 2px solid black;
+  }
+}
+
+@media (min-width: 1120px) {
+  .city-details-image {
+    margin-left: 10px;
+    width: 50%;
+    height: auto;
+    border: 2px solid black;
+  }
+}
+
+.city-details-show {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.city-details ul {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: block;
+}
+
+.city-details li {
+  line-height: 40px;
+  border-top: 2px solid #ffffff;
+}
+
+.city-details li:last-child {
+  border-bottom: 2px solid #ffffff;
+}
+
+/* city-details: end */
+
+/* add-city: start */
+#addCityView {
+  top: -200px;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+#addCityView.show {
+  top: 40px;
+}
+
+#addCityView h4 {
+  margin: auto;
+}
+
+#addCityForm {
+  margin-bottom: 10px;
+  margin: auto;
+}
+
+#closeAddCityView {
+  font-size:20px;
+}
+/* add-city: end */

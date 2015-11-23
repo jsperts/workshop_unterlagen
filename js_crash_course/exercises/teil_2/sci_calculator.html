@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <title>Calculator</title>
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Super Rechner!</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Resultat</div>
+        <div id="results" class="panel-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="clickHandler">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <button data-num="7" class="col-md-2 col-md-offset-1 btn btn-default btn-lg">7</button>
+        <button data-num="8" class="col-md-2 btn btn-default btn-lg">8</button>
+        <button data-num="9" class="col-md-2 btn btn-default btn-lg">9</button>
+        <button data-op="divide" class="col-md-2 btn btn-warning btn-lg">/</button>
+        <button data-op="max" class="col-md-2 btn btn-warning btn-lg">Max</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <button data-num="4" class="col-md-2 col-md-offset-1 btn btn-default btn-lg">4</button>
+        <button data-num="5" class="col-md-2 btn btn-default btn-lg">5</button>
+        <button data-num="6" class="col-md-2 btn btn-default btn-lg">6</button>
+        <button data-op="multiply" class="col-md-2 btn btn-warning btn-lg">*</button>
+        <button data-op="min" class="col-md-2 btn btn-warning btn-lg">Min</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <button data-num="3" class="col-md-2 col-md-offset-1 btn btn-default btn-lg">3</button>
+        <button data-num="2" class="col-md-2 btn btn-default btn-lg">2</button>
+        <button data-num="1" class="col-md-2 btn btn-default btn-lg">1</button>
+        <button data-op="subtract" class="col-md-2 btn btn-warning btn-lg">-</button>
+        <button data-op="pow" class="col-md-2 btn btn-warning btn-lg">^</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <button data-num="0" class="col-md-2 col-md-offset-1 btn btn-default btn-lg">0</button>
+        <button data-op="equal" class="col-md-2 btn btn-primary btn-lg">=</button>
+        <button data-op="reset" class="col-md-2 btn btn-danger btn-lg">C</button>
+        <button data-op="add" class="col-md-2 btn btn-warning btn-lg">+</button>
+        <button data-op="sqrt" class="col-md-2 btn btn-warning btn-lg">Sqrt</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="lib/calc_api.js"></script>
+<script src="calculator.js"></script>
+<script src="sci_calculator.js"></script>
+</body>
+</html>

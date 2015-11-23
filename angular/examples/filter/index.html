@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="filtersTestApp">
+<head>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Filters</title>
+  <style>
+    .inline-block {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body ng-controller="MainCtrl as main">
+<h2>myLimit Filter</h2>
+  <p>Filtereingabe: {{main.myNumber}}</p>
+  <div>myNumber: {{main.myNumber|myLimit: 2}}</div>
+  <div>myFilteredNumber: {{main.myFilteredNumber}}</div>
+<h2>Built-in Filter</h2>
+
+<h3>uppercase/lowercase</h3>
+  <p>Filtereingabe: {{main.text}}</p>
+  <div>lowercase: {{main.text|lowercase}}</div>
+  <div>uppercase: {{main.text|uppercase}}</div>
+
+<h3>limitTo</h3>
+  <p>Filtereingabe: {{main.text}}</p>
+  <div>limitTo: {{main.text|limitTo: 10}}</div>
+  <div>limitTo Startindex 4: {{main.text|limitTo: 10: 4}}</div>
+  <p>Filtereingabe: {{main.array}}</p>
+  <div>limitTo: {{main.array|limitTo: 2}}</div>
+  <div>limitTo Startindex 1: {{main.array|limitTo: 2: 1}}</div>
+
+<h3>orderBy</h3>
+<div>
+  <ul class="inline-block">
+    <li><strong>Kein orderBy</strong></li>
+    <li ng-repeat="obj in main.array">{{obj.name}}</li>
+  </ul>
+  <ul class="inline-block">
+    <li><strong>orderBy</strong></li>
+    <li ng-repeat="obj in main.array | orderBy: 'name'">{{obj.name}}</li>
+  </ul>
+  <ul class="inline-block">
+    <li><strong>orderBy mit reverse</strong></li>
+    <li ng-repeat="obj in main.array | orderBy: 'name':true">{{obj.name}}</li>
+  </ul>
+</div>
+<h3>filter</h3>
+<div>
+  <ul class="inline-block">
+    <li><strong>Kein filter</strong></li>
+    <li ng-repeat="obj in main.array">{{obj.name}}</li>
+  </ul>
+  <ul class="inline-block">
+    <li><strong>filter</strong></li>
+    <li ng-repeat="obj in main.array | filter: 'John'">{{obj.name}}</li>
+  </ul>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+div {
+  margin: 10px;
+}
+
+.box {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+}
+
+.box-animation {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes translate-move {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(40px, 0, 0);
+  }
+  50% {
+    transform: translate3d(80px, 0, 0);
+  }
+  75% {
+    transform: translate3d(120px, 0, 0);
+  }
+  100% {
+    transform: translate3d(160px, 0, 0);
+  }
+}
+
+.box-move {
+  animation-name: translate-move;
+}
+
+@keyframes manual-move {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 40px;
+  }
+  50% {
+    left: 80px;
+  }
+  75% {
+    left: 120px;
+  }
+  100% {
+    left: 160px;
+  }
+}
+
+.box-manual-move {
+  animation-name: manual-move;
+  position: relative;
+}

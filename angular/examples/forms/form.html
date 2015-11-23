@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="formsTestApp">
+<head>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Form</title>
+</head>
+<body ng-controller="MainCtrl as main">
+<form name="main.testForm" novalidate ng-submit="main.sendToServer()">
+  <div>
+    <fieldset>
+      <legend>Anrede:</legend>
+      <label ng-repeat="title in main.titles" for="{{title}}">{{title}}
+        <input type="radio" id="{{title}}" name="title" value="{{title}}" ng-model="main.user.title"/>
+      </label>
+    </fieldset>
+  </div>
+
+  <div>
+    <fieldset>
+      <legend>Sprache:</legend>
+      <label ng-repeat="lang in main.languages" for="{{lang.id}}">{{lang.long}}
+        <input type="radio" id="{{lang.id}}" name="lang" ng-value="{{lang}}" ng-model="main.user.lang"/>
+      </label>
+    </fieldset>
+  </div>
+
+  <div>
+    <label for="living">Wohnort:
+      <select id="living" name="living" id="living" ng-options="cityName for cityName in main.cities"
+              ng-model="main.user.living">
+        <option value="">Stadt auswählen</option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <label for="happy">Glücklich?
+      <input type="checkbox" id="happy" name="happy" ng-model="main.user.happy" ng-true-value="'yes'"
+             ng-false-value="'no'"/>
+    </label>
+  </div>
+
+  <div>
+    <label for="happyDropdown">Glücklich?
+      <select id="happyDropdown" name="happyDropdown">
+        <option ng-selected="main.user.happy === ''">Noch nicht ausgewählt</option>
+        <option ng-selected="main.user.happy === 'yes'">Glücklich</option>
+        <option ng-selected="main.user.happy === 'no'">Nicht Glücklich</option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <label for="firstName">Vorname:
+      <input id="firstName" type="text" name="firstName" ng-model="main.user.firstName"/>
+    </label>
+  </div>
+
+  <div>
+    <label for="lastName">Nachname:
+      <input id="lastName" type="text" name="lastName" ng-model="main.user.lastName"/>
+    </label>
+  </div>
+
+  <button type="submit">Speichern</button>
+</form>
+<script src="form.js"></script>
+</body>
+</html>

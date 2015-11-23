@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="stdCtrl">
+<head>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Standard Controller</title>
+</head>
+<!-- Nested Controller -> nested $scope -> Vererbung -->
+<body ng-controller="myCtrl">
+  <p>Name: <span>{{name}}</span></p>
+  <div ng-controller="nestedCtrl">
+    <p>Name: <span>{{name}}</span></p>
+  </div>
+  <script src="ctrlNested.js"></script>
+</body>
+</html>

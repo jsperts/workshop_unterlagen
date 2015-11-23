@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Super App</title>
+  <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<h3>Super Heroes</h3>
+<h4>Add super hero</h4>
+<form id="addSuperHeroForm">
+  <label for="superName">Super name:</label>
+  <input id="superName" type="text"/>
+  <label for="realName">Real name:</label>
+  <input id="realName" type="text"/>
+  <label for="actor">Actor:</label>
+  <input id="actor" type="text"/>
+  <button type="submit">Add</button>
+</form>
+<h4>Sort by super name</h4>
+<button id="sortAscending">Ascending</button>
+<button id="sortDescending">Descending</button>
+<table>
+  <thead>
+    <tr>
+      <th>Super Name</th>
+      <th>Real Name</th>
+      <th>Actor</th>
+    </tr>
+  </thead>
+  <tbody id="superHeroes">
+
+  </tbody>
+</table>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cities App</title>
+  <link href="styles/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Cities</h1>
+    <button type="button" id="sortAscending">Sort Ascending</button>
+    <button type="button" id="sortDescending">Sort Descending</button>
+    <button type="button" id="addCity">Add City</button>
+  </div>
+  <img class="banner" src="images/lima_peru.jpg">
+</header>
+<section id="addCityView">
+  <header>
+    <h2>Add City</h2>
+  </header>
+  <form id="addCityForm">
+    <label for="name">Name:</label>
+    <input id="name" type="text"/>
+    <label for="country">Country:</label>
+    <input id="country" type="text"/>
+    <label for="population">Population:</label>
+    <input id="population" type="text"/>
+    <label for="imgUrl">Image</label>
+    <input id="imgUrl" type="text">
+    <button type="submit">Add</button>
+  </form>
+  <div id="closeFormView" style="font-size:20px;">Close</div>
+</section>
+<main></main>
+<script src="node_modules/requirejs/require.js"></script>
+<script>
+  require.config({
+    baseUrl: 'build/'
+  });
+  require(['main']);</script>
+</body>
+</html>

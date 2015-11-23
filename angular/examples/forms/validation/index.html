@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="formsTestApp">
+<head>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Forms</title>
+  <style>
+    .highlight {
+      background-color: #f3a02d;
+    }
+  </style>
+</head>
+<body ng-controller="myFormCtrl as ctrl">
+<form name="ctrl.loginForm" novalidate ng-submit="ctrl.login()">
+  <div>
+    <label>Username:
+      <input type="text"
+             name="username"
+             ng-minlength="6"
+             ng-model="ctrl.user.name"/>
+      <span ng-if="ctrl.loginForm.username.$invalid">Error</span>
+    </label>
+  </div>
+  <div style="margin-top:10px"></div>
+  <div>
+    <label>Password:
+      <input type="password"
+             name="password"
+             ng-minlength="6"
+             ng-model="ctrl.user.pass"
+             ng-model-options="{updateOn: 'blur'}"/>
+      <span ng-if="ctrl.loginForm.password.$invalid">Error</span>
+    </label>
+  </div>
+  <button type="submit">Login</button>
+</form>
+<div ng-init="states=['$valid', '$invalid', '$dirty', '$pristine']">
+  <h3>Model</h3>
+
+  <p>
+      <span ng-if="ctrl.user.name != undefined">
+        Username: {{ctrl.user.name}}
+      </span>
+      <span ng-if="ctrl.user.name == undefined">
+        Username: undefined
+      </span>
+    <br/>
+      <span ng-if="ctrl.user.pass != undefined">
+        Password: {{ctrl.pass.name}}
+      </span>
+      <span ng-if="ctrl.user.pass == undefined">
+        Password: undefined
+      </span>
+  </p>
+
+  <div style="float: left">
+    <h4 style="margin: 2px">Form</h4>
+    <ul>
+      <li ng-repeat="state in states"
+          ng-class="{'highlight': ctrl.loginForm[state]}">
+        {{state}}: {{ctrl.loginForm[state]}}
+      </li>
+    </ul>
+  </div>
+  <div style="float: left">
+    <h4 style="margin: 2px">Username</h4>
+    <ul>
+      <li ng-repeat="state in states"
+          ng-class="{'highlight': ctrl.loginForm.username[state]}">
+        {{state}}: {{ctrl.loginForm.username[state]}}
+      </li>
+    </ul>
+  </div>
+  <div style="float: left">
+    <h4 style="margin: 2px">Password</h4>
+    <ul>
+      <li ng-repeat="state in states"
+          ng-class="{'highlight': ctrl.loginForm.password[state]}">
+        {{state}}: {{ctrl.loginForm.password[state]}}
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

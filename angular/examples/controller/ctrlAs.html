@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="ctrlAs">
+<head>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Controller As</title>
+</head>
+<body ng-controller="myCtrl as my">
+  <input ng-model="my.name"/>
+  <p>{{my.name}}</p>
+  <button type="button" ng-click="my.change()">Click Me!</button>
+  <script src="ctrlAs.js"></script>
+</body>
+</html>

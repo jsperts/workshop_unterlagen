@@ -1,0 +1,11 @@
+<div>
+  <button ng-click="picker.openSelector()">Select Color</button>
+</div>
+<div ng-if="picker.open" class="color-selector">
+  <ul>
+    <li ng-repeat="color in ['red', 'blue', 'black', 'yellow']">
+      <div ng-click="picker.selectColor(color)" class="color-element {{color}}"></div>
+    </li>
+  </ul>
+  <button ng-click="picker.closeSelector()">Close</button>
+</div>

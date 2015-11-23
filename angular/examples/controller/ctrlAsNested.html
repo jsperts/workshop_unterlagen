@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="ctrlAsNested">
+<head>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Standard Controller</title>
+</head>
+<body ng-controller="myCtrl as my">
+  <p>Name: <span>{{my.name}}</span></p>
+  <div ng-controller="nestedCtrl as nested">
+    <p>Name: <span>{{my.name}}</span></p>
+  </div>
+  <script src="ctrlAsNested.js"></script>
+</body>
+</html>

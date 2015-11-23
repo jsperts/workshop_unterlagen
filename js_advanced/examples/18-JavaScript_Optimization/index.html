@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>JavaScript Optimization</title>
+</head>
+<body>
+<button type="button" id="reactor">React!</button>
+<div id="reactorContent">No reaction</div>
+<button type="button" id="noTimeout">No timeout</button>
+<button type="button" id="withTimeout">With timeout</button>
+<button type="button" id="withTimeoutTimeBased">With timeout time based</button>
+<button type="button" id="noMemoization">No memoization</button>
+<button type="button" id="memoization">Memoization Fib 40</button>
+<button type="button" id="memoization80">Memoization Fib 80</button>
+<button type="button" id="mapThenFilter">Map then Filter</button>
+<button type="button" id="filterThenMap">Filter then Map</button>
+
+<div>
+  <h4>No timeout</h4>
+  <div style="border: 1px solid black; width: 1000px; height: 30px;">
+    <div id="progressNoTimeout" style="background-color: blue; height: 30px; width: 0"></div>
+  </div>
+  <h4>With timeout</h4>
+  <div style="border: 1px solid black; width: 1000px; height: 30px;">
+    <div id="progressWithTimeout" style="background-color: blue; height: 30px; width: 0"></div>
+  </div>
+  <h4>With timeout time based</h4>
+  <div style="border: 1px solid black; width: 1000px; height: 30px;">
+    <div id="progressWithTimeoutTimeBased" style="background-color: blue; height: 30px; width: 0"></div>
+  </div>
+</div>
+<script src="timeout.js"></script>
+<script src="memoization.js"></script>
+<script src="looping.js"></script>
+<script src="dom.js"></script>
+</body>
+</html>

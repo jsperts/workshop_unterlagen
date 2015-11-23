@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>CSSOM Optimization - Read/Write Order</title>
+  <style>
+    .box {
+      height: 30px;
+      width: 30px;
+      margin: 4px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div style="float: left;">
+<button type="button" id="mixedReadWrite">Mixed Read/Write</button>
+<button type="button" id="orderedReadWrite">Ordered Read/Write</button>
+<button type="button" id="mixedReadWriteLoop">Mixed Read/Write loop</button>
+<button type="button" id="orderedReadWriteLoop">Ordered Read/Write loop</button>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+</div>
+<div style="float: right;">
+  <img src="./rendering_pipeline.svg">
+</div>
+<script src="index.js"></script>
+</body>
+</html>

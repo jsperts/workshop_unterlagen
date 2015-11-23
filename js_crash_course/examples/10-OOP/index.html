@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="highlightjs/styles/agate.css">
+  <script src="highlightjs/highlight.pack.js"></script>
+  <title>OOP</title>
+</head>
+<body>
+  <pre style="float:left; width: 50%; font-size: 30px;"><code class="javascript">
+  function Pet(name, color) {
+    this.name = name;
+    this.color = color;
+  }
+
+  Pet.prototype.getName = function() {
+    return this.name;
+  };
+  Pet.prototype.getColor = function() {
+    return this.color;
+  };
+  var pet = new Pet('I am a pet', 'red');
+
+
+  function Dog(name, color) {
+    Pet.call(this, name, color);
+  }
+
+  Dog.prototype = Object.create(Pet.prototype);
+
+  Dog.prototype.getName = function() {
+    var name = Pet.prototype.getName.call(this);
+    return 'I am: ' + name;
+  };
+
+  var skip = new Dog('skip', 'black');
+
+  pet.getName(); // 'I am a pet'
+  skip.getName(); // 'I am: skip'
+  skip.getColor(); // 'black'
+  </code></pre>
+  <img style="position:fixed; width: 50%; float:left;" src="custom_proto_chain.svg">
+  <script src="oo.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

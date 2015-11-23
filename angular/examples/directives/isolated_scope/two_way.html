@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="twoWayScopeTestApp">
+<head>
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Two-way Isolated</title>
+</head>
+<body ng-controller="MainCtrl as main">
+  <h3>Controller</h3>
+  <p>Name: <input ng-model="main.name"/></p>
+  <h3>Direktive</h3>
+  <gts-name-dir gts-name="main.name">
+
+  </gts-name-dir>
+  <script src="two_way.js"></script>
+</body>
+</html>
