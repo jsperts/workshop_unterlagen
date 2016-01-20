@@ -1,0 +1,7 @@
+<input ng-model="$ctrl.currentColor" ns-capitalize/>
+<div ng-repeat="color in $ctrl.colors | colorFilter: $ctrl.currentColor" ns-color="{{color}}">
+  {{color}}
+</div>
+<p>Selected color: {{$ctrl.newColor}}</p>
+<button ng-click="$ctrl.send()">Send color</button>
+<div>{{$ctrl.response}}</div>

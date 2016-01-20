@@ -1,0 +1,27 @@
+<form name="$ctrl.testForm" novalidate>
+  <div>
+    <label>Test text:
+      <input type="text"
+             name="testText"
+             ng-minlength="3"
+             ng-model="$ctrl.text"
+             ns-contains-abc/>
+      <span ng-if="$ctrl.testForm.testText.$invalid">Error</span>
+    </label>
+    <p>Text: {{$ctrl.text}}</p>
+    <p>$error: {{$ctrl.testForm.testText.$error}}</p>
+    <label>Async test text:
+      <input type="text"
+             name="asyncTestText"
+             ng-minlength="3"
+             ng-model="$ctrl.asyncText"
+             ng-model-options="{debounce: 500}"
+             ns-contains-abc-async/>
+      <span ng-if="$ctrl.testForm.asyncTestText.$invalid">Error</span>
+      <span ng-if="$ctrl.testForm.asyncTestText.$pending">Checking...</span>
+    </label>
+    <p>Form pending: {{$ctrl.testForm.$pending != undefined}}</p>
+    <p>Text: {{$ctrl.asyncText}}</p>
+    <p>$error: {{$ctrl.testForm.asyncTestText.$error}}</p>
+  </div>
+</form>

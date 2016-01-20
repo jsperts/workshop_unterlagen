@@ -1,34 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="authorsApp">
+<html ng-app="app">
 <head>
   <title>Authors</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    [ng\:cloak], [ng-cloak], .ng-cloak {
-      display: none !important;
-    }
-  </style>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <!-- start css template tags -->
-  <!-- end css template tags -->
+  <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body>
-<div class="container">
-  <div class="row jumbotron">
-    <h1>Authors App</h1>
-  </div>
-  <ng-view></ng-view>
-</div>
-<script src="node_modules/angular/angular.min.js"></script>
-<script src="node_modules/angular-route/angular-route.min.js"></script>
-<script src="scripts/app.js"></script>
-<!-- start script template tags -->
-<script src="scripts/configs/route_provider.js"></script>
-<script src="scripts/services/data_service.js"></script>
-<script src="scripts/services/filter_service.js"></script>
-<script src="scripts/controllers/authors_ctrl.js"></script>
-<script src="scripts/controllers/edit_ctrl.js"></script>
-<!-- end script template tags -->
+<body class="container">
+  <my-app></my-app>
 </body>
 </html>

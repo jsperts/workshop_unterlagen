@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Todo App</title>
+  <script src="libs/system.js"></script>
+  <script src="libs/typescript.js"></script>
+  <script src="libs/rx.js"></script>
+  <script src="libs/angular2-polyfills.js"></script>
+  <script src="libs/angular2.js"></script>
+  <script>
+    System.config({
+      transpiler: 'typescript',
+      typescriptOptions: {
+        emitDecoratorMetadata: true
+      },
+      packages: {'app': {defaultExtension: 'ts'}}
+    });
+    System.import('./app/boot');
+  </script>
+  <style>
+    todo-app {
+      width: 30%;
+      margin: auto;
+      display: block;
+    }
+
+    body {
+      background-color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+<todo-app>Loading...</todo-app>
+</body>
+</html>

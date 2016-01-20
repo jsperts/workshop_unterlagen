@@ -1,18 +1,32 @@
 (1)
-In diesem Teil der Übung solltet Ihr Unit-Tests für eure App schreiben.
+Unit-Tests für die Anwendung schreiben
+Mit "grunt test-unit" die Tests starten.
 
 (2) Optional
-Versucht eure App auf Basis von Komponenten aufzubauen in dem Ihr Direktiven implementiert die eigene Controller
-haben. (ControllerAs funktioniert auch mit Direktiven)
+Integration-Tests für die Anwendung schreiben.
+Mit "grunt test-integration" die Tests starten.
 
-AngularJS API Doku für die Version 1.3.15:
-https://code.angularjs.org/1.3.15/docs/api/ng
+(3) Optional
+E2E-Tests für die Anwendung schreiben
+Für den Test-Lauf:
+HTTP-Server starten z. B. mit "grunt serve"
+Rest-Server starten ggf. neustarten damit er die ursprüngliche Daten hat.
+Mit "grunt test-e2e" die Tests starten.
+Dieser Befehl installiert die neuste chrome-driver Version, startet den Selenium-Server und führt die Tests durch.
 
-Folgende Module wurden in der Lösung verwendet:
+Angular API Doku für die Version 1.5.0:
+https://code.angularjs.org/1.5.0/docs/api/ng
+
+Folgende Module wurden in den Unit- und Integration-Tests verwendet:
 ngMock
 
-Folgende Services wurden in der Lösung verwendet:
-$controller (vom ngMock Modul, für das Testen von Controllern)
+Folgende Services wurden in den Unit- und Integration-Tests verwendet:
+$componentController (vom ngMock Modul, für das Testen von Controllern)
 $compile (für das Testen von Direktiven)
+$rootScope
 
+Unit-/Integration-Tests:
 Jasmine Doku: http://jasmine.github.io/2.0/introduction.html
+
+E2E-Tests:
+Protractor API: http://angular.github.io/protractor/#/api

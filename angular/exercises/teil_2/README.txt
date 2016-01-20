@@ -1,35 +1,38 @@
 (1)
-Passt den MainCtrl und den DataService an, so dass die nicht mehr statische Daten benutzen. Stattdessen sollen die
-Daten vom Server geladen werden.
-Nutzt hierfür den gegebenen rest_server und die URL http://127.0.0.1:8080/api/v1/author mit der GET Methode.
+Die Daten sollen jetzt vom Server kommen. Nutzt dafür den rest_server, da sind schon ein paar Einträge für die Authors-App vorhanden.
+Es ist euch überlassen, ob Ihr $http oder ngResource nutzt
+URL: http://127.0.0.1:8081/api/v1/author
+Methode: GET
+
 Fehler Behandlung könnte Ihr für jetzt ignorieren.
 
 (2)
-Die Suchfunktion und die Autorenliste sollen nicht mehr in der index.html Datei sein sondern in eine Datei im views
-Verzeichnis. Damit man beim laden die Autorenlist und Suchfunktion weiterhin sieht solltet Ihr eine Route dafür
-anlegen in dem Ihr eine Datei im config Verzeichnis erstellt und dort den $routeProvider konfiguriert.
-Der MainCtrl soll jetzt nicht mehr in der index.html Datei sein. Er soll mit hilfe des $routeProviders geladen werden
- (controllerAs funktioniert auch hier).
+Vorbereitungen für Routing:
+Beim Laden soll die Suchfunktion und die Autorenliste unter der Haupt-Route (/) zu finden sein.
+Ihr musst dafür die Hauptkomponente anpassen damit sie "ng-view" nutzt und den Router ($routeProvider) konfigurieren.
 
 (3)
 Wenn der Nutzer auf das delete-Icon klickt soll der Autor gelöscht werden (Vom Server und der Autorenliste)
-Nutzt hierfür die URL http://127.0.0.1:8080/api/v1/author/:id wobei :id die Eigentliche _id des Autors ist.
-Nutzt die DELETE Methode.
+URL: http://127.0.0.1:8081/api/v1/author/:id wobei :id die Eigentliche _id des Autors ist.
+Methode: DELETE
 Fehler Behandlung könnte Ihr für jetzt ignorieren.
 
 (4)
 Wenn der Nutzer auf den Edit-Button für ein Autor oder auf den Plus-Button Klickt soll die App zu eine neue View
-navigieren. Legt eine neue Datei für die View an und ein registriert eine neuen Controller dafür. Die View wird in
-Teil 3 implementiert damit der Nutzer ein neuen Autor hinzufügen kann bzw. ein existierenden Autor ändern kann.
+navigieren. Ihr braucht hierfür neue Komponenten. Die Komponenten werd in Teil 3 implementiert.
 
 (5) Optional
 Wer noch Zeit hat kann sich jetzt um die Fehlerbehandlung bei den asynchronen Serveraufrufen kümmern.
 
-AngularJS API Doku für die Version 1.3.15:
-https://code.angularjs.org/1.3.15/docs/api/ng
+(6) Optional
+Info anzeigen, dass Daten geladen werden.
+
+Angular API Doku für die Version 1.5.0:
+https://code.angularjs.org/1.5.0/docs/api/ng
 
 Folgende Module wurden in der Lösung verwendet:
 ngRoute
+(import ngRoute from 'angular-route';)
 
 Folgende Direktiven wurden in der Lösung verwendet:
 ng-view
@@ -37,5 +40,4 @@ ng-view
 Folgende Services wurden in der Lösung verwendet:
 $routeProvider
 $location
-$q
 $http

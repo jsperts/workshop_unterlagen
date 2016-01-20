@@ -1,0 +1,61 @@
+<div style="width: 50%; float: left;">
+  <h2>myLimit Filter</h2>
+  <p>
+    Filtereingabe: {{$ctrl.myNumber}} <br>
+    myNumber: {{$ctrl.myNumber | myLimit: 2}}
+  </p>
+
+  <h2>Built-in Filter</h2>
+
+  <h3>uppercase/lowercase</h3>
+  <p>
+    Filtereingabe: {{$ctrl.text}} <br>
+    lowercase: {{$ctrl.text | lowercase}} <br>
+    uppercase: {{$ctrl.text | uppercase}}
+  </p>
+
+  <h3>limitTo</h3>
+
+  <h4>limitTo Text</h4>
+  <p>
+    Filtereingabe: {{$ctrl.text}} <br>
+    limitTo: {{$ctrl.text | limitTo: 10}} <br>
+    limitTo Startindex 4: {{$ctrl.text | limitTo: 10: 4}}
+  </p>
+
+  <h4>limitTo Array</h4>
+  <p>
+    Filtereingabe: {{$ctrl.array}} <br>
+    limitTo: {{$ctrl.array | limitTo: 2}} <br>
+    limitTo Startindex 1: {{$ctrl.array | limitTo: 2: 1}}
+  </p>
+</div>
+
+<div style="width: 50%; float: left;">
+  <h3>orderBy</h3>
+  <div>
+    <ul class="inline-block">
+      <li><strong>Kein orderBy</strong></li>
+      <li ng-repeat="obj in $ctrl.array">{{obj.name}}</li>
+    </ul>
+    <ul class="inline-block">
+      <li><strong>orderBy</strong></li>
+      <li ng-repeat="obj in $ctrl.array | orderBy: 'name'">{{obj.name}}</li>
+    </ul>
+    <ul class="inline-block">
+      <li><strong>orderBy mit reverse</strong></li>
+      <li ng-repeat="obj in $ctrl.array | orderBy: 'name':true">{{obj.name}}</li>
+    </ul>
+  </div>
+  <h3>filter</h3>
+  <div>
+    <ul class="inline-block">
+      <li><strong>Kein filter</strong></li>
+      <li ng-repeat="obj in $ctrl.array">{{obj.name}}</li>
+    </ul>
+    <ul class="inline-block">
+      <li><strong>filter</strong></li>
+      <li ng-repeat="obj in $ctrl.array | filter: 'John'">{{obj.name}}</li>
+    </ul>
+  </div>
+</div>
