@@ -1,4 +1,4 @@
-'use strict';
+/*global module:false*/
 
 var cleanConfig = {
   prod: ['build/', 'dist/'],

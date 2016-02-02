@@ -1,4 +1,4 @@
-'use strict';
+/*global module:false*/
 
 var cssminConfig = {
   options: {

@@ -1,4 +1,4 @@
-'use strict';
+/*global module:false*/
 
 var jshintConfig = {
   options: {
@@ -22,7 +22,7 @@ var jshintConfig = {
   },
   app: {
     files: {
-      src: ['src/*.js']
+      src: ['./**/*.js', '!./build/*', '!./dist/*']
     }
   }
 };

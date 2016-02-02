@@ -49,4 +49,5 @@
 
   person.observe(registry.observePerson.bind(registry));
   person.changeName('Jack');
+  person.changeName('Black');
 })();

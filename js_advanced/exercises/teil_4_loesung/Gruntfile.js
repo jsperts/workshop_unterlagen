@@ -1,9 +1,13 @@
 /*global module:false*/
+/*global require:false*/
 
 module.exports = function(grunt) {
   'use strict';
 
-  require('load-grunt-tasks')(grunt);
+  var loadGruntTasksConfig = {
+    requireResolution: true
+  };
+  require('load-grunt-tasks')(grunt, loadGruntTasksConfig);
   var configs = require('./grunt_configs');
 
   grunt.initConfig({

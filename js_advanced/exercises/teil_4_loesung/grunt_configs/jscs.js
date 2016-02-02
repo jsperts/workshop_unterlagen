@@ -1,4 +1,4 @@
-'use strict';
+/*global module:false*/
 
 var jscsConfig = {
   app: {
@@ -7,7 +7,7 @@ var jscsConfig = {
       fix: true
     },
     files: {
-      src: ['src/**/*.js']
+      src: ['./**/*.js', '!./build/*', '!./dist/*']
     }
   }
 };

@@ -1,7 +1,13 @@
 /*global module:false*/
+/*global require:false*/
 
 module.exports = function(grunt) {
   'use strict';
+
+  var loadGruntTasksConfig = {
+    requireResolution: true
+  };
+  require('load-grunt-tasks')(grunt, loadGruntTasksConfig);
 
   grunt.initConfig({
     jscs: {
@@ -10,7 +16,7 @@ module.exports = function(grunt) {
           config: 'jscs.json'
         },
         files: {
-          src: ['*.js']
+          src: ['./**/*.js', '!./build/*', '!./dist/*']
         }
       }
     },
@@ -32,14 +38,11 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          src: ['*.js']
+          src: ['./**/*.js', '!./build/*', '!./dist/*']
         }
       }
     }
   });
-
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jscs');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'jscs']);

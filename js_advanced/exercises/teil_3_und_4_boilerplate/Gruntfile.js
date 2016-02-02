@@ -1,19 +1,26 @@
 /*global module:false*/
+/*global require:false*/
 
 module.exports = function(grunt) {
   'use strict';
+
+  var loadGruntTasksConfig = {
+    requireResolution: true
+  };
+  require('load-grunt-tasks')(grunt, loadGruntTasksConfig);
 
   grunt.initConfig({
     babel: {
       options: {
         sourceMap: true,
-        modules: 'amd'
+        presets: ['es2015'],
+        plugins: ['transform-es2015-modules-amd']
       },
       dist: {
         files: [{
           expand: true,
           cwd: 'src/',
-          src: '*.js',
+          src: './**/*.js',
           dest: 'build/'
         }]
       }
@@ -25,7 +32,7 @@ module.exports = function(grunt) {
           fix: true
         },
         files: {
-          src: ['src/*.js']
+          src: ['./**/*.js', '!./build/*', '!./dist/*']
         }
       }
     },
@@ -51,7 +58,7 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          src: ['src/*.js']
+          src: ['./**/*.js', '!./build/*', '!./dist/*']
         }
       }
     },
@@ -67,13 +74,8 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-babel');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jscs');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
   // Default task.
   grunt.registerTask('default', ['jshint', 'jscs']);
-  grunt.registerTask('build', ['babel']);
+  grunt.registerTask('build-dev', ['babel']);
   grunt.registerTask('build-watch', ['watch']);
 };

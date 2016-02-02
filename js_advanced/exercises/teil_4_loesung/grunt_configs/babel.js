@@ -1,15 +1,16 @@
-'use strict';
+/*global module:false*/
 
 var babelConfig = {
   options: {
     sourceMap: true,
-    modules: 'amd'
+    presets: ['es2015'],
+    plugins: ['transform-es2015-modules-amd']
   },
   dist: {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: '**/*.js',
+      src: './**/*.js',
       dest: 'build/'
     }]
   }

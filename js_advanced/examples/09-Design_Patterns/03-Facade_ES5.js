@@ -1,5 +1,5 @@
 // Beispielimplementierung, es gibt auch andere möglichkeiten
-// Implementierung für ES5, Prototypbasierend
+// Implementierung für ES5, Pseudoklassisch
 (function() {
   'use strict';
 
@@ -21,25 +21,20 @@
   /* Subsystem objects: end */
 
   /* Facade: start */
-  var permissionsSystemPrototype = Object.create(Object.prototype, {
-    getPermissionsFor: {
-      writable: false,
-      configurable: false,
-      enumerable: false,
-      value: function(user) {
-        var userPermissions = getUserPermissions(user);
-        var userGroup = getUserGroup(user);
-        var groupPermissions = getGroupPermissions(userGroup);
+  function PermissionsSystem() {}
 
-        var permissions = userPermissions.concat(groupPermissions);
-        return permissions;
-      }
-    }
-  });
+  PermissionsSystem.prototype.getPermissionsFor = function(user) {
+    var userPermissions = getUserPermissions(user);
+    var userGroup = getUserGroup(user);
+    var groupPermissions = getGroupPermissions(userGroup);
+
+    var permissions = userPermissions.concat(groupPermissions);
+    return permissions;
+  };
   /* Facade: end */
 
   // Nutzung
   var user = 'Max';
-  var accessControl = Object.create(permissionsSystemPrototype);
+  var accessControl = new PermissionsSystem();
   var userPermissions = accessControl.getPermissionsFor(user);
 })();

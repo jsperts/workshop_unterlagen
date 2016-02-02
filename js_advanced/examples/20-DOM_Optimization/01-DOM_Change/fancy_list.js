@@ -55,14 +55,8 @@
     var spans = list.getElementsByTagName('span');
     var spansLength = spans.length - 1;
     for (var i = spansLength; i >= 0; i--) {
-      /*spans[i].removeChild(spans[i].lastChild);
-      spans[i].appendChild(document.createTextNode(spansLength - i));*/
-
-      /*spans[i].innerHTML = '<strong>Name: </strong>' + (spansLength - i);*/
-
-      spans[i].childNodes[1].textContent = spansLength - i;
-
-      /* spans[i].lastChild.textContent = spansLength - i; */
+      spans[i].innerHTML = '<strong>Name: </strong>' + (spansLength - i);
+      /*spans[i].childNodes[1].textContent = spansLength - i;*/
     }
   });
 })(window);
