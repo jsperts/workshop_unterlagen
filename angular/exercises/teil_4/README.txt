@@ -26,7 +26,7 @@ $compile (für das Testen von Direktiven)
 $rootScope
 
 Unit-/Integration-Tests:
-Jasmine Doku: http://jasmine.github.io/2.0/introduction.html
+Jasmine Doku: http://jasmine.github.io/2.4/introduction.html
 
 E2E-Tests:
 Protractor API: http://angular.github.io/protractor/#/api
