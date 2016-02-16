@@ -19,7 +19,7 @@ Fehler Behandlung könnte Ihr für jetzt ignorieren.
 
 (4)
 Wenn der Nutzer auf den Edit-Button für ein Autor oder auf den Plus-Button Klickt soll die App zu eine neue View
-navigieren. Ihr braucht hierfür neue Komponenten. Die Komponenten werd in Teil 3 implementiert.
+navigieren. Ihr braucht hierfür neue Komponenten. Die Komponenten wird in Teil 3 implementiert.
 
 (5) Optional
 Wer noch Zeit hat kann sich jetzt um die Fehlerbehandlung bei den asynchronen Serveraufrufen kümmern.
