@@ -7,6 +7,8 @@ function rgbToHex(red, green, blue, alpha) {
 }
 
 rgbToHex(255, 255, 255, 0);
+
+
 function rgbToHex2(options) {
   var redGreen = options.red.toString(16) + options.green.toString(16);
   var blueAlpha = options.blue.toString(16) + options.alpha.toString(16);

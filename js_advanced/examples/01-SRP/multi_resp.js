@@ -15,6 +15,7 @@ function manipulateFile(fileName, toAppend, newFile) {
 
 manipulateFile('testFile.txt', 'I will be appended', 'newFile.txt');
 
+
 /*
  * Die Funktion hat mehrere Domänen
  * 1) Geht durch eine Liste

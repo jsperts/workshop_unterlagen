@@ -4,8 +4,8 @@
 /**
  * Represents a person
  * @constructor
- * @param {string} [name] - The name of the person
- * @param {string} [birthDate] - The birth date of the person
+ * @param {string} name - The name of the person
+ * @param {string} birthDate - The birth date of the person
  */
 function Person(name, birthDate) {
   this.name = name || '';

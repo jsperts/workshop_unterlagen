@@ -17,11 +17,15 @@ var impureResult = impure();
 
 
 function pure2(arr, element) {
-  var newArr = [];
-  // var newArr = arr.slice() könnte man auch nutzen
-  arr.forEach(function(elem) {
-    newArr.push(elem);
+  var newArr = arr.map(function(elem) {
+    return elem;
   });
+  newArr.push(element);
+  return newArr;
+}
+
+function pure2Alternativ(arr, element) {
+  var newArr = arr.slice();
   newArr.push(element);
   return newArr;
 }

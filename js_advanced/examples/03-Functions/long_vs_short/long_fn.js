@@ -11,8 +11,6 @@ function manipulateFile(oldFile, newFile) {
         return index + ' ' + line;
       });
       var newContent = lines.join('\n');
-      // Alternativ
-      //var newContent = contents.split('\n').map(function(l, i) {return i + ' ' + line;}).join('\n');
       fs.writeFileSync(newFile, newContent);
     } catch(e) {
       console.log(e);

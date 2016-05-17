@@ -56,7 +56,6 @@
     var spansLength = spans.length - 1;
     for (var i = spansLength; i >= 0; i--) {
       spans[i].innerHTML = '<strong>Name: </strong>' + (spansLength - i);
-      /*spans[i].childNodes[1].textContent = spansLength - i;*/
     }
   });
 })(window);
