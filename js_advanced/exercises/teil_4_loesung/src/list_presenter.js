@@ -1,11 +1,10 @@
 import {publish, subscribe} from './helpers/pub_sub';
-import {openDetails} from './helpers/topics';
-import {sortAscendingClicked, sortDescendingClicked} from './helpers/topics';
+import {OPEN_DETAILS, SORT_ASCENDING_CLICKED, SORT_DESCENDING_CLICKED} from './helpers/topics';
 
 function sortCities(cities, isAscending) {
   cities.sort(function(firstCity, secondCity) {
-    var firstCityName = firstCity.name.toLowerCase();
-    var secondCityName = secondCity.name.toLocaleLowerCase();
+    const firstCityName = firstCity.name.toLowerCase();
+    const secondCityName = secondCity.name.toLocaleLowerCase();
     if (firstCityName < secondCityName) {
       return isAscending ? -1 : 1;
     } else if (firstCityName > secondCityName) {
@@ -19,16 +18,16 @@ function sortCities(cities, isAscending) {
 
 function listPresenter(model, view) {
   view.openDetailsClicked.observe(function(id) {
-    publish(openDetails, id);
+    publish(OPEN_DETAILS, id);
   });
 
-  subscribe(sortAscendingClicked, function() {
-    var cities = model.getCities();
+  subscribe(SORT_ASCENDING_CLICKED, function() {
+    const cities = model.getCities();
     view.render(sortCities(cities.slice(), true));
   });
 
-  subscribe(sortDescendingClicked, function() {
-    var cities = model.getCities();
+  subscribe(SORT_DESCENDING_CLICKED, function() {
+    const cities = model.getCities();
     view.render(sortCities(cities.slice(), false));
   });
 
@@ -37,12 +36,12 @@ function listPresenter(model, view) {
   });
 
   function init() {
-    var cities = model.getCities();
+    const cities = model.getCities();
     view.render(cities);
   }
 
   return {
-    init: init
+    init
   };
 }
 

@@ -1,7 +1,7 @@
 function sortSuperHeroes(superHeroes, isAscending) {
   superHeroes.sort(function(firstHero, secondHero) {
-    var firstSuperName = firstHero.superName.toLowerCase();
-    var secondSuperName = secondHero.superName.toLocaleLowerCase();
+    const firstSuperName = firstHero.superName.toLowerCase();
+    const secondSuperName = secondHero.superName.toLocaleLowerCase();
     if (firstSuperName < secondSuperName) {
       return isAscending ? -1 : 1;
     } else if (firstSuperName > secondSuperName) {
@@ -20,7 +20,7 @@ function emptyTableBody(tableBody) {
 }
 
 function Table(model, elements) {
-  var self = this;
+  const self = this;
   this._model = model;
   this._tableBody = elements.tableBody;
   this._sortAscending = elements.sortAscending;
@@ -32,24 +32,24 @@ function Table(model, elements) {
   });
 
   this._sortAscending.addEventListener('click', function() {
-    var sortedSuperHeroes = sortSuperHeroes(self._tableContent, true);
+    const sortedSuperHeroes = sortSuperHeroes(self._tableContent, true);
     self.render(sortedSuperHeroes);
   });
   this._sortDescending.addEventListener('click', function() {
-    var sortedSuperHeroes = sortSuperHeroes(self._tableContent, false);
+    const sortedSuperHeroes = sortSuperHeroes(self._tableContent, false);
     self.render(sortedSuperHeroes);
   });
 }
 
 function createTableCell(value) {
-  var td = document.createElement('td');
+  const td = document.createElement('td');
   td.textContent = value;
   return td;
 }
 
 function createTableRow(superHero) {
-  var superHeroFields = ['superName', 'realName', 'actors'];
-  var tr = document.createElement('tr');
+  const superHeroFields = ['superName', 'realName', 'actors'];
+  const tr = document.createElement('tr');
   superHeroFields.forEach(function(field) {
     tr.appendChild(createTableCell(superHero[field]));
   });
@@ -64,7 +64,7 @@ Table.prototype.render = function(superHeroes) {
 };
 
 Table.prototype.init = function() {
-  var superHeroes = this._model.getSuperHeroes();
+  const superHeroes = this._model.getSuperHeroes();
   this.render(superHeroes);
 };
 

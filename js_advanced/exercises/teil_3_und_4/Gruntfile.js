@@ -28,10 +28,21 @@ module.exports = function(grunt) {
       options: {
         configFile: '.eslintrc.yml'
       }
+    },
+    watch: {
+      scripts: {
+        files: ['src/**/*.js'],
+        tasks: ['babel'],
+        options: {
+          spawn: false,
+          debounceDelay: 1000
+        }
+      }
     }
   });
 
   // Default task.
   grunt.registerTask('default', ['eslint']);
   grunt.registerTask('build-dev', ['babel']);
+  grunt.registerTask('build-watch', ['watch']);
 };

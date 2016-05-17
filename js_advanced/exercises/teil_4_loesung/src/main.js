@@ -13,28 +13,28 @@ import detailsPresenter from './details_presenter';
 import HeaderView from './header_view';
 import headerPresenter from './header_presenter';
 
-var cities = new Cities();
+const cities = new Cities();
 
 /* Add City: start */
 function getFormFields() {
-  var formFieldIds = ['name', 'country', 'population', 'imgUrl'];
+  const formFieldIds = ['name', 'country', 'population', 'imgUrl'];
   return formFieldIds.map(function(fieldId) {
     return document.getElementById(fieldId);
   });
 }
 
-var addCityElements = {
+const addCityElements = {
   form: document.getElementById('addCityForm'),
   closeButton: document.getElementById('closeAddCityView'),
   view: document.getElementById('addCityView'),
   formFields: getFormFields()
 };
-var addCityView = new AddCityView(addCityElements);
+const addCityView = new AddCityView(addCityElements);
 addCityPresenter(cities, addCityView);
 /* Add City: end */
 
 /* Details: start */
-var detailsElements = {
+const detailsElements = {
   view: document.getElementById('detailsView'),
   heading: document.getElementById('detailsViewHeading'),
   closeButton: document.getElementById('detailsViewClose'),
@@ -42,26 +42,26 @@ var detailsElements = {
   population: document.getElementById('detailsViewPopulation'),
   image: document.getElementById('detailsViewImg')
 };
-var detailsView = new DetailsView(detailsElements);
+const detailsView = new DetailsView(detailsElements);
 detailsPresenter(cities, detailsView);
 /* Details: end */
 
 /* List: start */
-var listViewElements = {
+const listViewElements = {
   view: document.getElementsByTagName('main')[0]
 };
-var listView = new ListView(listViewElements);
+const listView = new ListView(listViewElements);
 listPresenter(cities, listView).init();
 /* List: end */
 
 /* Header: start */
-var headerViewElements = {
+const headerViewElements = {
   view: document.getElementsByTagName('header')[0],
   sortAscendingButton: document.getElementById('sortAscending'),
   sortDescendingButton: document.getElementById('sortDescending'),
   addCityButton: document.getElementById('addCity')
 };
-var headerView = new HeaderView(headerViewElements);
+const headerView = new HeaderView(headerViewElements);
 headerPresenter(headerView);
 /* Header: end */
 

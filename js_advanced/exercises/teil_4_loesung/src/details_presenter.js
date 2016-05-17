@@ -1,13 +1,13 @@
 import {subscribe} from './helpers/pub_sub';
-import {openDetails} from './helpers/topics';
+import {OPEN_DETAILS} from './helpers/topics';
 
 function detailsPresenter(model, view) {
-  var viewIsClosed = true;
+  let viewIsClosed = true;
 
-  subscribe(openDetails, function(id) {
+  subscribe(OPEN_DETAILS, function(id) {
     // Only one details view can be open at a given time
     if (viewIsClosed) {
-      var city = model.getCityById(id);
+      const city = model.getCityById(id);
       viewIsClosed = false;
       view.render(city);
       view.show();

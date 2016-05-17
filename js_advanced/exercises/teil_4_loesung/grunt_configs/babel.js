@@ -1,6 +1,4 @@
-/*global module:false*/
-
-var babelConfig = {
+const babelConfig = {
   options: {
     sourceMap: true,
     presets: ['es2015'],
@@ -11,7 +9,7 @@ var babelConfig = {
       expand: true,
       cwd: 'src/',
       src: './**/*.js',
-      dest: 'build/'
+      dest: 'dist/'
     }]
   }
 };

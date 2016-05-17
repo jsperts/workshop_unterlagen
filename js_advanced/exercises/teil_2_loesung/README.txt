@@ -9,6 +9,10 @@ Vorbereitung
 3) Grunt CLI installieren
   npm install -g grunt-cli
 
+Webserver starten
+
+1) npm start
+
 Übung Teil 1
 
 1) Verstehen was der Code macht
@@ -23,14 +27,15 @@ Vorbereitung
 
 Links
 
-jscs: http://jscs.info/
-jshint: http://jshint.com/
+eslint: http://eslint.org/
 grunt: http://gruntjs.com/
 
 Übung Teil 2
 
+Je nach Modul-System muss die index.html-Datei geändert werden
+
 1) Lösung von Teil 1 in Module aufspalten
-2) Lösung von Teil 1 mit MV* oder Flux implementieren
+2) Lösung von Teil 1 mit MV*/Flux implementieren
 3) Code Review
 4) Optional: Mehrere MV*/Module-Systeme nutzen
 5) Optional: Unter der Tabelle soll noch eine Liste mit Superheroes angezeigt werden. Die Liste sollte nicht sortiert sein

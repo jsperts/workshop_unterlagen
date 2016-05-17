@@ -1,10 +1,8 @@
-/*global module:false*/
-
-var requirejsConfig = {
+const requirejsConfig = {
   compile: {
     options: {
       include: 'main',
-      baseUrl: 'build/',
+      baseUrl: 'dist/',
       name: '../../node_modules/almond/almond', // assumes a production build using almond
       out: 'dist/app.min.js'
     }

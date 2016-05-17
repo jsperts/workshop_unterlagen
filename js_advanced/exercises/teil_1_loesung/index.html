@@ -30,6 +30,18 @@
 
   </tbody>
 </table>
-<script src="index.js"></script>
+<!-- Module pattern -->
+<script src="./src/index.js"></script>
+<!-- AMD -->
+<!--script data-main="src/main" src="../node_modules/requirejs/require.js"></script-->
+
+<!-- ESM -->
+<!--script src="../node_modules/requirejs/require.js"></script>
+<script>
+  require.config({
+    baseUrl: 'dist/'
+  });
+  require(['main']);
+</script-->
 </body>
 </html>

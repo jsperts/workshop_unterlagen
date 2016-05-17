@@ -1,6 +1,6 @@
-var imagePath = 'images/';
+const imagePath = 'images/';
 
-var kansas = {
+const kansas = {
   _id: 1,
   name: 'Kansas City',
   country: 'USA',
@@ -8,7 +8,7 @@ var kansas = {
   imgUrl: imagePath + 'kansas.jpg'
 };
 
-var newYork = {
+const newYork = {
   _id: 2,
   name: 'New York',
   country: 'USA',
@@ -16,7 +16,7 @@ var newYork = {
   imgUrl: imagePath + 'new_york.jpg'
 };
 
-var manchester = {
+const manchester = {
   _id: 3,
   name: 'Manchester',
   country: 'UK',
@@ -24,7 +24,7 @@ var manchester = {
   imgUrl: imagePath + 'manchester.jpg'
 };
 
-var panama = {
+const panama = {
   _id: 4,
   name: 'Panama City',
   country: 'Panama',
@@ -32,7 +32,7 @@ var panama = {
   imgUrl: imagePath + 'panama.jpg'
 };
 
-var london = {
+const london = {
   _id: 5,
   name: 'London',
   country: 'UK',
@@ -40,7 +40,7 @@ var london = {
   imgUrl: imagePath + 'london.jpg'
 };
 
-var brisbane = {
+const brisbane = {
   _id: 6,
   name: 'Brisbane',
   country: 'Australia',
@@ -48,7 +48,7 @@ var brisbane = {
   imgUrl: imagePath + 'brisbane.jpg'
 };
 
-var moscow = {
+const moscow = {
   _id: 7,
   name: 'Moscow',
   country: 'Russia',
@@ -56,7 +56,7 @@ var moscow = {
   imgUrl: imagePath + 'moscow.jpg'
 };
 
-var toronto = {
+const toronto = {
   _id: 8,
   name: 'Toronto',
   country: 'Canada',
@@ -64,7 +64,7 @@ var toronto = {
   imgUrl: imagePath + 'toronto.jpg'
 };
 
-var frankfurt = {
+const frankfurt = {
   _id: 9,
   name: 'Frankfurt',
   country: 'Germany',
@@ -72,7 +72,7 @@ var frankfurt = {
   imgUrl: imagePath + 'frankfurt.jpg'
 };
 
-var dubai = {
+const dubai = {
   _id: 10,
   name: 'Dubai',
   country: 'UAE',

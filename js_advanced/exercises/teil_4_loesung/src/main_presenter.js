@@ -1,12 +1,12 @@
 import {publish} from './helpers/pub_sub';
-import {fixHeader, unfixHeader} from './helpers/topics';
+import {FIX_HEADER, UNFIX_HEADER} from './helpers/topics';
 
 function mainPresenter(window, document) {
   window.addEventListener('scroll', function() {
     if (document.body.scrollTop > 40) {
-      publish(fixHeader);
+      publish(FIX_HEADER);
     } else {
-      publish(unfixHeader);
+      publish(UNFIX_HEADER);
     }
   });
 }

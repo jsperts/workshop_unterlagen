@@ -1,20 +1,13 @@
-/*global module:false*/
-
-var copyConfig = {
+const copyConfig = {
   prod: {
-    files: [
-      // includes files within path
-      {
-        expand: true, src: ['images/*'], dest: 'dist/'
-      }
-          ]
+    files: [{
+      expand: true, src: ['images/*'], dest: 'dist/'       // includes files within path
+    }]
   },
   dev: {
-    files: [
-      {
-        expand: true, src: ['images/*'], dest: 'build/'
-      }
-          ]
+    files: [{
+      expand: true, src: ['images/*'], dest: 'build/'
+    }]
   }
 };
 

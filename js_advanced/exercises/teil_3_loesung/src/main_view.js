@@ -1,5 +1,5 @@
 function MainView(model, mainElement) {
-  var self = this;
+  const self = this;
   this._model = model;
   this._elem = mainElement;
   this._model.cityAdded.observe(function() {
@@ -7,7 +7,7 @@ function MainView(model, mainElement) {
   });
 
   window.addEventListener('scroll', function() {
-    var header = document.getElementsByTagName('header')[0];
+    const header = document.getElementsByTagName('header')[0];
     if (document.body.scrollTop > 40) {
       header.firstElementChild.style.position = 'fixed';
       header.firstElementChild.style.backgroundColor = '#f0f0f0';
@@ -18,13 +18,13 @@ function MainView(model, mainElement) {
   });
 
   function sortCities(cities, isAscending) {
-    var swapped;
+    let swapped;
     do {
       swapped = false;
-      for (var i = 0; i < cities.length - 1; i++) {
-        var secondCityName = cities[i].name.toLowerCase();
-        var firstCityName = cities[i + 1].name.toLocaleLowerCase();
-        var temp;
+      for (let i = 0; i < cities.length - 1; i++) {
+        const secondCityName = cities[i].name.toLowerCase();
+        const firstCityName = cities[i + 1].name.toLocaleLowerCase();
+        let temp;
         if (isAscending && secondCityName > firstCityName) {
           temp = cities[i];
           cities[i] = cities[i + 1];
@@ -42,11 +42,11 @@ function MainView(model, mainElement) {
   }
 
   document.getElementById('sortAscending').addEventListener('click', function() {
-    var cities = self._model.getCities();
+    const cities = self._model.getCities();
     self.render(sortCities(cities.slice(), true));
   });
   document.getElementById('sortDescending').addEventListener('click', function() {
-    var cities = self._model.getCities();
+    const cities = self._model.getCities();
     self.render(sortCities(cities.slice(), false));
   });
 
@@ -56,25 +56,25 @@ function MainView(model, mainElement) {
 }
 
 function createCity(container, city) {
-  var section = document.createElement('section');
+  const section = document.createElement('section');
   section.className = 'city';
   container.appendChild(section);
-  var header = document.createElement('header');
-  var heading = document.createElement('h1');
-  var name = document.createTextNode(city.name);
+  const header = document.createElement('header');
+  const heading = document.createElement('h1');
+  const name = document.createTextNode(city.name);
 
   heading.appendChild(name);
   header.appendChild(heading);
-  var img = document.createElement('img');
+  const img = document.createElement('img');
   img.src = city.imgUrl;
   img.className = 'city-image';
-  var ul = document.createElement('ul');
+  const ul = document.createElement('ul');
   ul.className = 'city-description';
 
-  var country = document.createElement('li');
+  const country = document.createElement('li');
   country.innerHTML = '<span style="font-weight: bold;">Country: </span>' + city.country;
 
-  var population = document.createElement('li');
+  const population = document.createElement('li');
 
   population.innerHTML = '<span style="font-weight: bold;">Population: </span>' + city.population;
 
@@ -84,15 +84,16 @@ function createCity(container, city) {
   section.appendChild(img);
   section.appendChild(ul);
 
+  /* eslint-disable no-shadow */
   section.addEventListener('click', function() {
-    var section = document.createElement('section');
+    const section = document.createElement('section');
     section.className = 'city-details';
-    var header = document.createElement('header');
+    const header = document.createElement('header');
     header.style.marginLeft = '10px';
-    var heading = document.createElement('h1');
-    var name = document.createTextNode(city.name);
+    const heading = document.createElement('h1');
+    const name = document.createTextNode(city.name);
     heading.appendChild(name);
-    var close = document.createElement('span');
+    const close = document.createElement('span');
     close.appendChild(document.createTextNode('Close'));
     close.addEventListener('click', function() {
       function slideOut() {
@@ -108,20 +109,20 @@ function createCity(container, city) {
     header.appendChild(heading);
     section.appendChild(header);
     document.body.appendChild(section);
-    var ul = document.createElement('ul');
+    const ul = document.createElement('ul');
     ul.className = 'city-description';
 
-    var country = document.createElement('li');
+    const country = document.createElement('li');
     country.innerHTML = '<span style="font-weight: bold;">Country: </span>' + city.country;
 
-    var population = document.createElement('li');
+    const population = document.createElement('li');
 
     population.innerHTML = '<span style="font-weight: bold;">Population: </span>' + city.population;
 
     ul.appendChild(country);
     ul.appendChild(population);
 
-    var img = document.createElement('img');
+    const img = document.createElement('img');
     img.src = city.imgUrl;
     section.appendChild(img);
 
@@ -135,6 +136,7 @@ function createCity(container, city) {
     setTimeout(slideIn, 10);
     section.appendChild(ul);
   });
+  /* eslint-enable no-shadow */
 }
 
 MainView.prototype.render = function(cities) {
@@ -147,7 +149,7 @@ MainView.prototype.render = function(cities) {
 };
 
 MainView.prototype.init = function() {
-  var cities = this._model.getCities();
+  const cities = this._model.getCities();
   this.render(cities);
 };
 

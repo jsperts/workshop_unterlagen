@@ -1,4 +1,4 @@
-var topics = {};
+const topics = {};
 
 export function subscribe(topic, func) {
   if (topics[topic]) {
@@ -16,7 +16,7 @@ export function unsubscribe(topic, func) {
 
 export function publish(topic, args) {
   if (topics[topic]) {
-    var callbacks = topics[topic];
+    const callbacks = topics[topic];
     callbacks.forEach(function(cb) {
       cb(args);
     });

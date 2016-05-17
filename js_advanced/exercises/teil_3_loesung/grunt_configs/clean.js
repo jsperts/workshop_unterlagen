@@ -1,6 +1,4 @@
-/*global module:false*/
-
-var cleanConfig = {
+const cleanConfig = {
   prod: ['build/', 'dist/'],
   dev: ['build/']
 };

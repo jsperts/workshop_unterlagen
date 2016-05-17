@@ -1,6 +1,4 @@
-/*global module:false*/
-
-var htmlminConfig = {
+const htmlminConfig = {
   multiple: {
     options: {
       removeComments: true,
@@ -9,7 +7,7 @@ var htmlminConfig = {
     files: [{
       expand: true,
       flatten: true,
-      src: ['build/index.html'],
+      src: ['dist/index.html'],
       dest: 'dist/'
     }]
   }

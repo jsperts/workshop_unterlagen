@@ -1,7 +1,7 @@
 import Observable from './observable';
 
 function getInputFieldValues(fields) {
-  var res = {};
+  const res = {};
   Array.prototype.forEach.call(fields, function(field) {
     res[field.id] = field.value;
   });
@@ -15,7 +15,7 @@ function resetInputFieldValues(fields) {
 }
 
 function Form(elements) {
-  var self = this;
+  const self = this;
   this.formSubmitted = new Observable();
 
   this._form = elements.form;
@@ -23,7 +23,7 @@ function Form(elements) {
 
   this._form.addEventListener('submit', function(event) {
     event.preventDefault();
-    var data = getInputFieldValues(self._formFields);
+    const data = getInputFieldValues(self._formFields);
     self.formSubmitted.notify(data);
     resetInputFieldValues(self._formFields);
   });

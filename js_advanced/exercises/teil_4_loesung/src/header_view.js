@@ -1,7 +1,7 @@
 import Observable from './helpers/observable';
 
 function HeaderView(elements) {
-  var self = this;
+  const self = this;
   this._elements = elements;
   this.sortAscendingClicked = new Observable();
   this.sortDescendingClicked = new Observable();

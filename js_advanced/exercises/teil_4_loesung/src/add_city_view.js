@@ -1,7 +1,7 @@
 import Observable from './helpers/observable';
 
 function getInputFieldValues(fields) {
-  var res = {};
+  const res = {};
   Array.prototype.forEach.call(fields, function(field) {
     res[field.id] = field.value;
   });
@@ -9,14 +9,14 @@ function getInputFieldValues(fields) {
 }
 
 function AddCityView(elements) {
-  var self = this;
+  const self = this;
   this._elements = elements;
   this.formSubmitted = new Observable();
   this.closeClicked = new Observable();
 
   elements.form.addEventListener('submit', function(event) {
     event.preventDefault();
-    var data = getInputFieldValues(self._elements.formFields);
+    const data = getInputFieldValues(self._elements.formFields);
     self.formSubmitted.notify(data);
   });
 

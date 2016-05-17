@@ -6,22 +6,22 @@ function ListView(elements) {
 }
 
 function renderCityHeader(cityName) {
-  var header = document.createElement('header');
-  var heading = document.createElement('h1');
+  const header = document.createElement('header');
+  const heading = document.createElement('h1');
   heading.appendChild(document.createTextNode(cityName));
   header.appendChild(heading);
   return header;
 }
 
 function renderCityDescription(country, population) {
-  var ul = document.createElement('ul');
+  const ul = document.createElement('ul');
   ul.className = 'city-element-description';
 
-  var countryElement = document.createElement('li');
+  const countryElement = document.createElement('li');
   // ES6 Template literal
   countryElement.innerHTML = `<span class="js_bold">Country: </span>${country}`;
 
-  var populationElement = document.createElement('li');
+  const populationElement = document.createElement('li');
   // ES6 Template literal
   populationElement.innerHTML = `<span class="js_bold">Population: </span>${population}`;
 
@@ -32,13 +32,13 @@ function renderCityDescription(country, population) {
 }
 
 function renderCityElement(element, city) {
-  var header = renderCityHeader(city.name);
+  const header = renderCityHeader(city.name);
 
-  var img = document.createElement('img');
+  const img = document.createElement('img');
   img.src = city.imgUrl;
   img.className = 'city-element-image';
 
-  var description = renderCityDescription(city.country, city.population);
+  const description = renderCityDescription(city.country, city.population);
 
   element.appendChild(header);
   element.appendChild(img);
@@ -47,7 +47,7 @@ function renderCityElement(element, city) {
 }
 
 function createCityElement() {
-  var cityElement = document.createElement('section');
+  const cityElement = document.createElement('section');
   cityElement.className = 'city-element';
   return cityElement;
 }
@@ -59,10 +59,10 @@ function removeAll(container) {
 }
 
 ListView.prototype.render = function(cities) {
-  var self = this;
+  const self = this;
   removeAll(this._elements.view);
   cities.forEach(function(city) {
-    var cityElement = renderCityElement(createCityElement(), city);
+    const cityElement = renderCityElement(createCityElement(), city);
     this._elements.view.appendChild(cityElement);
 
     cityElement.addEventListener('click', function() {

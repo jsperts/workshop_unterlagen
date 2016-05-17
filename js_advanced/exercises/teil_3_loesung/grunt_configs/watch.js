@@ -1,6 +1,4 @@
-/*global module:false*/
-
-var watchConfig = {
+const watchConfig = {
   scripts: {
     files: ['src/**/*.js', 'index.html'],
     tasks: ['build-dev'],

@@ -1,12 +1,10 @@
-/*global module:false*/
-
-var processhtmlConfig = {
+const processhtmlConfig = {
   dev: {
     options: {
       process: true
     },
     files: {
-      'build/index.html': ['index.html']
+      'dist/index.html': ['index.html']
     }
   },
   prod: {
@@ -14,7 +12,7 @@ var processhtmlConfig = {
       process: true
     },
     files: {
-      'build/index.html': ['index.html']
+      'dist/index.html': ['index.html']
     }
   }
 };

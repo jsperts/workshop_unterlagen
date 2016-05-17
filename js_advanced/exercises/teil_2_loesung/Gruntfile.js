@@ -1,11 +1,9 @@
-/*global module:false*/
-/*global require:false*/
-
 module.exports = function(grunt) {
   'use strict';
 
-  var loadGruntTasksConfig = {
-    requireResolution: true
+  const loadGruntTasksConfig = {
+    requireResolution: true,
+    pattern: ['grunt-*', '@*/grunt-*', 'gruntify-*']
   };
   require('load-grunt-tasks')(grunt, loadGruntTasksConfig);
 
@@ -25,46 +23,15 @@ module.exports = function(grunt) {
         }]
       }
     },
-    jscs: {
-      app: {
-        options: {
-          config: 'jscs.json',
-          fix: true
-        },
-        files: {
-          src: ['./**/*.js', '!./build/*', '!./dist/*']
-        }
-      }
-    },
-    jshint: {
+    eslint: {
+      src: ['**/*.js'],
       options: {
-        bitwise: true,
-        curly: true,
-        eqeqeq: true,
-        esnext: true, // es6 features
-        forin: true,
-        freeze: true,
-        latedef: 'nofunc',
-        noarg: true,
-        nonew: true,
-        singleGroups: true,
-        strict: false, // es6 modules are strict by default
-        undef: true,
-        unused: true,
-        browser: true,
-        globals: {
-          require: true
-        }
-      },
-      app: {
-        files: {
-          src: ['./**/*.js', '!./build/*', '!./dist/*']
-        }
+        configFile: '.eslintrc.yml'
       }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'jscs']);
+  grunt.registerTask('default', ['eslint']);
   grunt.registerTask('build-dev', ['babel']);
 };

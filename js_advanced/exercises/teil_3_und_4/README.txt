@@ -4,7 +4,7 @@ Critical Rendering Path Optimierung
 
 1) Das Ladeverhalten 2-3 Seiten mit Hilfe von DevTools, YSlow und webpagetest.org unter die Lupe nehmen. Was könnte man da verbessern?
 2) Das Ladeverhalten der Beispielanwendung analysieren
-3) Testen was passiert wenn das Netzwerk langsam ist (Throttling in DevTools/server.js in examples/14-Loading_Steps)
+3) Testen was passiert, wenn das Netzwerk langsam ist (Throttling in DevTools/server.js in examples/15-Loading_Steps)
 4) Wie ändert sich das Ladeverhalten wenn die Reihenfolge von script-/link-Tags sich ändert?
 5) Das Ladeverhalten der Beispielanwendung optimieren
 6) Optional: Wie lange brauchen die Bilder bis die angezeigt werden können?

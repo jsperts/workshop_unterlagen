@@ -1,5 +1,5 @@
 import {subscribe} from './helpers/pub_sub';
-import {addCityClicked} from './helpers/topics';
+import {ADD_CITY_CLICKED} from './helpers/topics';
 
 function addCityPresenter(model, view) {
   view.formSubmitted.observe(function(data) {
@@ -12,7 +12,7 @@ function addCityPresenter(model, view) {
     view.hide();
   });
 
-  subscribe(addCityClicked, function() {
+  subscribe(ADD_CITY_CLICKED, function() {
     view.show();
   });
 }

@@ -1,25 +1,30 @@
 import {publish, subscribe} from './helpers/pub_sub';
-import {sortAscendingClicked, sortDescendingClicked, addCityClicked} from './helpers/topics';
-import {fixHeader, unfixHeader} from './helpers/topics';
+import {
+    SORT_ASCENDING_CLICKED,
+    SORT_DESCENDING_CLICKED,
+    ADD_CITY_CLICKED,
+    FIX_HEADER,
+    UNFIX_HEADER
+} from './helpers/topics';
 
 function headerPresenter(view) {
   view.sortAscendingClicked.observe(function() {
-    publish(sortAscendingClicked);
+    publish(SORT_ASCENDING_CLICKED);
   });
 
   view.sortDescendingClicked.observe(function() {
-    publish(sortDescendingClicked);
+    publish(SORT_DESCENDING_CLICKED);
   });
 
   view.addCityClicked.observe(function() {
-    publish(addCityClicked);
+    publish(ADD_CITY_CLICKED);
   });
 
-  subscribe(fixHeader, function() {
+  subscribe(FIX_HEADER, function() {
     view.fix();
   });
 
-  subscribe(unfixHeader, function() {
+  subscribe(UNFIX_HEADER, function() {
     view.unfix();
   });
 }

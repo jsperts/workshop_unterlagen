@@ -1,6 +1,6 @@
 import Observable from './observable';
 
-var superHeroes = [{
+const superHeroes = [{
   _id: 1,
   superName: 'Superman',
   realName: 'Clark Kent',

@@ -1,6 +1,4 @@
-/*global module:false*/
-
-var cssminConfig = {
+const cssminConfig = {
   options: {
     shorthandCompacting: true,
     roundingPrecision: -1

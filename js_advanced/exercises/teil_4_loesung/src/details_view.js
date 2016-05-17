@@ -1,7 +1,7 @@
 import Observable from './helpers/observable';
 
 function DetailsView(elements) {
-  var self = this;
+  const self = this;
   this._elements = elements;
   this.closeButtonClicked = new Observable();
 
@@ -16,16 +16,16 @@ function DetailsView(elements) {
 }
 
 DetailsView.prototype.render = function(city) {
-  var heading = this._elements.heading;
+  const heading = this._elements.heading;
   heading.textContent = city.name;
 
-  var img = this._elements.image;
+  const img = this._elements.image;
   img.src = city.imgUrl;
 
-  var country = this._elements.country;
+  const country = this._elements.country;
   country.textContent = city.country;
 
-  var population = this._elements.population;
+  const population = this._elements.population;
   population.textContent = city.population;
 };
 

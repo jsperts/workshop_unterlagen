@@ -1,7 +1,7 @@
 (function(document) {
   'use strict';
 
-  var superHeroes = [{
+  const superHeroesArray = [{
     _id: 1,
     superName: 'Superman',
     realName: 'Clark Kent',
@@ -22,17 +22,17 @@
     realName: 'Bruce Banner',
     actors: ['Edward Norton', 'Mark Ruffalo']
   }];
-  var superHeroFields = ['superName', 'realName', 'actors'];
+  const superHeroFields = ['superName', 'realName', 'actors'];
 
   /* Table manipulation: start */
   function createTableCell(value) {
-    var td = document.createElement('td');
+    const td = document.createElement('td');
     td.textContent = value;
     return td;
   }
 
   function createTableRow(superHero) {
-    var tr = document.createElement('tr');
+    const tr = document.createElement('tr');
     superHeroFields.forEach(function(field) {
       tr.appendChild(createTableCell(superHero[field]));
     });
@@ -46,7 +46,7 @@
   }
 
   function populateTableBody(superHeroes) {
-    var superHeroesTableBody = document.getElementById('superHeroes');
+    const superHeroesTableBody = document.getElementById('superHeroes');
     emptyTableBody(superHeroesTableBody);
     superHeroes.forEach(function(superHero) {
       superHeroesTableBody.appendChild(createTableRow(superHero));
@@ -57,8 +57,8 @@
 
   function sortSuperHeroes(superHeroes, isAscending) {
     superHeroes.sort(function(firstHero, secondHero) {
-      var firstSuperName = firstHero.superName.toLowerCase();
-      var secondSuperName = secondHero.superName.toLocaleLowerCase();
+      const firstSuperName = firstHero.superName.toLowerCase();
+      const secondSuperName = secondHero.superName.toLocaleLowerCase();
       if (firstSuperName < secondSuperName) {
         return isAscending ? -1 : 1;
       } else if (firstSuperName > secondSuperName) {
@@ -71,7 +71,7 @@
   }
 
   function getInputFieldValues(fieldIds) {
-    var res = {};
+    const res = {};
     fieldIds.forEach(function(fieldId) {
       res[fieldId] = document.getElementById(fieldId).value;
     });
@@ -86,29 +86,29 @@
 
   /* Listeners: start */
   function sortAscendingClicked(superHeroes) {
-    var sortedSuperHeroes = sortSuperHeroes(superHeroes, true);
+    const sortedSuperHeroes = sortSuperHeroes(superHeroes, true);
     populateTableBody(sortedSuperHeroes);
   }
 
   function sortDescendingClicked(superHeroes) {
-    var sortedSuperHeroes = sortSuperHeroes(superHeroes, false);
+    const sortedSuperHeroes = sortSuperHeroes(superHeroes, false);
     populateTableBody(sortedSuperHeroes);
   }
 
   function formSubmitted() {
-    var fieldIds = ['superName', 'realName', 'actors'];
-    var superHero = getInputFieldValues(fieldIds);
+    const fieldIds = ['superName', 'realName', 'actors'];
+    const superHero = getInputFieldValues(fieldIds);
     // actors must be an array
     superHero.actors = superHero.actors.split(',');
-    superHeroes.push(superHero);
-    populateTableBody(superHeroes);
+    superHeroesArray.push(superHero);
+    populateTableBody(superHeroesArray);
     resetInputFieldValues(fieldIds);
   }
 
   function registerListeners(superHeroes) {
-    var sortAscending = document.getElementById('sortAscending');
-    var sortDescending = document.getElementById('sortDescending');
-    var superHeroForm = document.getElementById('addSuperHeroForm');
+    const sortAscending = document.getElementById('sortAscending');
+    const sortDescending = document.getElementById('sortDescending');
+    const superHeroForm = document.getElementById('addSuperHeroForm');
 
     sortAscending.addEventListener('click', function() {
       sortAscendingClicked(superHeroes);
@@ -133,6 +133,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    onDOMContentLoaded(superHeroes);
+    onDOMContentLoaded(superHeroesArray);
   });
-})(document);
+}(document));
