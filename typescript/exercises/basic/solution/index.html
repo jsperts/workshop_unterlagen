@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Shapes</title>
+  <!--script src="/node_modules/systemjs/dist/system.src.js"></script-->
+  <script src="https://code.angularjs.org/tools/system.js"></script>
+  <style>
+    .shape {
+      float: left;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+<div id="controlsContainer">
+  <p>Number of shapes: <span id="numberOfShapes"></span></p>
+  <label>Width:
+    <input id="width" type="number"/>
+  </label>
+  <label>Height:
+    <input id="height" type="number"/>
+  </label>
+  <button type="button" id="addShape">Add Shape</button>
+  <button type="button" id="filterShapes">Filter</button>
+</div>
+<div id="shapesContainer" class="container"></div>
+<script>
+  System.config({
+    packages: {'app': {defaultExtension: 'js'}}
+  });
+  System.import('./app/main');
+</script>
+</body>
+</html>

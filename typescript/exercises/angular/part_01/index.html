@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authors</title>
+  <base href="/">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="./node_modules/systemjs/dist/system.js"></script>
+  <script src="./node_modules/angular/angular.min.js"></script>
+  <script src="./node_modules/angular-route/angular-route.min.js"></script>
+  <script src="./node_modules/angular-messages/angular-messages.min.js"></script>
+</head>
+<body class="container" id="app">
+  <div ng-controller="mainCtrl">
+    <div class="row jumbotron">
+      <h1>Authors App</h1>
+    </div>
+    <ng-view></ng-view>
+  </div>
+
+  <!-- app/common -->
+  <script src="dist/common/helpers/get_index.js"></script>
+  <script src="dist/common/common.module.js"></script>
+  <script src="dist/common/authors.service.js"></script>
+  <script src="dist/common/filter.service.js"></script>
+  <!-- app/manipulate_author -->
+  <script src="dist/manipulate_author/manipulate_author.module.js"></script>
+  <script src="dist/manipulate_author/manipulate_author.routes.js"></script>
+  <script src="dist/manipulate_author/add_author.controller.js"></script>
+  <script src="dist/manipulate_author/edit_author.controller.js"></script>
+  <script src="dist/manipulate_author/year_not_in_future.directive.js"></script>
+  <!-- app -->
+  <script src="dist/app.module.js"></script>
+  <script src="dist/app.routes.js"></script>
+  <script src="dist/author_list.controller.js"></script>
+  <script src="dist/main.controller.js"></script>
+  <script src="dist/search.controller.js"></script>
+</body>
+</html>

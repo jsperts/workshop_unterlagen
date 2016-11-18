@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authors</title>
+  <base href="/">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="./node_modules/systemjs/dist/system.js"></script>
+</head>
+<body class="container">
+<my-app></my-app>
+<script>
+  System.config({
+    defaultJSExtensions: true,
+    map: {
+      'system-polyfills': 'node_modules/systemjs/dist/system-polyfills.js',
+      'angular': 'node_modules/angular/angular.js',
+      'angular-route': 'node_modules/angular-route/angular-route.js',
+      'angular-messages': 'node_modules/angular-messages/angular-messages.js'
+    },
+    meta: {
+      'angular': {
+        format: 'global',
+        exports: 'angular'
+      },
+      'angular-route': {
+        format: 'global',
+        deps: ['angular']
+      },
+      'angular-messages': {
+        format: 'global',
+        deps: ['angular']
+      },
+      'angular-mocks': {
+        format: 'global',
+        exports: 'angular',
+        deps: ['angular']
+      }
+    }
+  });
+  System.import('./dist/app.module.js');
+</script>
+</body>
+</html>

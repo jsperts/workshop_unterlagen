@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Data item 1"
+    },
+    {
+      "id": 2,
+      "name": "Data item 2"
+    },
+    {
+      "id": 3,
+      "name": "Data item 3"
+    },
+    {
+      "id": 5,
+      "name": "Data item 5"
+    },
+    {
+      "name": "Dummy Name",
+      "id": 6
+    },
+    {
+      "name": "Dummy Name",
+      "id": 7
+    }
+  ],
+  "color": [
+    {
+      "data": "green",
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<div class="row panel panel-primary">
+  <div class="panel-heading">{{title}}</div>
+  <div class="panel-body">
+    <form name="authorsForm" novalidate ng-submit="submit()">
+      <div class="form-group">
+        <label for="authorName">Name</label>
+        <input type="text"
+               name="authorName"
+               ng-model-options="{updateOn: 'blur'}"
+               ng-model="authorToEdit.name"
+               class="form-control"
+               id="authorName"
+               ng-required="true"/>
+        <ng-messages class="has-error"
+                     for="authorsForm.authorName.$error"
+                     ng-if="authorsForm.$submitted">
+          <ng-message class="text-danger" when="required">This field is required</ng-message>
+        </ng-messages>
+      </div>
+      <div class="form-group">
+        <label for="authorBirthYear">Birth Year</label>
+        <input type="number"
+               name="birthYear"
+               ng-model-options="{updateOn: 'blur'}"
+               ng-model="authorToEdit.birthYear"
+               class="form-control"
+               id="authorBirthYear"
+               ng-required="true"
+               my-year-not-in-future/>
+        <ng-messages class="has-error"
+                     for="authorsForm.birthYear.$error"
+                     ng-if="authorsForm.$submitted">
+          <ng-message class="text-danger" when="required">This field is required</ng-message>
+          <ng-message class="text-danger" when="number">This field must be a number</ng-message>
+          <ng-message class="text-danger" when="yearInFuture">The birth year must not be in the future</ng-message>
+        </ng-messages>
+      </div>
+      <div class="form-group">
+        <label for="bookToAdd">Book to add</label>
+        <div class="input-group">
+          <input type="text" ng-model="bookToAdd" class="form-control" id="bookToAdd"/>
+          <span class="input-group-btn">
+                <button type="button" class="btn btn-info" ng-click="addBook(bookToAdd)">Add Book</button>
+              </span>
+        </div>
+      </div>
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item active">Books:</li>
+          <li class="list-group-item" ng-repeat="book in authorToEdit.books">
+            <span>{{book}}</span>
+            <span class="glyphicon glyphicon-remove pull-right" ng-click="removeBook($index)"></span>
+          </li>
+        </ul>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-info" ng-click="navigate()">Cancel</button>
+    </form>
+  </div>
+</div>

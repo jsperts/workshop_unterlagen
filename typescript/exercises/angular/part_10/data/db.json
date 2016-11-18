@@ -1,0 +1,40 @@
+{
+  "authors": [
+    {
+      "_id": 1,
+      "name": "Ian Fleming",
+      "birthYear": 1908,
+      "books": [
+        "Dr. No",
+        "Goldfinger",
+        "Thunderball"
+      ]
+    },
+    {
+      "_id": 3,
+      "name": "Dan Brown",
+      "birthYear": 1964,
+      "books": [
+        "Digital Fortress",
+        "Angels and Demons",
+        "The Da Vinci Code"
+      ]
+    },
+    {
+      "_id": 4,
+      "name": "Isaac Asimovasdsa",
+      "birthYear": 1920,
+      "books": [
+        "The Neutrino",
+        "The Human Brain"
+      ],
+      "id": 4
+    },
+    {
+      "name": "sdasd",
+      "birthYear": 1950,
+      "books": [],
+      "_id": 5
+    }
+  ]
+}
