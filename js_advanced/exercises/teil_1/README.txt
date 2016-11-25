@@ -17,9 +17,8 @@ Webserver starten
 
 1) Verstehen was der Code macht
 2) Refactoring, der Code soll verständlicher werden
-   jscs und jshint können dabei helfen
+   eslint kann dabei helfen
    In Kommandozeile: grunt aufrufen um "Fehler" zu sehen
-   Die fix-Eigenschaft von jscs kann manche "Fehler" wie z. B. Einrükungen selbst fixen
 3) Bug fix: Beim Sortieren sollen Groß-/Kleinbuchstabe keine Rolle spielen
 4) Erweiterung: Statt nur ein Schauspieler (actor-Eigenschaft) soll ein super hero mehrere Schauspieler haben (actors-Eigenschaft als Array)
 5) Erweiterung: Nach dem Submit soll das Formular leer sein
