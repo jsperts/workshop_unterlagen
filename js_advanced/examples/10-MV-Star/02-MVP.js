@@ -3,71 +3,79 @@
   'use strict';
 
   // Used for the Observer Pattern
-  function Observable() {
-    this._listeners = [];
-  }
-  Observable.prototype.observe = function(cb){
-    this._listeners.push(cb);
-  };
+  class Observable {
+    constructor() {
+      this.listeners = [];
+    }
 
-  Observable.prototype.notify = function(data) {
-    this._listeners.forEach(function(listener) {
-      listener(data);
-    });
-  };
+    observe(cb) {
+      this.listeners.push(cb);
+    }
+
+    notify(data) {
+      this.listeners.forEach((listener) => {
+        listener(data);
+      });
+    };
+  }
 
   /* Model: start */
-  function TodoModel(todos) {
-    this._todos = todos;
-    this.todoAdded = new Observable();
+  class TodoModel {
+    constructor(todos) {
+      this.todos = todos;
+      this.todoAdded = new Observable();
+    }
+
+    addTodo(todo) {
+      this.todos.push(todo);
+      this.todoAdded.notify(todo);
+    }
+
+    getTodos() {
+      return this.todos;
+    }
   }
 
-  TodoModel.prototype.addTodo = function(todo) {
-    this._todos.push(todo);
-    this.todoAdded.notify(todo);
-  };
-
-  TodoModel.prototype.getTodos = function() {
-    return this._todos;
-  };
   /* Model: end */
 
   /* Presenter: start */
-  function TodoPresenter(model, view) {
-    this._model = model;
-    this._view = view;
-    view.addButtonClicked.observe(function(todo) {
-      model.addTodo(todo);
-    });
-    model.todoAdded.observe(function(todos) {
-      view.renderTodos(model.getTodos());
-    });
+  class TodoPresenter {
+    constructor(model, view) {
+      this.model = model;
+      this.view = view;
+      view.addButtonClicked.observe((todo) => {
+        model.addTodo(todo);
+      });
+      model.todoAdded.observe((todos) => {
+        view.renderTodos(model.getTodos());
+      });
+    }
+
+    renderTodos() {
+      this.view.renderTodos(this.model.getTodos());
+    }
   }
 
-  TodoPresenter.prototype.renderTodos = function() {
-    this._view.renderTodos(this._model.getTodos());
-  };
   /* Presenter: end */
 
   /* View: start */
 
-  function TodosView(elements) {
-    this._todosList = elements.list;
-    this.addButtonClicked = new Observable();
+  class TodosView {
+    constructor(elements) {
+      this.todosList = elements.list;
+      this.addButtonClicked = new Observable();
 
-    var self = this;
+      elements.addButton.addEventListener('click', () => {
+        this.addButtonClicked.notify(elements.inputField.value);
+      });
+    }
 
-    elements.addButton.addEventListener('click', function() {
-      self.addButtonClicked.notify(elements.inputField.value);
-    });
+    renderTodos(todos) {
+      var todosString = todos.map((todo) => `<li>${todo}</li>`).join('');
+      this.todosList.innerHTML = todosString;
+    }
   }
 
-  TodosView.prototype.renderTodos = function(todos) {
-    var todosString = todos.map(function(todo) {
-      return '<li>' + todo + '</li>';
-    }).join('');
-    this._todosList.innerHTML = todosString;
-  };
   /* View: end */
 
   // Bootstrap

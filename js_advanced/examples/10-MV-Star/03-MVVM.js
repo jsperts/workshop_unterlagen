@@ -3,19 +3,21 @@
   'use strict';
 
   // Used for the Observer Pattern
-  function Observable() {
-    this._listeners = [];
+  class Observable {
+    constructor() {
+      this.listeners = [];
+    }
+
+    observe(cb) {
+      this.listeners.push(cb);
+    }
+
+    notify(data) {
+      this.listeners.forEach((listener) => {
+        listener(data);
+      });
+    }
   }
-
-  Observable.prototype.observe = function(cb) {
-    this._listeners.push(cb);
-  };
-
-  Observable.prototype.notify = function(data) {
-    this._listeners.forEach(function(listener) {
-      listener(data);
-    });
-  };
 
   /* Binder: start */
   function Binder(viewModel) {
@@ -70,31 +72,35 @@
   /* Binder: end */
 
   /* Model: start */
-  function TodoModel(todos) {
-    this._todos = todos;
-    this.todoAdded = new Observable();
+  class TodoModel {
+    constructor(todos) {
+      this.todos = todos;
+      this.todoAdded = new Observable();
+    }
+
+    addTodo(todo) {
+      this.todos.push(todo);
+      this.todoAdded.notify(todo);
+    }
+
+    getTodos() {
+      return this.todos;
+    }
   }
 
-  TodoModel.prototype.addTodo = function(todo) {
-    this._todos.push(todo);
-    this.todoAdded.notify(todo);
-  };
-
-  TodoModel.prototype.getTodos = function() {
-    return this._todos;
-  };
   /* Model: end */
 
   /* ViewModel: start */
-  function TodoViewModel(model) {
-    var self = this;
-    this._model = model;
-    this.todosList = model.getTodos();
-    model.todoAdded.observe(function(todos) {
-      self.todosList = model.getTodos();
-    });
-    this.addTodo = function() {
-      model.addTodo(this.todo);
+  class TodoViewModel {
+    constructor(model) {
+      this.model = model;
+      this.todosList = model.getTodos();
+      model.todoAdded.observe(() => {
+        this.todosList = model.getTodos();
+      });
+      this.addTodo = () => {
+        model.addTodo(this.todo);
+      }
     }
   }
   /* ViewModel: end */

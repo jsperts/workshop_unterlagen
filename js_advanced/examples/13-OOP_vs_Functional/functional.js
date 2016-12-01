@@ -8,11 +8,7 @@
   };
 
   function addHairColor(person, hairColor) {
-    return {
-      firstName: person.firstName,
-      lastName: person.lastName,
-      hairColor: hairColor
-    };
+    return Object.assign({}, person, { hairColor });
   }
 
   function print(person) {

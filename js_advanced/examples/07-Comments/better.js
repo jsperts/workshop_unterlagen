@@ -7,20 +7,21 @@
  * @param {string} name - The name of the person
  * @param {string} birthDate - The birth date of the person
  */
-function Person(name, birthDate) {
-  this.name = name || '';
-  this.birthDate = birthDate || '01.01.1970';
+class Person {
+  constructor(name = '', birthDate = '01.01.1970') {
+    this.name = name;
+    this.birthDate = birthDate;
+  }
+
+  /** @returns {Number} */
+  calculateAge() {
+    var currentYear = new Date().getFullYear();
+    var birthYear = new Date(this.birthDate).getFullYear();
+    return currentYear - birthYear;
+  }
+
+  printAgeAndName() {
+    var age = this.calculateAge();
+    console.log('Name:', this.name, 'Age:', age);
+  }
 }
-
-/** @returns {Number} */
-Person.prototype.calculateAge = function() {
-  var currentYear = new Date().getFullYear();
-  var birthYear = new Date(this.birthDate).getFullYear();
-  return currentYear - birthYear;
-};
-
-Person.prototype.printAgeAndName = function() {
-  var age = this.calculateAge();
-  console.log('Name:', this.name, 'Age:', age);
-};
-

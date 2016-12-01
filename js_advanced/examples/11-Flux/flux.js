@@ -86,21 +86,23 @@
   /* Action: end */
 
   /* View: start */
-  function TodosView(todoActions, todoStore, elements) {
-    elements.addButton.addEventListener('click', function() {
-      todoActions.addTodo(elements.inputField.value);
-    });
+  class TodosView {
+    constructor(todoActions, todoStore, elements) {
+      elements.addButton.addEventListener('click', () => {
+        todoActions.addTodo(elements.inputField.value);
+      });
 
-    function renderTodos(todos) {
-      var todosString = todos.map(function(todo) {
-        return '<li>' + todo + '</li>';
-      }).join('');
-      elements.list.innerHTML = todosString;
+      function renderTodos(todos) {
+        var todosString = todos.map(function(todo) {
+          return `<li>${todo}</li>`;
+        }).join('');
+        elements.list.innerHTML = todosString;
+      }
+
+      todoStore.addChangeListener((todos) => {
+        renderTodos(todos);
+      });
     }
-
-    todoStore.addChangeListener(function(todos) {
-      renderTodos(todos);
-    });
   }
 
   /* View: end */

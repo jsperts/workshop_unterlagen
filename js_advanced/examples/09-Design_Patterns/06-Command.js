@@ -37,15 +37,17 @@
   /* Receiver: end */
 
   /* Command: start */
-  function Command(receiver, action, undoAction) {
-    this.action = action;
-    this.undoAction = undoAction;
-    this.receiver = receiver;
-  }
+  class Command {
+    constructor(receiver, action, undoAction) {
+      this.action = action;
+      this.undoAction = undoAction;
+      this.receiver = receiver;
+    }
 
-  Command.prototype.execute = function(value) {
-    this.receiver.execute(this.action, this.undoAction, value);
-  };
+    execute(value) {
+      this.receiver.execute(this.action, this.undoAction, value);
+    }
+  }
   /* Command: end */
 
   /* Client: start */

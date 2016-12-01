@@ -3,68 +3,75 @@
   'use strict';
 
   // Used for the Observer Pattern
-  function Observable() {
-    this._listeners = [];
-  }
-  Observable.prototype.observe = function(cb){
-    this._listeners.push(cb);
-  };
+  class Observable {
+    constructor() {
+      this.listeners = [];
+    }
 
-  Observable.prototype.notify = function(data) {
-    this._listeners.forEach(function(listener) {
-      listener(data);
-    });
-  };
+    observe(cb){
+      this.listeners.push(cb);
+    }
+
+    notify(data) {
+      this.listeners.forEach((listener) => {
+        listener(data);
+      });
+    }
+  }
 
   /* Model: start */
-  function TodoModel(todos) {
-    this._todos = todos;
-    this.todoAdded = new Observable();
+  class TodoModel {
+    constructor(todos) {
+      this.todos = todos;
+      this.todoAdded = new Observable();
+    }
+
+    addTodo(todo) {
+      this.todos.push(todo);
+      this.todoAdded.notify(todo);
+    }
+
+    getTodos() {
+      return this.todos;
+    }
   }
 
-  TodoModel.prototype.addTodo = function(todo) {
-    this._todos.push(todo);
-    this.todoAdded.notify(todo);
-  };
-
-  TodoModel.prototype.getTodos = function() {
-    return this._todos;
-  };
   /* Model: end */
 
   /* Controller: start */
-  function TodoController(model, view) {
-    view.addButtonClicked.observe(function(todo) {
-      model.addTodo(todo);
-    });
+  class TodoController {
+    constructor(model, view) {
+      view.addButtonClicked.observe(function(todo) {
+        model.addTodo(todo);
+      });
+    }
   }
   /* Controller: end */
 
   /* View: start */
 
-  function TodosView(model, elements) {
-    this._model = model;
-    this._todosList = elements.list;
-    this.addButtonClicked = new Observable();
+  class TodosView {
+    constructor(model, elements) {
+      this.model = model;
+      this.todosList = elements.list;
+      this.addButtonClicked = new Observable();
 
-    var self = this;
+      this.model.todoAdded.observe(() => {
+        this.renderTodos();
+      });
 
-    this._model.todoAdded.observe(function() {
-      self.renderTodos();
-    });
+      elements.addButton.addEventListener('click', () => {
+        this.addButtonClicked.notify(elements.inputField.value);
+      });
+    }
 
-    elements.addButton.addEventListener('click', function() {
-      self.addButtonClicked.notify(elements.inputField.value);
-    });
+    renderTodos() {
+      var todos = this.model.getTodos();
+      var todosString = todos.map((todo) => `<li>${todo}</li>`).join('');
+      this.todosList.innerHTML = todosString;
+    }
   }
 
-  TodosView.prototype.renderTodos = function() {
-    var todos = this._model.getTodos();
-    var todosString = todos.map(function(todo) {
-      return '<li>' + todo + '</li>';
-    }).join('');
-    this._todosList.innerHTML = todosString;
-  };
   /* View: end */
 
   // Bootstrap

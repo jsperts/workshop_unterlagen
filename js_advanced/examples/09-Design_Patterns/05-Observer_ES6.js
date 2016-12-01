@@ -6,13 +6,13 @@
   // Basis Klasse für alle Observables
   class Observable {
     constructor() {
-      this._listeners = [];
+      this.listeners = [];
     }
     observe(cb) {
-      this._listeners.push(cb);
+      this.listeners.push(cb);
     }
     notify(data) {
-      this._listeners.forEach(function(listener) {
+      this.listeners.forEach(function(listener) {
         listener(data);
       });
     }
