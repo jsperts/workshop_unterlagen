@@ -19,5 +19,5 @@
     "start": "http-server -a localhost -c-1 -p 8080"
   },
   "engine": "node >= 4.2.4",
-  "private": "true"
+  "private": true
 }
