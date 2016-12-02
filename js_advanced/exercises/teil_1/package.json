@@ -1,0 +1,28 @@
+{
+  "name": "js-advanced",
+  "version": "0.0.1",
+  "description": "Übungen für den JavaScript-Advanced Workshop",
+  "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "6.18.2",
+    "babel-loader": "6.2.8",
+    "babel-plugin-transform-runtime": "6.15.0",
+    "babel-preset-es2015": "6.18.0",
+    "eslint": "3.11.1",
+    "eslint-config-standard": "6.2.1",
+    "eslint-plugin-promise": "3.4.0",
+    "eslint-plugin-standard": "2.0.1",
+    "html-webpack-plugin": "^2.24.1",
+    "webpack": "^2.1.0-beta.26",
+    "webpack-dev-server": "^2.1.0-beta.10"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "lint": "eslint 'src/**/*.js'",
+    "lint:fix": "eslint --fix 'src/**/*.js'"
+  },
+  "engine": "node >= 5.0.0",
+  "private": true
+}
