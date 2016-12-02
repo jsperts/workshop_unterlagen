@@ -1,5 +1,17 @@
 Übung Teil 3
 
+TODO for learner
+CSS einbinden
+Add prod build
+
+
+add cache busting
+optimize images webpack?
+
+ExtractTextPlugin -> otherwise css is inlined
+https://github.com/webpack/extract-text-webpack-plugin
+https://github.com/webpack/css-loader
+
 Critical Rendering Path Optimierung
 
 1) Das Ladeverhalten 2-3 Seiten mit Hilfe von DevTools, YSlow und webpagetest.org unter die Lupe nehmen. Was könnte man da verbessern?
