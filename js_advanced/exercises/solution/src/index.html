@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cities App</title>
+</head>
+<body>
+<header class="main-header">
+  <div class="main-subheader sticky">
+    <h1>Cities</h1>
+    <div class="btn-group">
+      <button type="button" id="sortAscending">Sort Ascending</button>
+      <button type="button" id="sortDescending">Sort Descending</button>
+      <button type="button" id="addCity">Add City</button>
+    </div>
+  </div>
+  <img class="banner" src="images/lima_peru.jpg">
+</header>
+
+<!-- Add City View: start -->
+<section id="addCityView" class="form-closed">
+  <header>
+    <h2>Add City</h2>
+  </header>
+  <form id="addCityForm">
+    <div class="col left">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" type="text"/>
+      </div>
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input id="country" type="text"/>
+      </div>
+    </div>
+    <div class="col right">
+      <div class="form-group">
+        <label for="population">Population:</label>
+        <input id="population" type="text"/>
+      </div>
+      <div class="form-group">
+        <label for="imgUrl">Image:</label>
+        <input id="imgUrl" type="text">
+      </div>
+    </div>
+    <div class="btn-group">
+      <button type="submit">Add</button>
+      <button id="closeAddCityView" type="button">Close</button>
+    </div>
+  </form>
+</section>
+<!-- Add City View: end -->
+
+<main></main>
+
+<!-- Details View: start -->
+<section id="detailsView" class="city-details">
+  <header style="margin-left: 10px">
+    <span id="detailsViewClose">Close</span>
+    <h1 id="detailsViewHeading"></h1>
+  </header>
+  <div class="wrapper">
+    <img id="detailsViewImg" class="city-image"/>
+    <ul class="city-description">
+      <li><strong>Country:</strong> <span id="detailsViewCountry"></span></li>
+      <li><strong>Population:</strong> <span id="detailsViewPopulation"></span></li>
+    </ul>
+  </div>
+</section>
+<!-- Details View: end -->
+</body>
+</html>

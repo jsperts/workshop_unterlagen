@@ -1,0 +1,184 @@
+/* reset */
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  max-width: 1120px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* General */
+h1 {
+  color: #f37726;
+}
+
+.btn-group {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  width: 200px;
+  height: 40px;
+  background-color: #4b4b4b;
+  color: white;
+  border: none;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  width: 100%;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  height: 28px;
+}
+
+.col {
+  width: 49%;
+  float: left;
+}
+
+.col.left {
+  padding-right: 1%;
+}
+
+.col.right {
+  padding-left: 1%;
+}
+
+/* Main header */
+.main-subheader {
+  height: 86px;
+  width: 100%;
+}
+
+.main-subheader > h1 {
+  margin: 2px;
+  text-align: center;
+}
+
+.banner {
+  width: 100%;
+}
+
+/* City */
+.city {
+  box-sizing: border-box;
+  margin: 1%;
+  width: 98%;
+  transition: width 1s ease;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.city:hover {
+  width: 100%;
+}
+
+.city > header > h1 {
+  padding-left: 4px;
+}
+
+.city-image {
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.city-description {
+  display: inline-block;
+  padding: 4px;
+}
+
+/* City details */
+.city-details {
+  position: fixed;
+  left: 2000px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.08), 0 2px 7px 0 rgba(0, 0, 0, 0.1);
+}
+
+.city-details .city-image {
+  margin-left: 10px;
+  width: 49%;
+  height: auto;
+  float: left;
+}
+
+.city-details ul {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: block;
+  width: 49%;
+}
+
+.city-details li {
+  line-height: 40px;
+  border-top: 2px solid #f37726;
+}
+
+.city-details li:last-child {
+  border-bottom: 2px solid #f37726;
+}
+
+/* Add city form */
+#addCityView {
+  top: 40px;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+#addCityView h4, #addCityView form {
+  margin: auto;
+  max-width: 1120px;
+}
+
+#addCityView form {
+  margin-bottom: 10px;
+}
+
+/* Part 2 styles */
+#addCityView.form-closed {
+  top: -240px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.sticky.stuck {
+  position: fixed;
+  left: 0;
+}
+
+.sticky {
+  position: static;
+  background-color: #f0f0f0;
+}
