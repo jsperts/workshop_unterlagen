@@ -1,3 +1,5 @@
+import '../styles/styles.css';
+
 import Cities from './model';
 import mainPresenter from './main_presenter';
 

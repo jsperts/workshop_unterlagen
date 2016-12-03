@@ -1,3 +1,5 @@
+import '../styles/styles.css';
+
 import Cities from './model';
 import Controller from './controller';
 import Main from './main_view';
