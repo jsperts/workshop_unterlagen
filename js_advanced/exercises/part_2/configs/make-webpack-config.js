@@ -29,12 +29,13 @@ module.exports = function (isProd = false) {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: [
-            'babel-loader'
-          ],
-          query: {
-            extends: '../configs/.babelrc'
-          }
+          loader: 'babel-loader',
+          options: {
+            plugins: ['transform-runtime'],
+            presets: [
+              ['es2015', { modules: false }],
+            ],
+          },
         }, {
           test: /\.css$/,
           exclude: /node_modules/,
