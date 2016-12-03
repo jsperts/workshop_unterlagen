@@ -180,17 +180,17 @@ cities.forEach(function(city) {
 function sortCities(cities, isAscending) {
   let swapped;
   do {
-    swapped = false;
-    for (let i = 0; i < cities.length - 1; i++) {
-      const secondCityName = cities[i].name.toLowerCase();
-      const firstCityName = cities[i + 1].name.toLocaleLowerCase();
-      let temp;
-      if (isAscending && secondCityName > firstCityName) {
-        temp = cities[i];
-        cities[i] = cities[i + 1];
-        cities[i + 1] = temp;
-        swapped = true;
-      } else if (!isAscending && secondCityName < firstCityName) {
+swapped = false;
+for (let i = 0; i < cities.length - 1; i++) {
+  const secondCityName = cities[i].name.toLowerCase();
+  const firstCityName = cities[i + 1].name.toLocaleLowerCase();
+  let temp;
+  if (isAscending && secondCityName > firstCityName) {
+      temp = cities[i];
+      cities[i] = cities[i + 1];
+    cities[i + 1] = temp;
+    swapped = true;
+  } else if (!isAscending && secondCityName < firstCityName) {
         temp = cities[i + 1];
         cities[i + 1] = cities[i];
         cities[i] = temp;
@@ -205,6 +205,7 @@ document.getElementById('sortAscending').addEventListener('click', function() {
   mainElement.innerHTML = '';
   sortCities(cities.slice(), true).forEach(function(city) {
     createCity(mainElement, city);
+
   });
 });
 document.getElementById('sortDescending').addEventListener('click', function() {
@@ -217,11 +218,12 @@ document.getElementById('sortDescending').addEventListener('click', function() {
 window.addEventListener('scroll', function() {
   const header = document.getElementsByTagName('header')[0];
   if (document.body.scrollTop > 40) {
-    header.firstElementChild.style.position = 'fixed';
-    header.firstElementChild.style.backgroundColor = '#f0f0f0';
-    header.firstElementChild.style.left = '0';
+  header.firstElementChild.style.position = 'fixed';
+  header.firstElementChild.style.backgroundColor = '#f0f0f0';
+  header.firstElementChild.style.left = '0';
   } else {
     header.firstElementChild.style.position = 'static';
+
     header.firstElementChild.style.backgroundColor = '';
   }
 });
