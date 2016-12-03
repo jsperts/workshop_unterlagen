@@ -1,7 +1,7 @@
 import Observable from './helpers/observable';
 
 class AddCityView {
-  constructor({form, closeButton, formFields, view}) {
+  constructor({ form, closeButton, formFields, view }) {
     this.view = view;
     this.formSubmitted = new Observable();
     this.closeClicked = new Observable();

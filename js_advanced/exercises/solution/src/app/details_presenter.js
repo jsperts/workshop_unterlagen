@@ -1,5 +1,5 @@
-import {subscribe} from './helpers/pub_sub';
-import {OPEN_DETAILS} from './helpers/topics';
+import { subscribe } from './helpers/pub_sub';
+import { OPEN_DETAILS } from './helpers/topics';
 
 function detailsPresenter(model, view) {
   let viewIsClosed = true;

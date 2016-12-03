@@ -5,7 +5,7 @@ const kansas = {
   name: 'Kansas City',
   country: 'USA',
   population: '470,800',
-  imgUrl: imagePath + 'kansas.jpg'
+  imgUrl: imagePath + 'kansas.jpg',
 };
 
 const newYork = {
@@ -13,7 +13,7 @@ const newYork = {
   name: 'New York',
   country: 'USA',
   population: '8,491,079',
-  imgUrl: imagePath + 'new_york.jpg'
+  imgUrl: imagePath + 'new_york.jpg',
 };
 
 const manchester = {
@@ -21,7 +21,7 @@ const manchester = {
   name: 'Manchester',
   country: 'UK',
   population: '110,378',
-  imgUrl: imagePath + 'manchester.jpg'
+  imgUrl: imagePath + 'manchester.jpg',
 };
 
 const panama = {
@@ -29,7 +29,7 @@ const panama = {
   name: 'Panama City',
   country: 'Panama',
   population: '880,691',
-  imgUrl: imagePath + 'panama.jpg'
+  imgUrl: imagePath + 'panama.jpg',
 };
 
 const london = {
@@ -37,7 +37,7 @@ const london = {
   name: 'London',
   country: 'UK',
   population: '8,308,000',
-  imgUrl: imagePath + 'london.jpg'
+  imgUrl: imagePath + 'london.jpg',
 };
 
 const brisbane = {
@@ -45,7 +45,7 @@ const brisbane = {
   name: 'Brisbane',
   country: 'Australia',
   population: '2,274,600',
-  imgUrl: imagePath + 'brisbane.jpg'
+  imgUrl: imagePath + 'brisbane.jpg',
 };
 
 const moscow = {
@@ -53,7 +53,7 @@ const moscow = {
   name: 'Moscow',
   country: 'Russia',
   population: '11,920,000',
-  imgUrl: imagePath + 'moscow.jpg'
+  imgUrl: imagePath + 'moscow.jpg',
 };
 
 const toronto = {
@@ -61,7 +61,7 @@ const toronto = {
   name: 'Toronto',
   country: 'Canada',
   population: '2,615,000',
-  imgUrl: imagePath + 'toronto.jpg'
+  imgUrl: imagePath + 'toronto.jpg',
 };
 
 const frankfurt = {
@@ -69,7 +69,7 @@ const frankfurt = {
   name: 'Frankfurt',
   country: 'Germany',
   population: '687,775',
-  imgUrl: imagePath + 'frankfurt.jpg'
+  imgUrl: imagePath + 'frankfurt.jpg',
 };
 
 const dubai = {
@@ -77,7 +77,7 @@ const dubai = {
   name: 'Dubai',
   country: 'UAE',
   population: '2,106,177',
-  imgUrl: imagePath + 'dubai.jpg'
+  imgUrl: imagePath + 'dubai.jpg',
 };
 
 export default [

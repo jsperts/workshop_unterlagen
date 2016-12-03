@@ -1,5 +1,5 @@
-import {subscribe} from './helpers/pub_sub';
-import {ADD_CITY_CLICKED} from './helpers/topics';
+import { subscribe } from './helpers/pub_sub';
+import { ADD_CITY_CLICKED } from './helpers/topics';
 
 function addCityPresenter(model, view) {
   view.formSubmitted.observe((data) => {

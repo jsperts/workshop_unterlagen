@@ -1,17 +1,16 @@
-import {publish, subscribe} from './helpers/pub_sub';
-import {OPEN_DETAILS, SORT_ASCENDING_CLICKED, SORT_DESCENDING_CLICKED} from './helpers/topics';
+import { publish, subscribe } from './helpers/pub_sub';
+import { OPEN_DETAILS, SORT_ASCENDING_CLICKED, SORT_DESCENDING_CLICKED } from './helpers/topics';
 
 function sortCities(cities, isAscending) {
-  cities.sort(function(firstCity, secondCity) {
+  cities.sort(function (firstCity, secondCity) {
     const firstCityName = firstCity.name.toLowerCase();
     const secondCityName = secondCity.name.toLocaleLowerCase();
     if (firstCityName < secondCityName) {
       return isAscending ? -1 : 1;
     } else if (firstCityName > secondCityName) {
       return isAscending ? 1 : -1;
-    } else {
-      return 0;
     }
+    return 0;
   });
   return cities;
 }
@@ -41,7 +40,7 @@ function listPresenter(model, view) {
   }
 
   return {
-    init
+    init,
   };
 }
 

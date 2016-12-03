@@ -31,7 +31,7 @@ function createCityElement(city) {
 }
 
 class ListView {
-  constructor({view}) {
+  constructor({ view }) {
     this.view = view;
     this.openDetailsClicked = new Observable();
   }

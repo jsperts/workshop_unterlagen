@@ -1,5 +1,5 @@
-import {publish} from './helpers/pub_sub';
-import {FIX_HEADER, UNFIX_HEADER} from './helpers/topics';
+import { publish } from './helpers/pub_sub';
+import { FIX_HEADER, UNFIX_HEADER } from './helpers/topics';
 
 function mainPresenter(window, document) {
   window.addEventListener('scroll', () => {

@@ -27,7 +27,7 @@ const addCityElements = {
   form: document.getElementById('addCityForm'),
   closeButton: document.getElementById('closeAddCityView'),
   view: document.getElementById('addCityView'),
-  formFields: getFormFields()
+  formFields: getFormFields(),
 };
 const addCityView = new AddCityView(addCityElements);
 addCityPresenter(cities, addCityView);
@@ -40,7 +40,7 @@ const detailsElements = {
   closeButton: document.getElementById('detailsViewClose'),
   country: document.getElementById('detailsViewCountry'),
   population: document.getElementById('detailsViewPopulation'),
-  image: document.getElementById('detailsViewImg')
+  image: document.getElementById('detailsViewImg'),
 };
 const detailsView = new DetailsView(detailsElements);
 detailsPresenter(cities, detailsView);
@@ -48,7 +48,7 @@ detailsPresenter(cities, detailsView);
 
 /* List: start */
 const listViewElements = {
-  view: document.getElementsByTagName('main')[0]
+  view: document.getElementsByTagName('main')[0],
 };
 const listView = new ListView(listViewElements);
 listPresenter(cities, listView).init();
@@ -59,7 +59,7 @@ const headerViewElements = {
   view: document.getElementsByTagName('header')[0],
   sortAscendingButton: document.getElementById('sortAscending'),
   sortDescendingButton: document.getElementById('sortDescending'),
-  addCityButton: document.getElementById('addCity')
+  addCityButton: document.getElementById('addCity'),
 };
 const headerView = new HeaderView(headerViewElements);
 headerPresenter(headerView);

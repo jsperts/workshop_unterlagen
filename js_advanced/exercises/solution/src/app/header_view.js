@@ -1,7 +1,7 @@
 import Observable from './helpers/observable';
 
 class HeaderView {
-  constructor({view, sortAscendingButton, sortDescendingButton, addCityButton}) {
+  constructor({ view, sortAscendingButton, sortDescendingButton, addCityButton }) {
     this.view = view;
     this.sortAscendingClicked = new Observable();
     this.sortDescendingClicked = new Observable();
