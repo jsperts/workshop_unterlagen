@@ -5,17 +5,17 @@
   "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
   "license": "MIT",
   "dependencies": {
-    "systemjs": "0.19.38"
+    "systemjs": "0.20.2"
   },
   "devDependencies": {
     "http-server": "0.9.0",
-    "tslint": "3.15.1",
-    "typescript": "2.0.3"
+    "tslint": "4.4.2",
+    "typescript": "2.1.5"
   },
   "scripts": {
     "start": "http-server -a localhost -c-1 -p 8080",
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "build": "tsc --noUnusedParameters --noUnusedLocals",
+    "watch": "tsc --noUnusedParameters --noUnusedLocals --watch",
     "lint": "tslint -c tslint.json app/*.ts"
   },
   "private": true
