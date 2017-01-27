@@ -5,7 +5,6 @@ import { By } from '@angular/platform-browser';
 import { PaintDirective } from './paint.directive';
 
 @Component({
-  selector: 'test-comp',
   template: `
       <div paint [color]="color"></div>
     `

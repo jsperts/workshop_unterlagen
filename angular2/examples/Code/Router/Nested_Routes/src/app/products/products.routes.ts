@@ -5,7 +5,6 @@ import {ProductComponent} from './product.component';
 
 const routes: Routes = [{
   path: 'products', component: ProductsComponent, children: [
-    {path: ''}, // Default if no product is selected
     {path: ':id', component: ProductComponent},
   ],
 }];

@@ -10,6 +10,6 @@ import { ProductsService } from './products.service';
 @NgModule({
   imports: [ CommonModule, routing ],
   declarations: [ ProductsComponent, ProductComponent ],
-  providers: [ ProductsService ]
+  providers: [ ProductsService ],
 })
 export class ProductsModule { }

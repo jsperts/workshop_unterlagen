@@ -24,7 +24,8 @@ const routes: Routes = [
       canDeactivate: [ AllSavedGuardService ],
     }, {
       path: '',
-      redirectTo: 'products'
+      redirectTo: 'products',
+      pathMatch: 'full',
     }]
   },
   {

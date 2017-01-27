@@ -22,13 +22,17 @@
     },
     {
       "name": "Dummy Name",
-      "id": 7
+      "id": 8
     }
   ],
   "color": [
     {
       "data": "green",
       "id": 1
+    },
+    {
+      "data": "green",
+      "id": 2
     }
   ]
 }

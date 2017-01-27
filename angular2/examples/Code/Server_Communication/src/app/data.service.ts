@@ -47,7 +47,7 @@ export class DataService {
   getWithQuery() {
     const params = new URLSearchParams();
     params.set('offset', String(1));
-    params.set('limit', '10');
+    params.set('limit', '3');
     params.set('key&1', 'val3');
     const options = new RequestOptions({ search: params });
 

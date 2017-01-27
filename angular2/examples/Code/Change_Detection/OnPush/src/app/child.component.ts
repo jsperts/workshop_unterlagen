@@ -17,7 +17,7 @@ import {
 })
 export class ChildComponent implements OnChanges, DoCheck {
   @Input() parent: string;
-  data: string = 'My Data';
+  data = 'My Data';
 
   ngOnChanges() {
     console.log('OnChanges. Parent', this.parent);
