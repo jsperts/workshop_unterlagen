@@ -19,13 +19,10 @@
         />
       </div>
       <div [ngClass]="{hide: password.valid || password.pristine}" class="alert alert-danger">
-        <!-- Careful: We need the control here
-             the interfaces for ngModel and FormControl are not 100% the same
-         -->
-        <span [ngClass]="{hide: !password.control.hasError('required')}">
+        <span [ngClass]="{hide: !password.hasError('required')}">
           Password is required
         </span>
-        <span [ngClass]="{hide: !password.control.hasError('minlength')}">
+        <span [ngClass]="{hide: !password.hasError('minlength')}">
           Password must be at least {{password.errors?.minlength?.requiredLength}} characters long
         </span>
       </div>
