@@ -1,7 +1,4 @@
-interface CalculatorCtor {
+declare class Calculator {
+
 }
 
-interface CalculatorInstance {
-}
-
-declare var Calculator: CalculatorCtor;
