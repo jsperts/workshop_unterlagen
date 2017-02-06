@@ -4,9 +4,7 @@
   "license": "MIT",
   "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
   "scripts": {
-    "start": "json-server -p 8081 -H localhost --static ./ ./Data/http_demo.json",
-    "lint": "tslint \"src/**/*.ts\"",
-    "test": "tsc && karma start karma_unit.conf.js"
+    "lint": "tslint \"src/**/*.ts\""
   },
   "dependencies": {
     "@angular/common": "2.4.5",

@@ -8,7 +8,6 @@ import { AppActions } from './app.actions';
 @Component({
   selector: 'app-root',
   template: `<div>
-    <h1>Angular 2 + Dexie Todo Example</h1>
     <app-add-todo (addTodo)="onAddTodo($event)"></app-add-todo>
     <app-todo-list
       [todos]="todosList"

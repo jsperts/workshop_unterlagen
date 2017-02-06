@@ -4,12 +4,16 @@ import { TodoWithID } from './todos.service';
 
 @Component({
   selector: 'app-todo-list',
-  styles: [`ul li { list-style: none; }`],
-  template: `<ul>
-    <li *ngFor="let todo of todos">
-      <input type="checkbox" [checked]="todo.done" (change)="onTodoToggle($event, todo.id, !todo.done)"/>
-      <span>{{todo.title}}</span>
-      <button type="button" (click)="onDelete(todo.id)">Delete</button>
+  styles: [`.list-group { margin-top: 20px }`],
+  template: `<ul class="list-group">
+    <li *ngFor="let todo of todos" class="list-group-item">
+      <div class="row">
+        <div class="col-md-1">
+          <input type="checkbox" [checked]="todo.done" (change)="onTodoToggle($event, todo.id, !todo.done)"/>
+        </div>
+        <span class="col-md-10">{{todo.title}}</span>
+        <button type="button" class="btn btn-danger" (click)="onDelete(todo.id)">Delete</button>
+      </div>
     </li>
   </ul>`
 })
