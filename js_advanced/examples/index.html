@@ -3,56 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <title>Beispiele</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
-<ul>
-  <li><a href="02-DRY/index.html">02-DRY</a></li>
-  <li>10-MV-Star</li>
-  <ul>
-    <li><a href="10-MV-Star/01-MVC.html">01-MVC</a></li>
-    <li><a href="10-MV-Star/02-MVP.html">02-MVP</a></li>
-    <li><a href="10-MV-Star/03-MVVM.html">03-MVVM</a></li>
-  </ul>
-  <li><a href="11-Flux/flux.html">11-Flux</a></li>
-  <li>12-Modules</li>
-  <ul>
-    <li><a href="12-Modules/01-Module_Pattern/index.html">01-Module Pattern</a></li>
-    <li><a href="12-Modules/02-AMD/index.html">02-AMD</a></li>
-    <li><a href="12-Modules/03-ESM/index.html">03-ESM</a></li>
-  </ul>
-  <li><a href="14-Loading/index.html">14-Loading</a></li>
-  <li><a href="15-Loading_Steps/index.html">15-Loading Steps</a></li>
-  <li>16-Execution Model</li>
-  <ul>
-    <li><a href="16-Execution_Model/no_webworker">No Webworker</a></li>
-    <li><a href="16-Execution_Model/webworker">Webworker</a></li>
-  </ul>
-  <li><a href="17-Event_Loop/index.html">17-Event Loop</a></li>
-  <li><a href="18-Performance_Measuring/perf_measuring.html">18-Performance Measuring</a></li>
-  <li><a href="19-JavaScript_Optimization/index.html">19-JavaScript Optimization</a></li>
-  <li>20-DOM Optimization</li>
-  <ul>
-    <li>01-DOM Change</li>
-    <ul>
-      <li><a href="20-DOM_Optimization/01-DOM_Change/simple_list.html">Simple list</a></li>
-      <li><a href="20-DOM_Optimization/01-DOM_Change/fancy_list.html">Fancy list</a></li>
+<body class="container">
+<div class="jumbotron">
+  <h1>JavaScript Advanced Examples</h1>
+</div>
+<ul class="list-group">
+  <li class="list-group-item"><a href="02-DRY/index.html">02-DRY</a></li>
+  <li class="list-group-item">
+    10-MV-Star
+    <ul class="list-group">
+      <li class="list-group-item"><a href="10-MV-Star/01-MVC.html">01-MVC</a></li>
+      <li class="list-group-item"><a href="10-MV-Star/02-MVP.html">02-MVP</a></li>
+      <li class="list-group-item"><a href="10-MV-Star/03-MVVM.html">03-MVVM</a></li>
     </ul>
-    <li>02-Events</li>
-    <ul>
-      <li><a href="20-DOM_Optimization/02-Events/debounce.html">Debounce</a></li>
-      <li><a href="20-DOM_Optimization/02-Events/throttling.html">Throttling</a></li>
+  </li>
+  <li class="list-group-item"><a href="11-Flux/flux.html">11-Flux</a></li>
+  <li class="list-group-item">
+    12-Modules
+    <ul class="list-group">
+      <li class="list-group-item"><a href="12-Modules/01-Module_Pattern/index.html">01-Module
+        Pattern</a></li>
+      <li class="list-group-item"><a href="12-Modules/02-AMD/index.html">02-AMD</a></li>
+      <li class="list-group-item"><a href="12-Modules/03-ESM/index.html">03-ESM</a></li>
     </ul>
-  </ul>
-  <li>21-CSSOM Optimization</li>
-  <ul>
-    <li><a href="21-CSSOM_Optimization/01-Read_Write_Order/index.html">01-Read/Write Order</a></li>
-    <li><a href="21-CSSOM_Optimization/02-Selectors/index.html">02-Selectors</a></li>
-  </ul>
-  <li>22-Animations</li>
-  <ul>
-    <li><a href="22-Animations/01-Animation_Type/index.html">01-Animation Type</a></li>
-    <li><a href="22-Animations/02-Scrolling/index.html">02-Scrolling</a></li>
-  </ul>
+  </li>
+  <li class="list-group-item"><a href="14-Loading/index.html">14-Loading</a></li>
+  <li class="list-group-item"><a href="15-Loading_Steps/index.html">15-Loading Steps</a></li>
+  <li class="list-group-item">
+    16-Execution Model
+    <ul class="list-group">
+      <li class="list-group-item"><a href="16-Execution_Model/no_webworker">No Webworker</a></li>
+      <li class="list-group-item"><a href="16-Execution_Model/webworker">Webworker</a></li>
+    </ul>
+  </li>
+  <li class="list-group-item"><a href="17-Event_Loop/index.html">17-Event Loop</a></li>
+  <li class="list-group-item"><a href="18-Performance_Measuring/perf_measuring.html">18-Performance
+    Measuring</a></li>
+  <li class="list-group-item"><a href="19-JavaScript_Optimization/index.html">19-JavaScript
+    Optimization</a></li>
+  <li class="list-group-item">
+    20-DOM Optimization
+    <ul class="list-group">
+      <li class="list-group-item">
+        01-DOM Change
+        <ul class="list-group">
+          <li class="list-group-item"><a href="20-DOM_Optimization/01-DOM_Change/simple_list.html">Simple
+            list</a></li>
+          <li class="list-group-item"><a href="20-DOM_Optimization/01-DOM_Change/fancy_list.html">Fancy
+            list</a></li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        02-Events
+        <ul class="list-group">
+          <li class="list-group-item"><a
+              href="20-DOM_Optimization/02-Events/debounce.html">Debounce</a></li>
+          <li class="list-group-item"><a href="20-DOM_Optimization/02-Events/throttling.html">Throttling</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item">
+    21-CSSOM Optimization
+    <ul class="list-group">
+      <li class="list-group-item"><a href="21-CSSOM_Optimization/01-Read_Write_Order/index.html">01-Read/Write
+        Order</a></li>
+      <li class="list-group-item"><a href="21-CSSOM_Optimization/02-Selectors/index.html">02-Selectors</a>
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item">22-Animations
+    <ul class="list-group">
+      <li class="list-group-item"><a href="22-Animations/01-Animation_Type/index.html">01-Animation
+        Type</a></li>
+      <li class="list-group-item"><a href="22-Animations/02-Scrolling/index.html">02-Scrolling</a>
+      </li>
+    </ul>
+  </li>
 </ul>
 </body>
 </html>
