@@ -56,6 +56,7 @@
 
 * https://github.com/ampedandwired/html-webpack-plugin
 * https://github.com/webpack/css-loader
+* https://github.com/webpack-contrib/style-loader
 * https://github.com/webpack/extract-text-webpack-plugin
 * https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin (Doku für Webpack 1)
 
