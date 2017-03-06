@@ -39,7 +39,7 @@ module.exports = function (isProd = false) {
         }, {
           test: /\.css$/,
           exclude: /node_modules/,
-          loader: 'css-loader',
+          use: ['style-loader', 'css-loader'],
         },
       ],
     },
