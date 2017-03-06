@@ -11,7 +11,7 @@ module.exports = function (isProd = false) {
 
   const plugins = [
     new webpack.NamedModulesPlugin(),
-    new CopyWebpackPlugin([ {from: './images/', to: './images' }]),
+    new CopyWebpackPlugin([{ from: './images/', to: './images' }]),
     new HtmlWebpackPlugin({ template: './index.html' }),
   ];
 
