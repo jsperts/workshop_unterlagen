@@ -10,7 +10,7 @@ describe('e2e App', function() {
   });
 
   it('should be able to add a new color', () => {
-    page.navigateTo();
+    page.navigateToHome();
     // Find input field and write 'green' into it
     element(by.name('color')).sendKeys('green');
     // Find button and click it
@@ -20,7 +20,7 @@ describe('e2e App', function() {
   });
 
   it('should be able to select a color', () => {
-    page.navigateTo();
+    page.navigateToHome();
     // Get the first element of the list
     const elem = element.all(by.css('[paint]')).first();
     // click it
