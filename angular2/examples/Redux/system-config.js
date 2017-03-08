@@ -26,7 +26,7 @@
       'rxjs': 'npm:rxjs',
       'dexie': 'npm:dexie/dist/dexie.js',
       'redux': 'npm:redux/dist/redux.js',
-      'ng2-redux': 'npm:ng2-redux/lib',
+      '@angular-redux/store': 'npm:@angular-redux/store/lib',
 
       main: 'dist/main.js'
     },
@@ -38,7 +38,7 @@
       rxjs: {
         defaultExtension: 'js'
       },
-      'ng2-redux': {
+      '@angular-redux/store': {
         defaultExtension: 'js',
         main: 'index'
       },

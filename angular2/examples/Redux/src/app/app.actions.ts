@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {NgRedux} from 'ng2-redux';
+import {NgRedux} from '@angular-redux/store';
 
 import { TodosService, Todo, TodoWithID } from './todos.service';
 import { AppState } from './app.store';
