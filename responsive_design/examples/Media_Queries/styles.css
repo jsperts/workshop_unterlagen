@@ -1,0 +1,12 @@
+body {
+  margin: 20px auto;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+.show-print {
+  display: none;
+}

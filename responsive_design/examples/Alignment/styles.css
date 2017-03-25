@@ -1,0 +1,27 @@
+.box {
+  padding-bottom: 20%;
+}
+
+.box--small {
+  padding-bottom: 10%;
+}
+
+.box--large {
+  padding-bottom: 30%;
+}
+
+.box-red {
+  background-color: red;
+}
+
+.box-green {
+  background-color: green;
+}
+
+.box-yellow {
+  background-color: yellow;
+}
+
+.box-blue {
+  background-color: blue;
+}

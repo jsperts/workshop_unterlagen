@@ -1,0 +1,30 @@
+body {
+  margin-top: 1%;
+}
+
+.box {
+  width: 23%;
+  padding-bottom: 23%;
+  float: left;
+  margin-left: 2%;
+}
+
+.box:first-child {
+  margin-left: 1%;
+}
+
+.box-red {
+  background-color: red;
+}
+
+.box-green {
+  background-color: green;
+}
+
+.box-yellow {
+  background-color: yellow;
+}
+
+.box-blue {
+  background-color: blue;
+}

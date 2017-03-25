@@ -1,0 +1,14 @@
+{
+  "name": "modern-web-apps",
+  "version": "0.0.1",
+  "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "http-server": "0.9.0"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -c-1 -p 8081"
+  },
+  "private": true
+}
