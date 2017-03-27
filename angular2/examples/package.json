@@ -8,25 +8,25 @@
     "lint": "tslint \"Code/**/*.ts\""
   },
   "dependencies": {
-    "@angular/common": "2.4.5",
-    "@angular/compiler": "2.4.5",
-    "@angular/core": "2.4.5",
-    "@angular/forms": "2.4.5",
-    "@angular/http": "2.4.5",
-    "@angular/platform-browser": "2.4.5",
-    "@angular/platform-browser-dynamic": "2.4.5",
-    "@angular/router": "3.4.5",
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/forms": "4.0.0",
+    "@angular/http": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "@angular/router": "4.0.0",
     "bootstrap": "3.3.7",
-    "reflect-metadata": "0.1.9",
-    "rxjs": "5.0.3",
-    "systemjs": "0.20.1",
-    "zone.js": "0.7.6"
+    "reflect-metadata": "0.1.10",
+    "rxjs": "5.2.0",
+    "systemjs": "0.20.10",
+    "zone.js": "0.8.5"
   },
   "devDependencies": {
-    "codelyzer": "2.0.0-beta.4",
-    "json-server": "0.9.4",
-    "tslint": "4.4.2",
-    "typescript": "2.1.5"
+    "codelyzer": "3.0.0-beta.4",
+    "json-server": "0.9.6",
+    "tslint": "4.5.1",
+    "typescript": "2.2.1"
   },
   "private": true
 }
