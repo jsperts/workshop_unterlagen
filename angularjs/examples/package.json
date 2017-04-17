@@ -1,0 +1,36 @@
+{
+  "name": "angular-beispiele",
+  "version": "0.0.1",
+  "description": "Beispiele",
+  "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.5.0",
+    "angular-resource": "1.5.0",
+    "angular-route": "1.5.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.0",
+    "babel-core": "6.5.1",
+    "babel-loader": "6.2.2",
+    "babel-plugin-transform-runtime": "6.5.0",
+    "babel-preset-es2015": "6.5.0",
+    "babel-runtime": "6.5.0",
+    "http-server": "0.8.5",
+    "jasmine-core": "2.4.1",
+    "karma": "0.13.19",
+    "karma-chrome-launcher": "0.2.2",
+    "karma-jasmine": "0.3.7",
+    "karma-ng-html2js-preprocessor": "0.2.0",
+    "karma-phantomjs-launcher": "1.0.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "1.7.0",
+    "phantomjs-prebuilt": "2.1.4",
+    "webpack": "1.12.13"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -c-1 -p 8080"
+  },
+  "engine": "node >= 4.2.0",
+  "private": "true"
+}
