@@ -1,6 +1,6 @@
-# Example code for Angular 2
+# Example code for Angular
 
-These examples are part of our [Angular 2 + TypeScript Workshop](https://jsperts.de/workshops/schulungen-seminare/angular2-typescript-workshop-02-2017)
+These examples are part of our [Angular + TypeScript Workshop](https://jsperts.de/schulungen/angular-typescript)
 
 ## Prerequisites
 

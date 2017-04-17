@@ -1,6 +1,6 @@
-# Exercises for Angular 2
+# Exercises for Angular
 
-These exercises are part of our [Angular 2 + TypeScript Workshop](https://jsperts.de/workshops/schulungen-seminare/angular2-typescript-workshop-02-2017)
+These exercises are part of our [Angular + TypeScript Workshop](https://jsperts.de/schulungen/angular-typescript)
 
 ## Prerequisites
 
