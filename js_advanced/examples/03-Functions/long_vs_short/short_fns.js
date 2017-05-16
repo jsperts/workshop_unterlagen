@@ -3,7 +3,7 @@
 var fs = require('fs');
 
 /*
- * Jede funktion hat eine Aufgabe
+ * Jede Funktion hat eine Aufgabe
  */
 
 function getContent(fileName) {

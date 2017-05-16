@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung mit ES6 Klassen
 (function() {
   'use strict';
@@ -23,7 +23,7 @@
   /* Facade: start */
   class PermissionsSystem {
     constructor() {}
-    getPermissionsFor() {
+    getPermissionsFor(user) {
       var userPermissions = getUserPermissions(user);
       var userGroup = getUserGroup(user);
       var groupPermissions = getGroupPermissions(userGroup);
@@ -38,4 +38,6 @@
   const user = 'Max';
   const accessControl = new PermissionsSystem();
   const userPermissions = accessControl.getPermissionsFor(user);
+
+  console.log(userPermissions);
 })();

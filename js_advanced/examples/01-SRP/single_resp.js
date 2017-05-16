@@ -3,7 +3,7 @@
 var fs = require('fs');
 
 /*
- * Jede funktion hat eine Aufgabe
+ * Jede Funktion hat eine Aufgabe
  */
 
 function getContent(fileName) {
@@ -29,7 +29,7 @@ manipulateFile('testFile.txt', 'I will be appended', 'newFile.txt');
 
 /*
  * Eine Funktion geht durch die Liste.
- * Eine weiter Funktion konstruiert den Namen der Person
+ * Eine weitere Funktion konstruiert den Namen der Person
  */
 function iterateAndManipulate(listOfPersons) {
   for (var i = 0; i < listOfPersons.length; i++) {

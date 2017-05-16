@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 (function(document) {
   'use strict';
 
@@ -21,21 +21,44 @@
 
   /* Binder: start */
   function Binder(viewModel) {
-    var dataBindings = document.querySelectorAll('[bind-data]');
+    var dataBindingsInput = document.querySelectorAll('[bind-input]');
+    var dataBindingsList = document.querySelectorAll('[bind-list]');
     var functionBindings = document.querySelectorAll('[bind-func]');
-    Array.prototype.forEach.call(dataBindings, function(dataBinding) {
+    Array.prototype.forEach.call(dataBindingsInput, function(dataBinding) {
+      var bindWhat = dataBinding.getAttribute('bind-input');
+      var value = viewModel[bindWhat];
+      Object.defineProperty(viewModel, bindWhat, {
+        get: function() {
+          return value;
+        },
+        set: function(data) {
+          // Set data in viewModel
+          value = data;
+          // value of input field should actually be changed here
+          // ...but this case is not used in this example
+        }
+      });
+
+      // On change, take the value and pass it to viewModel
+      dataBinding.addEventListener('change', function() {
+        value = dataBinding.value;
+      });
+    });
+
+    Array.prototype.forEach.call(dataBindingsList, function(dataBinding) {
       var addToDOM = (function addToDOM(dataBinding) {
         return function(data) {
           if (data) {
             var dataString = data.map(function(todo) {
-              return '<li>' + todo + '</li>';
+              // don't do this in production code, todo needs to be escaped
+              return `<li>${todo}</li>`;
             }).join('');
             dataBinding.innerHTML = dataString;
           }
         }
       })(dataBinding);
 
-      var bindWhat = dataBinding.getAttribute('bind-data');
+      var bindWhat = dataBinding.getAttribute('bind-list');
       var value = viewModel[bindWhat];
       Object.defineProperty(viewModel, bindWhat, {
         get: function() {
@@ -51,11 +74,6 @@
 
       // add initial data to DOM
       addToDOM(value);
-
-      // On change, take the value and pass it to viewModel
-      dataBinding.addEventListener('change', function() {
-        value = dataBinding.value;
-      });
     });
 
     Array.prototype.forEach.call(functionBindings, function(functionBinding) {
@@ -68,7 +86,6 @@
       });
     });
   }
-
   /* Binder: end */
 
   /* Model: start */
@@ -87,7 +104,6 @@
       return this.todos;
     }
   }
-
   /* Model: end */
 
   /* ViewModel: start */
@@ -106,7 +122,6 @@
   /* ViewModel: end */
 
   // Bootstrap
-
   (function bootstrap() {
     var model = new TodoModel(['a', 'b', 'c']);
     var viewModel = new TodoViewModel(model);

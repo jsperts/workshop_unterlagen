@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 (function(document) {
   'use strict';
 
@@ -104,7 +104,6 @@
       });
     }
   }
-
   /* View: end */
 
   // Bootstrap

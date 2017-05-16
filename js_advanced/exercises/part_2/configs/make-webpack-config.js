@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function (isProd = false) {
   const sourcePath = path.join(__dirname, '../src');
@@ -47,8 +47,8 @@ module.exports = function (isProd = false) {
       extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js'],
       modules: [
         path.resolve(__dirname, '../', 'node_modules'),
-        sourcePath
-      ]
+        sourcePath,
+      ],
     },
     plugins,
   };
@@ -74,7 +74,7 @@ module.exports = function (isProd = false) {
         warnings: true,
         colors: {
           green: '\u001b[32m',
-        }
+        },
       },
     },
   };

@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung für ES5, Prototypbasierend
 (function () {
   'use strict';

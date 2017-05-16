@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung mit ES6 Klassen
 (function() {
   'use strict';

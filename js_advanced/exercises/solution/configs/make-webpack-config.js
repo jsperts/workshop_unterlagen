@@ -11,7 +11,7 @@ module.exports = function (isProd = false) {
 
   const plugins = [
     new webpack.NamedModulesPlugin(),
-    new CopyWebpackPlugin([{from: './images/', to: './images'}]),
+    new CopyWebpackPlugin([{ from: './images/', to: './images' }]),
     new ExtractTextPlugin('styles.css'),
   ];
 
@@ -47,7 +47,7 @@ module.exports = function (isProd = false) {
       })
     );
   } else {
-    plugins.push(new HtmlWebpackPlugin({ template: './index.html' }))
+    plugins.push(new HtmlWebpackPlugin({ template: './index.html' }));
   }
 
   const commonOptions = {
@@ -84,8 +84,8 @@ module.exports = function (isProd = false) {
       extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js'],
       modules: [
         path.resolve(__dirname, '../', 'node_modules'),
-        sourcePath
-      ]
+        sourcePath,
+      ],
     },
     plugins,
   };
@@ -95,7 +95,7 @@ module.exports = function (isProd = false) {
     devServer: {
       contentBase: './',
       historyApiFallback: true,
-      port: 3000,
+      port: 3001,
       compress: false,
       inline: true,
       hot: false,
@@ -111,7 +111,7 @@ module.exports = function (isProd = false) {
         warnings: true,
         colors: {
           green: '\u001b[32m',
-        }
+        },
       },
     },
   };

@@ -1,6 +1,6 @@
 'use strict';
 
-// Konstruktoren sollten mit Großbuchstabe Anfangen
+// Konstruktoren sollten mit Großbuchstabe anfangen
 class FIFO {
   constructor() {
     this.queue = [];

@@ -110,7 +110,7 @@ function createCityDetails(container, city) {
     const detailsTemplate = `
       <section id="cityDetails${city._id}" class="city-details">
         <header style="margin-left: 10px;">
-          <span id="cityClose${city._id}">Close</span>
+          <a href="javascript:void 0" id="cityClose${city._id}">Close</a>
           <h1>${city.name}</h1>
         </header>
         <div class="wrapper">

@@ -6,6 +6,7 @@ const url = require('url');
 const path = require('path');
 
 const delays = {
+  'index.html': 0,
   'script.js': 0,
   'styles.css': 0
 };
@@ -15,6 +16,8 @@ function getMimeType(ext) {
     return 'text/css';
   } else if (ext === '.js') {
     return 'text/javascript';
+  } else if (ext === '.html') {
+    return 'text/html';
   }
 }
 
@@ -38,7 +41,8 @@ function onRequest(req, resp) {
   }
 }
 
-var server = http.createServer(onRequest);
-server.listen(8080, function() {
-  console.log('Listening on port 8080');
+const port = 8082;
+const server = http.createServer(onRequest);
+server.listen(port, function() {
+  console.log(`Listening on port ${port}`);
 });

@@ -123,7 +123,8 @@ function createCity(container, city) {
     const heading = document.createElement('h1');
     const name = document.createTextNode(city.name);
     heading.appendChild(name);
-    const close = document.createElement('span');
+    const close = document.createElement('a');
+    close.href = 'javascript:void 0';
     close.appendChild(document.createTextNode('Close'));
     close.addEventListener('click', function() {
       function slideOut() {

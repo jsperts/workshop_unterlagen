@@ -1,6 +1,6 @@
-import TodoController from './controller';
-import TodoModel from './model';
-import TodosView from './view';
+import TodoController from './controller.js';
+import TodoModel from './model.js';
+import TodosView from './view.js';
 
 // private
 var model = new TodoModel();

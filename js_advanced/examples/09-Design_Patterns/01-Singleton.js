@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 (function() {
   'use strict';
 
@@ -35,7 +35,8 @@
 
       return {
         get: get,
-        post: post
+        post: post,
+        queue,
       };
     }
 

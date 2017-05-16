@@ -4,7 +4,7 @@ var fs = require('fs');
 /*
  * Die Funktion hat mehrere Aufgaben
  * 1) Öffnet eine Datei
- * 2) Konkateniert ein String
+ * 2) Konkateniert einen String
  * 3) Schreibt eine neue Datei
  */
 function manipulateFile(fileName, toAppend, newFile) {

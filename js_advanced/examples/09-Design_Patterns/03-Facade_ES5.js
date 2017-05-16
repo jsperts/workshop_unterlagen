@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung für ES5, Pseudoklassisch
 (function() {
   'use strict';
@@ -37,4 +37,6 @@
   var user = 'Max';
   var accessControl = new PermissionsSystem();
   var userPermissions = accessControl.getPermissionsFor(user);
+
+  console.log(userPermissions);
 })();

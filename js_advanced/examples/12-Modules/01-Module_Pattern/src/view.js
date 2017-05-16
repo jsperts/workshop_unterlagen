@@ -20,6 +20,7 @@ var TodosView = (function(Observable) {
   TodosView.prototype.renderTodos = function() {
     var todos = this._model.getTodos();
     var todosString = todos.map(function(todo) {
+      // don't do this in production code, todo needs to be escaped
       return '<li>' + todo + '</li>';
     }).join('');
     this._todosList.innerHTML = todosString;

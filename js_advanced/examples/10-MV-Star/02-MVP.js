@@ -1,4 +1,4 @@
-// Beispielimplementierung, es gibt auch andere möglichkeiten
+// Beispielimplementierung, es gibt auch andere Möglichkeiten
 (function(document) {
   'use strict';
 
@@ -35,7 +35,6 @@
       return this.todos;
     }
   }
-
   /* Model: end */
 
   /* Presenter: start */
@@ -55,11 +54,9 @@
       this.view.renderTodos(this.model.getTodos());
     }
   }
-
   /* Presenter: end */
 
   /* View: start */
-
   class TodosView {
     constructor(elements) {
       this.todosList = elements.list;
@@ -71,15 +68,14 @@
     }
 
     renderTodos(todos) {
+      // don't do this in production code, todo needs to be escaped
       var todosString = todos.map((todo) => `<li>${todo}</li>`).join('');
       this.todosList.innerHTML = todosString;
     }
   }
-
   /* View: end */
 
   // Bootstrap
-
   (function bootstrap() {
     var model = new TodoModel(['a', 'b', 'c']);
     var elements = {

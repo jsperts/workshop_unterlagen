@@ -10,12 +10,8 @@
 <h3>Todos List</h3>
 <ul id="todosList"></ul>
 
-<script src="../../node_modules/requirejs/require.js"></script>
-<script>
-  require.config({
-    baseUrl: 'dist/'
-  });
-  require(['main']);
-</script>
+<script src="../../node_modules/browser-es-module-loader/dist/babel-browser-build.js"></script>
+<script src="../../node_modules/browser-es-module-loader/dist/browser-es-module-loader.js"></script>
+<script type="module" src="src/main.js"></script>
 </body>
 </html>
