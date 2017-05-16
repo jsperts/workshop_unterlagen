@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
 
   function delayXms(x) {
@@ -8,10 +8,10 @@
 
   function debounce(fn, delay) {
     var timer = null;
-    return function() {
+    return function () {
       // Call the fn after event triggering ended and delay passed
       clearTimeout(timer);
-      timer = setTimeout(function() {
+      timer = setTimeout(function () {
         fn();
       }, delay);
     };
@@ -23,5 +23,5 @@
   }
 
   window.addEventListener('scroll', noDebounce);
-  //window.addEventListener('scroll', debounce(noDebounce, 100));
+  // window.addEventListener('scroll', debounce(noDebounce, 100));
 })(window);

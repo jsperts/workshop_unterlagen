@@ -7,7 +7,6 @@ function foo(x) {
   }
 }
 
-
 var a = 2 * 2;
 console.log(a);
 
@@ -23,10 +22,10 @@ console.log(d);
 var arr = [];
 
 // "arr" Elemente werden wahrscheinlich veraendert
-arr.forEach(function(){});
+arr.forEach(function () {});
 
 // "arr1" hat gleiche Laenge wie "arr" aber die Elemente sind wahrscheinlich veraendert
-var arr1 = arr.map(function(){});
+var arr1 = arr.map(function () {});
 
 // "arr2" ist wahrscheinlich kuerzer als "arr"
-var arr2 = arr.filter(function(){});
+var arr2 = arr.filter(function () {});

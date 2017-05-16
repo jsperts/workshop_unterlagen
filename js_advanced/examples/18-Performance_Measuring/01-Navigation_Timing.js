@@ -1,4 +1,4 @@
-(function(perf, window) {
+(function (perf, window) {
   'use strict';
 
   function run() {
@@ -17,6 +17,6 @@
   }
 
   window.navigationTiming = {
-    run: run
+    run: run,
   };
 })(window.performance, window);

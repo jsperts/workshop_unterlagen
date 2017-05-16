@@ -15,7 +15,6 @@ function pure(a, b) {
 
 var pureResult = pure(a, b);
 
-
 function impure2(arr, element) {
   arr.push(element);
   return arr;

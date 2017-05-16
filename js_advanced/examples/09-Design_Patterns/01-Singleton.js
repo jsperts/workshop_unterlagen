@@ -1,9 +1,9 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
-(function() {
+(function () {
   'use strict';
 
   /* Singleton: start */
-  var http = (function() {
+  var http = (function () {
     var instance;
 
     function init() {
@@ -41,12 +41,12 @@
     }
 
     return {
-      getInstance: function() {
+      getInstance: function () {
         if (!instance) {
           instance = init();
         }
         return instance;
-      }
+      },
     };
   })();
   /* Singleton: end */

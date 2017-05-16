@@ -1,4 +1,4 @@
-(function(document) {
+(function (document) {
   'use strict';
 
   var canvas = document.getElementById('notDry');
@@ -37,6 +37,4 @@
   ctx.strokeStyle = '#d11111';
   ctx.stroke();
   ctx.closePath();
-
 })(document);
-

@@ -1,6 +1,6 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung mit ES6 Klassen
-(function() {
+(function () {
   'use strict';
 
   // Basis Klasse für alle Observables
@@ -12,7 +12,7 @@
       this.listeners.push(cb);
     }
     notify(data) {
-      this.listeners.forEach(function(listener) {
+      this.listeners.forEach(function (listener) {
         listener(data);
       });
     }

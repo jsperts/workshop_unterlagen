@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   var numOfElements = 10000;
@@ -9,5 +9,4 @@
     list.appendChild(li);
     li.textContent = i;
   }
-
 })();

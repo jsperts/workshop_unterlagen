@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -7,7 +7,7 @@
 
     function delayXms(x) {
       var syncStart = Date.now();
-      while(Date.now() - syncStart < x) {}
+      while (Date.now() - syncStart < x) {}
     }
 
     function async() {

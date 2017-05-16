@@ -1,19 +1,19 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
-(function(document) {
+(function (document) {
   'use strict';
 
   /* Dispatcher: start */
   // Offizielle Flux-Dispatcher: https://github.com/facebook/flux
   var dispatcher = {
     callbacks: [],
-    register: function(cb) {
+    register: function (cb) {
       this.callbacks.push(cb);
     },
-    dispatch: function(payload) {
-      this.callbacks.forEach(function(cb) {
+    dispatch: function (payload) {
+      this.callbacks.forEach(function (cb) {
         cb(payload);
       });
-    }
+    },
   };
   /* Dispatcher: end */
 
@@ -21,12 +21,12 @@
   var INIT_ACTION = 'init';
 
   /* Store: start */
-  var todoStore = (function(dispatcher) {
+  var todoStore = (function (dispatcher) {
     var todos = ['a', 'b', 'c'];
     var callbacks = [];
 
     function triggerChange(data) {
-      callbacks.forEach(function(cb) {
+      callbacks.forEach(function (cb) {
         cb(data);
       });
     }
@@ -44,7 +44,7 @@
     actionHandlers[INIT_ACTION] = init;
     actionHandlers[TODO_ADDED_ACTION] = addTodo;
 
-    dispatcher.register(function(payload) {
+    dispatcher.register(function (payload) {
       var actionType = payload.actionType;
       var data = payload.data;
 
@@ -59,28 +59,28 @@
     }
 
     return {
-      addChangeListener: addChangeListener
-    }
+      addChangeListener: addChangeListener,
+    };
   })(dispatcher);
   /* Store: end */
 
   /* Actions: start */
-  var todoActions = (function(dispatcher) {
+  var todoActions = (function (dispatcher) {
     function addTodo(todo) {
       dispatcher.dispatch({
         actionType: TODO_ADDED_ACTION,
-        data: todo
+        data: todo,
       });
     }
 
     function init() {
       dispatcher.dispatch({
-        actionType: INIT_ACTION
+        actionType: INIT_ACTION,
       });
     }
     return {
       addTodo: addTodo,
-      init: init
+      init: init,
     };
   })(dispatcher);
   /* Action: end */
@@ -93,7 +93,7 @@
       });
 
       function renderTodos(todos) {
-        var todosString = todos.map(function(todo) {
+        var todosString = todos.map(function (todo) {
           return `<li>${todo}</li>`;
         }).join('');
         elements.list.innerHTML = todosString;
@@ -111,7 +111,7 @@
     var elements = {
       addButton: document.getElementById('addButton'),
       inputField: document.getElementById('inputField'),
-      list: document.getElementById('todosList')
+      list: document.getElementById('todosList'),
     };
     var view = new TodosView(todoActions, todoStore, elements);
     todoActions.init();

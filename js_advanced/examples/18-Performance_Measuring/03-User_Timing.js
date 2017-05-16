@@ -1,4 +1,4 @@
-(function(perf) {
+(function (perf) {
   'use strict';
 
   function run() {
@@ -20,7 +20,7 @@
 
     perf.mark('mark_t2');
 
-    arr.forEach(function(e) {
+    arr.forEach(function (e) {
 
     });
 
@@ -51,7 +51,6 @@
   }
 
   window.userTiming = {
-    run: run
+    run: run,
   };
-
 })(performance);

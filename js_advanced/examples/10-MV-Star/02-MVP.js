@@ -1,5 +1,5 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
-(function(document) {
+(function (document) {
   'use strict';
 
   // Used for the Observer Pattern
@@ -81,7 +81,7 @@
     var elements = {
       addButton: document.getElementById('addButton'),
       inputField: document.getElementById('inputField'),
-      list: document.getElementById('todosList')
+      list: document.getElementById('todosList'),
     };
     var view = new TodosView(elements);
     var presenter = new TodoPresenter(model, view);

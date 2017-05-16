@@ -8,13 +8,12 @@ var fs = require('fs');
  * 3) Schreibt eine neue Datei
  */
 function manipulateFile(fileName, toAppend, newFile) {
-  var contents = fs.readFileSync(fileName, {encoding: 'utf8'});
+  var contents = fs.readFileSync(fileName, { encoding: 'utf8' });
   var newContent = contents + '\n' + toAppend;
   fs.writeFileSync(newFile, newContent);
 }
 
 manipulateFile('testFile.txt', 'I will be appended', 'newFile.txt');
-
 
 /*
  * Die Funktion hat mehrere Domänen
@@ -27,4 +26,3 @@ function iterateAndManipulate(listOfPersons) {
     person.fullName = person.firstName + ' ' + person.lastName;
   }
 }
-

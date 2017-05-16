@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -27,13 +27,12 @@
     }
     addToDOM(['t0', 0, 'ms']);
     var measures = perf.getEntriesByType('measure');
-    measures.sort(function(a, b){
+    measures.sort(function (a, b) {
       if (a.name > b.name) {
         return 1;
-      } else {
-        return -1;
       }
-    }).forEach(function(measure) {
+      return -1;
+    }).forEach(function (measure) {
       addToDOM([measure.name, measure.duration, 'ms']);
     });
 
@@ -41,9 +40,8 @@
     perf.clearMeasures();
   }
 
-  runButtonSimple.addEventListener('click', function() {
+  runButtonSimple.addEventListener('click', function () {
     resetContent();
     window.runSimple(doneFn);
   });
-
 })(window);

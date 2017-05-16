@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   var canvas = document.getElementById('dry');
@@ -24,4 +24,3 @@
   // Links
   drawLine(26, 72, 26, 26, '#d11111');
 })(document);
-

@@ -1,6 +1,6 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung für ES5, Pseudoklassisch
-(function() {
+(function () {
   'use strict';
 
   /* Subsystem functions: start */
@@ -23,7 +23,7 @@
   /* Facade: start */
   function PermissionsSystem() {}
 
-  PermissionsSystem.prototype.getPermissionsFor = function(user) {
+  PermissionsSystem.prototype.getPermissionsFor = function (user) {
     var userPermissions = getUserPermissions(user);
     var userGroup = getUserGroup(user);
     var groupPermissions = getGroupPermissions(userGroup);

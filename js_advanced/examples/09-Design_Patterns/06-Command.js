@@ -1,21 +1,21 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
-(function() {
+(function () {
   'use strict';
 
   /* Receiver: start */
   var actionFunctions = {
-    add: function(a, b) {
+    add: function (a, b) {
       return a + b;
     },
-    sub: function(a, b) {
+    sub: function (a, b) {
       return a - b;
-    }
+    },
   };
 
   var calc = {
     history: [],
     sum: 0,
-    execute: function(action, undoAction, value) {
+    execute: function (action, undoAction, value) {
       var command = null;
       if (action === 'undo') {
         command = this.history.pop();
@@ -25,14 +25,14 @@
         command = {
           action: actionFunctions[action],
           undoAction: actionFunctions[undoAction],
-          value: value
+          value: value,
         };
         this.history.push(command);
 
         this.sum = command.action(this.sum, command.value);
         console.log('Sum:', this.sum);
       }
-    }
+    },
   };
   /* Receiver: end */
 

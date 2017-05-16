@@ -1,4 +1,4 @@
-(function(perf) {
+(function (perf) {
   'use strict';
   function run() {
     var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
@@ -18,7 +18,7 @@
 
     var t2 = perf.now();
 
-    arr.forEach(function(e) {
+    arr.forEach(function (e) {
 
     });
 
@@ -31,6 +31,6 @@
   }
 
   window.highResolutionTime = {
-    run: run
+    run: run,
   };
 })(window.performance);

@@ -22,7 +22,7 @@ class Humanity {
 
   update(person) {
     var numberOfPersons = this.humanity.length;
-    for(var i = 0; i < numberOfPersons; i++) {
+    for (var i = 0; i < numberOfPersons; i++) {
       // Der Kontext hilft zu verstehen was "currentPerson" ist
       var currentPerson = this.humanity[i];
       if (person.id === currentPerson.id) {

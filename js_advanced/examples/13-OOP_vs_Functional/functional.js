@@ -1,10 +1,10 @@
-(function() {
+(function () {
   'use strict';
 
   // Daten getrennt von der Funktionen
   var person = {
     firstName: 'John',
-    lastName: 'Doe'
+    lastName: 'Doe',
   };
 
   function addHairColor(person, hairColor) {

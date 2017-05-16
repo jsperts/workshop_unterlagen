@@ -25,4 +25,4 @@ var arr = [];
 
 // for-Schleife kann alles machen
 // Einzelne Elemente verändern, die Länge verändern etc.
-for(var i = 0; i < arr.length; i++) {}
+for (var i = 0; i < arr.length; i++) {}

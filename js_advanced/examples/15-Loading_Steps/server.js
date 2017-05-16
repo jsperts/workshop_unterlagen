@@ -8,7 +8,7 @@ const path = require('path');
 const delays = {
   'index.html': 0,
   'script.js': 0,
-  'styles.css': 0
+  'styles.css': 0,
 };
 
 function getMimeType(ext) {
@@ -29,8 +29,8 @@ function onRequest(req, resp) {
     const filename = pathname.substr(1);
     try {
       if (fs.statSync(filename).isFile()) {
-        setTimeout(function() {
-          resp.setHeader("Content-Type", getMimeType(path.extname(filename)));
+        setTimeout(function () {
+          resp.setHeader('Content-Type', getMimeType(path.extname(filename)));
           fs.createReadStream(filename).pipe(resp);
         }, delays[filename]);
       }
@@ -43,6 +43,6 @@ function onRequest(req, resp) {
 
 const port = 8082;
 const server = http.createServer(onRequest);
-server.listen(port, function() {
+server.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });

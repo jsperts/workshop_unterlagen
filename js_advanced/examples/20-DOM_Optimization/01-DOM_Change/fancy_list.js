@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -32,7 +32,7 @@
     list.appendChild(li);
   }
 
-  addRemove.addEventListener('click', function() {
+  addRemove.addEventListener('click', function () {
     while (list.firstChild) {
       list.removeChild(list.firstChild);
     }
@@ -42,7 +42,7 @@
     }
   });
 
-  addRemoveInnerHTML.addEventListener('click', function() {
+  addRemoveInnerHTML.addEventListener('click', function () {
     var str = '';
     for (var i = numOfElements - 1; i >= 0; i--) {
       str += '<li><div><a>Click me!</a></div><span><strong>Name: </strong>' + i + '</span></li>';
@@ -51,7 +51,7 @@
   });
 
   rearrange.addEventListener('click', function clickCallback() {
-    //var spans = [].slice.call(list.getElementsByTagName('span'));
+    // var spans = [].slice.call(list.getElementsByTagName('span'));
     var spans = list.getElementsByTagName('span');
     var spansLength = spans.length - 1;
     for (var i = spansLength; i >= 0; i--) {

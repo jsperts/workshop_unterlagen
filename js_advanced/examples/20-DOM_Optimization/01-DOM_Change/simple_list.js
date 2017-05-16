@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -15,7 +15,7 @@
     li.textContent = i;
   }
 
-  addRemove.addEventListener('click', function() {
+  addRemove.addEventListener('click', function () {
     while (list.firstChild) {
       list.removeChild(list.firstChild);
     }
@@ -26,7 +26,7 @@
     }
   });
 
-  addRemoveInnerHTML.addEventListener('click', function() {
+  addRemoveInnerHTML.addEventListener('click', function () {
     var str = '';
     for (var i = numOfElements - 1; i >= 0; i--) {
       str += '<li>' + i + '</li>';
@@ -34,7 +34,7 @@
     list.innerHTML = str;
   });
 
-  rearrange.addEventListener('click', function() {
+  rearrange.addEventListener('click', function () {
     var next = list.firstChild;
     var i = numOfElements - 1;
     while (next) {

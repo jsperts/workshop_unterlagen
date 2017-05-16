@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -6,11 +6,11 @@
     var iterations = 1000000;
     var array = [];
     array[0] = {
-      predicate: true
+      predicate: true,
     };
     for (var i = 1; i < iterations; i++) {
       array[i] = {
-        predicate: false
+        predicate: false,
       };
     }
     return array;
@@ -20,9 +20,9 @@
   function mapThenFilter(doneFn) {
     var array = prepareArray();
     perf.mark('mark_start');
-    array.map(function(elem, index) {
+    array.map(function (elem, index) {
       return elem.name = index;
-    }).filter(function(elem) {
+    }).filter(function (elem) {
       return elem.predicate;
     });
     perf.mark('mark_end');
@@ -32,9 +32,9 @@
   function filterThenMap(doneFn) {
     var array = prepareArray();
     perf.mark('mark_start');
-    array.filter(function(elem) {
+    array.filter(function (elem) {
       return elem.predicate;
-    }).map(function(elem, index) {
+    }).map(function (elem, index) {
       return elem.name = index;
     });
     perf.mark('mark_end');
@@ -43,6 +43,6 @@
 
   window.l = {
     filterThenMap: filterThenMap,
-    mapThenFilter: mapThenFilter
+    mapThenFilter: mapThenFilter,
   };
 })(window);

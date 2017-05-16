@@ -1,4 +1,4 @@
-define(['observable'], function(Observable) {
+define(['observable'], function (Observable) {
   'use strict';
 
   // private
@@ -9,12 +9,12 @@ define(['observable'], function(Observable) {
     this.todoAdded = new Observable(this);
   }
 
-  TodoModel.prototype.addTodo = function(todo) {
+  TodoModel.prototype.addTodo = function (todo) {
     this._todos.push(todo);
     this.todoAdded.notify(todo);
   };
 
-  TodoModel.prototype.getTodos = function() {
+  TodoModel.prototype.getTodos = function () {
     return this._todos;
   };
 

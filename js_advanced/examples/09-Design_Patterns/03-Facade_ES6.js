@@ -1,6 +1,6 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung mit ES6 Klassen
-(function() {
+(function () {
   'use strict';
 
   /* Subsystem functions: start */

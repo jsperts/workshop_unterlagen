@@ -1,4 +1,4 @@
-(function(perf, win) {
+(function (perf, win) {
   'use strict';
 
   function run() {
@@ -7,6 +7,6 @@
   }
 
   window.resourceTiming = {
-    run: run
+    run: run,
   };
 })(performance, window);

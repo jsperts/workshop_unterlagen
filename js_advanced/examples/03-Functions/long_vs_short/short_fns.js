@@ -7,12 +7,12 @@ var fs = require('fs');
  */
 
 function getContent(fileName) {
-  return fs.readFileSync(fileName, {encoding: 'utf8'});
+  return fs.readFileSync(fileName, { encoding: 'utf8' });
 }
 
 function addLineNumbers(content) {
   var lines = content.split('\n');
-  lines = lines.map(function(line, index) {
+  lines = lines.map(function (line, index) {
     return index + ' ' + line;
   });
   return lines.join('\n');
@@ -35,7 +35,7 @@ function manipulateFile(oldFile, newFile) {
       var content = getContent(oldFile);
       var newContent = addLineNumbers(content);
       writeFile(newFile, newContent);
-    } catch(e) {
+    } catch (e) {
       console.log(e);
     }
   }
@@ -44,4 +44,3 @@ function manipulateFile(oldFile, newFile) {
 var oldFileName = 'testFile.txt';
 var newFileName = 'newFile.txt';
 manipulateFile(oldFileName, newFileName);
-

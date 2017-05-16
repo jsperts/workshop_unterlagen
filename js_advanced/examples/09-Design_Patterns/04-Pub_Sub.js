@@ -1,5 +1,5 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
-(function() {
+(function () {
   'use strict';
 
   var pubSubSystem = (function () {
@@ -27,7 +27,7 @@
     function publish(topic, args) {
       if (topics[topic]) {
         var callbacks = topics[topic];
-        callbacks.forEach(function(cb) {
+        callbacks.forEach(function (cb) {
           cb(args);
         });
       }
@@ -36,8 +36,8 @@
     return {
       subscribe: subscribe,
       unsubscribe: unsubscribe,
-      publish: publish
-    }
+      publish: publish,
+    };
   })();
 
   // Nutzung
@@ -52,5 +52,4 @@
   pubSubSystem.publish(topic, 'data');
 
   pubSubSystem.unsubscribe(topic, elementAdded);
-
 })();

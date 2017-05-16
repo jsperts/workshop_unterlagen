@@ -1,28 +1,28 @@
-(function(calcAPI) {
+(function (calcAPI) {
   'use strict';
 
   var state = {
     first: undefined,
     second: undefined,
-    operation: undefined
+    operation: undefined,
   };
   var appendTrueOption = {
-    append: true
+    append: true,
   };
 
   var arithmeticOps = {
-    add: function(a, b) {
+    add: function (a, b) {
       return a + b;
     },
-    subtract: function(a, b) {
+    subtract: function (a, b) {
       return a - b;
     },
-    multiply: function(a, b) {
+    multiply: function (a, b) {
       return a * b;
     },
-    divide: function(a, b) {
+    divide: function (a, b) {
       return a / b;
-    }
+    },
   };
 
   function resetState() {
@@ -63,5 +63,4 @@
   calcAPI.setDivideListener(gotDivideOp);
 
   calcAPI.print('0');
-
 })(window.calcAPI);

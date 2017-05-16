@@ -12,7 +12,7 @@
       this._listeners.forEach(function (listener) {
         listener(data);
       });
-    }
+    },
   };
 
   /* Observable: start */
@@ -24,8 +24,8 @@
       value: function (newName) {
         this.name = newName;
         this.notify(newName);
-      }
-    }
+      },
+    },
   });
   /* Observable: end */
 
@@ -34,7 +34,7 @@
     observePerson: function (name) {
       console.log('New name', name);
       this.names.push(name);
-    }
+    },
   };
   /* Observer: end */
 

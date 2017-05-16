@@ -1,4 +1,4 @@
-(function(perf) {
+(function (perf) {
   'use strict';
 
   function run() {
@@ -22,7 +22,7 @@
     console.timeEnd('second');
 
     console.time('third');
-    arr.forEach(function(e) {
+    arr.forEach(function (e) {
 
     });
     console.timeEnd('third');
@@ -31,6 +31,6 @@
   }
 
   window.consoleTime = {
-    run: run
+    run: run,
   };
 })(window.performance);

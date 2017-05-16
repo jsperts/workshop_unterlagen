@@ -7,7 +7,7 @@ var fs = require('fs');
  */
 
 function getContent(fileName) {
-  return fs.readFileSync(fileName, {encoding: 'utf8'});
+  return fs.readFileSync(fileName, { encoding: 'utf8' });
 }
 
 function appendNewContent(content, newContent) {
@@ -25,7 +25,6 @@ function manipulateFile(fileName, toAppend, newFile) {
 }
 
 manipulateFile('testFile.txt', 'I will be appended', 'newFile.txt');
-
 
 /*
  * Eine Funktion geht durch die Liste.

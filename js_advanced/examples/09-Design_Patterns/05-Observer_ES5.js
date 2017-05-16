@@ -1,18 +1,18 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
 // Implementierung für ES5, Pseudoklassisch
-(function() {
+(function () {
   'use strict';
 
   // Basis Konstruktorfunktion für alle Observables
   function Observable() {
     this._listeners = [];
   }
-  Observable.prototype.observe = function(cb){
+  Observable.prototype.observe = function (cb) {
     this._listeners.push(cb);
   };
 
-  Observable.prototype.notify = function(data) {
-    this._listeners.forEach(function(listener) {
+  Observable.prototype.notify = function (data) {
+    this._listeners.forEach(function (listener) {
       listener(data);
     });
   };
@@ -27,7 +27,7 @@
 
   Person.prototype.constructor = Person;
 
-  Person.prototype.changeName = function(newName) {
+  Person.prototype.changeName = function (newName) {
     this.name = newName;
     this.notify(newName);
   };
@@ -38,7 +38,7 @@
     this.names = [];
   }
 
-  Registry.prototype.observePerson = function(name) {
+  Registry.prototype.observePerson = function (name) {
     console.log('New name', name);
     this.names.push(name);
   };

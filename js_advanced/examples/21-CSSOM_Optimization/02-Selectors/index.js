@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -30,9 +30,9 @@
 
     perf.clearMarks();
     var measures = perf.getEntriesByType('measure');
-    var slowest = {duration: Number.MIN_VALUE};
-    var fastest = {duration: Number.MAX_VALUE};
-    measures.forEach(function(measure) {
+    var slowest = { duration: Number.MIN_VALUE };
+    var fastest = { duration: Number.MAX_VALUE };
+    measures.forEach(function (measure) {
       if (measure.duration >= slowest.duration) {
         slowest = measure;
       }
@@ -46,7 +46,7 @@
     perf.clearMeasures();
   }
 
-  getLast.addEventListener('click', function() {
+  getLast.addEventListener('click', function () {
     perf.mark('mark_by_id_start');
     document.getElementById(lastItemId);
     perf.mark('mark_by_id_end');
@@ -80,9 +80,9 @@
 
     perf.clearMarks();
     var measures = perf.getEntriesByType('measure');
-    var slowest = {duration: Number.MIN_VALUE};
-    var fastest = {duration: Number.MAX_VALUE};
-    measures.forEach(function(measure) {
+    var slowest = { duration: Number.MIN_VALUE };
+    var fastest = { duration: Number.MAX_VALUE };
+    measures.forEach(function (measure) {
       if (measure.duration >= slowest.duration) {
         slowest = measure;
       }
@@ -96,7 +96,7 @@
     perf.clearMeasures();
   }
 
-  getNested.addEventListener('click', function() {
+  getNested.addEventListener('click', function () {
     perf.mark('mark_class_start');
     document.querySelector('.nested');
     perf.mark('mark_class_end');

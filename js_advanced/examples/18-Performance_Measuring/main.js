@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   var navigationTiming = document.getElementById('navigationTiming');
@@ -7,23 +7,23 @@
   var resourceTiming = document.getElementById('resourceTiming');
   var consoleTime = document.getElementById('consoleTime');
 
-  navigationTiming.addEventListener('click', function() {
+  navigationTiming.addEventListener('click', function () {
     window.navigationTiming.run();
   });
 
-  highResolutionTime.addEventListener('click', function() {
+  highResolutionTime.addEventListener('click', function () {
     window.highResolutionTime.run();
   });
 
-  userTiming.addEventListener('click', function() {
+  userTiming.addEventListener('click', function () {
     window.userTiming.run();
   });
 
-  resourceTiming.addEventListener('click', function() {
+  resourceTiming.addEventListener('click', function () {
     window.resourceTiming.run();
   });
 
-  consoleTime.addEventListener('click', function() {
+  consoleTime.addEventListener('click', function () {
     window.consoleTime.run();
   });
 })();

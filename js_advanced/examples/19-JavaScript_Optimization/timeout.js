@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -11,7 +11,7 @@
     var j = 0;
     for (var i = 0; i < iterationsNoTimeout; i++) {
       j++;
-      if (j % (iterationsNoTimeout/1000) === 0) {
+      if (j % (iterationsNoTimeout / 1000) === 0) {
         progressFn(1);
       }
     }
@@ -37,7 +37,7 @@
       } else {
         start = end;
         end += steps;
-        if (j % (iterationsWithTimeout/1000) === 0) {
+        if (j % (iterationsWithTimeout / 1000) === 0) {
           progressFn(1);
         }
         setTimeout(addOne, 0);
@@ -63,7 +63,7 @@
         progressFn(1000, true);
         doneFn('withTimeoutTimeBased');
       } else {
-        progressFn(Math.ceil(index/(iterationsWithTimeoutTimeBased/1000)), true);
+        progressFn(Math.ceil(index / (iterationsWithTimeoutTimeBased / 1000)), true);
         setTimeout(addOne, 0);
       }
     }
@@ -74,6 +74,6 @@
   window.t = {
     withTimeout: withTimeout,
     withTimeoutTimeBased: withTimeoutTimeBased,
-    noTimeout: noTimeout
+    noTimeout: noTimeout,
   };
 })(window);

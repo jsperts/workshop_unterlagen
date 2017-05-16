@@ -7,18 +7,18 @@ export default function TodosView(model, elements) {
 
   var self = this;
 
-  this._model.todoAdded.observe(function() {
+  this._model.todoAdded.observe(function () {
     self.renderTodos();
   });
 
-  elements.addButton.addEventListener('click', function() {
+  elements.addButton.addEventListener('click', function () {
     self.addButtonClicked.notify(elements.inputField.value);
   });
 }
 
-TodosView.prototype.renderTodos = function() {
+TodosView.prototype.renderTodos = function () {
   var todos = this._model.getTodos();
-  var todosString = todos.map(function(todo) {
+  var todosString = todos.map(function (todo) {
     // don't do this in production code, todo needs to be escaped
     return '<li>' + todo + '</li>';
   }).join('');

@@ -1,5 +1,5 @@
 // Beispielimplementierung, es gibt auch andere Möglichkeiten
-(function(document) {
+(function (document) {
   'use strict';
 
   // Used for the Observer Pattern
@@ -8,7 +8,7 @@
       this.listeners = [];
     }
 
-    observe(cb){
+    observe(cb) {
       this.listeners.push(cb);
     }
 
@@ -40,7 +40,7 @@
   /* Controller: start */
   class TodoController {
     constructor(model, view) {
-      view.addButtonClicked.observe(function(todo) {
+      view.addButtonClicked.observe(function (todo) {
         model.addTodo(todo);
       });
     }
@@ -78,7 +78,7 @@
     var elements = {
       addButton: document.getElementById('addButton'),
       inputField: document.getElementById('inputField'),
-      list: document.getElementById('todosList')
+      list: document.getElementById('todosList'),
     };
     var view = new TodosView(model, elements);
     var controller = new TodoController(model, view);

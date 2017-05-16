@@ -4,15 +4,15 @@ class fifo {
   constructor() {
     this.queue = [];
 
-    this.add = function(elem) {
+    this.add = function (elem) {
       this.queue.push(elem);
     };
 
-    this.get = function() {
+    this.get = function () {
       return this.queue.shift();
     };
 
-    this.clear = function() {
+    this.clear = function () {
       this.queue = [];
     };
   }

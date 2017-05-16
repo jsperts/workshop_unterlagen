@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   var boxes = document.getElementsByClassName('box');
@@ -11,7 +11,7 @@
   var mixedReadWriteLoop = document.getElementById('mixedReadWriteLoop');
   var orderedReadWriteLoop = document.getElementById('orderedReadWriteLoop');
 
-  mixedReadWrite.addEventListener('click', function() {
+  mixedReadWrite.addEventListener('click', function () {
     // read
     var heightBox1 = box1.clientHeight;
 
@@ -31,7 +31,7 @@
     box3.style.height = heightBox3 + 20 + 'px';
   });
 
-  orderedReadWrite.addEventListener('click', function() {
+  orderedReadWrite.addEventListener('click', function () {
     // read
     var heightBox1 = box1.clientHeight;
     var heightBox2 = box2.clientHeight;
@@ -43,17 +43,17 @@
     box3.style.height = heightBox3 + 20 + 'px';
   });
 
-  mixedReadWriteLoop.addEventListener('click', function() {
-    [].forEach.call(boxes, function(box) {
+  mixedReadWriteLoop.addEventListener('click', function () {
+    [].forEach.call(boxes, function (box) {
       var height = box.clientHeight;
       box.style.height = height + 20 + 'px';
     });
   });
 
-  orderedReadWriteLoop.addEventListener('click', function() {
-    [].forEach.call(boxes, function(box) {
+  orderedReadWriteLoop.addEventListener('click', function () {
+    [].forEach.call(boxes, function (box) {
       var height = box.clientHeight;
-      window.requestAnimationFrame(function() {
+      window.requestAnimationFrame(function () {
         box.style.height = height + 20 + 'px';
       });
     });

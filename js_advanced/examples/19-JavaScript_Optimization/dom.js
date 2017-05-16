@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var perf = window.performance;
 
@@ -18,7 +18,7 @@
 
   var div = document.getElementById('reactorContent');
 
-  reactButton.addEventListener('click', function() {
+  reactButton.addEventListener('click', function () {
     x += 1;
     div.textContent = 'Reacted ' + x + ' times!';
   });
@@ -31,31 +31,31 @@
   }
 
   function progress(elem) {
-    return function(step, absolute) {
+    return function (step, absolute) {
       if (absolute) {
         elem.style.width = step + 'px';
       } else {
         elem.style.width = parseInt(elem.style.width) + step + 'px';
       }
-    }
+    };
   }
 
-  noTimeout.addEventListener('click', function() {
+  noTimeout.addEventListener('click', function () {
     var progressFn = progress(document.getElementById('progressNoTimeout'));
     window.t.noTimeout(doneFn, progressFn);
   });
 
-  withTimeout.addEventListener('click', function() {
+  withTimeout.addEventListener('click', function () {
     var progressFn = progress(document.getElementById('progressWithTimeout'));
     window.t.withTimeout(doneFn, progressFn);
   });
 
-  withTimeoutTimeBased.addEventListener('click', function() {
+  withTimeoutTimeBased.addEventListener('click', function () {
     var progressFn = progress(document.getElementById('progressWithTimeoutTimeBased'));
     window.t.withTimeoutTimeBased(doneFn, progressFn);
   });
 
-  noMemoization.addEventListener('click', function() {
+  noMemoization.addEventListener('click', function () {
     perf.mark('mark_start');
     var res = window.m.noMemoization(40);
     perf.mark('mark_end');
@@ -63,7 +63,7 @@
     doneFn('noMemoization');
   });
 
-  memoization.addEventListener('click', function() {
+  memoization.addEventListener('click', function () {
     perf.mark('mark_start');
     var res = window.m.memoization(40);
     perf.mark('mark_end');
@@ -71,7 +71,7 @@
     doneFn('memoization');
   });
 
-  memoization80.addEventListener('click', function() {
+  memoization80.addEventListener('click', function () {
     perf.mark('mark_start');
     var res = window.m.memoization(80);
     perf.mark('mark_end');
@@ -79,11 +79,11 @@
     doneFn('memoization');
   });
 
-  mapThenFilter.addEventListener('click', function() {
+  mapThenFilter.addEventListener('click', function () {
     window.l.mapThenFilter(doneFn);
   });
 
-  filterThenMap.addEventListener('click', function() {
+  filterThenMap.addEventListener('click', function () {
     window.l.filterThenMap(doneFn);
   });
 })(window);
