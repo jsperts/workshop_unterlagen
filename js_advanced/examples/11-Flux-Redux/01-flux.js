@@ -44,13 +44,13 @@
     actionHandlers[INIT_ACTION] = init;
     actionHandlers[TODO_ADDED_ACTION] = addTodo;
 
-    dispatcher.register(function (payload) {
-      var actionType = payload.actionType;
-      var data = payload.data;
+    dispatcher.register(function (action) {
+      var actionType = action.actionType;
+      var data = action.data;
 
-      var action = actionHandlers[actionType];
-      if (action) {
-        action(data);
+      var actionHandler = actionHandlers[actionType];
+      if (actionHandler) {
+        actionHandler(data);
       }
     });
 
