@@ -1,0 +1,5 @@
+Bitte geben Sie genau einen numerischen Parameter an.
+
+Z.B.: [command] 5
+
+Das Programm berechnet daraufhin das Quadrat der Zahl und zeigt dieses an.

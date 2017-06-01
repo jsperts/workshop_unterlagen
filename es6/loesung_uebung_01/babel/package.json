@@ -1,0 +1,8 @@
+{
+  "name": "uebung_01_babel",
+  "private": true,
+  "scripts": {
+    "babel1": "../../node_modules/.bin/babel src1 -d dist1",
+    "babel2": "../../node_modules/.bin/babel src2 -d dist2"
+  }
+}

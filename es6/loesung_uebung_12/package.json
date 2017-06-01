@@ -1,0 +1,7 @@
+{
+  "name": "uebung_12",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony_async_await ../lib/server_with_load.js"
+  }
+}

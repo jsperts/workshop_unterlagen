@@ -1,0 +1,7 @@
+{
+  "name": "uebung_08",
+  "private": true,
+  "scripts": {
+    "start": "node ../lib/server.js"
+  }
+}

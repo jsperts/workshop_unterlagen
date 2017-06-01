@@ -1,0 +1,7 @@
+{
+  "name": "uebung_10",
+  "private": true,
+  "scripts": {
+    "test_server": "node ../lib/test_iterator.js"
+  }
+}

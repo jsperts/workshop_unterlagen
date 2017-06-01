@@ -1,0 +1,13 @@
+
+.anim-spin {
+    animation: 2s linear 0s normal none infinite running anim-spin;
+}
+
+@keyframes anim-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}

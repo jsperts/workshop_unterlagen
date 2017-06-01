@@ -1,0 +1,7 @@
+{
+  "name": "uebung_01_node_loader_runner",
+  "private": true,
+  "scripts": {
+    "index": "../../node_modules/.bin/node-esml index.js"
+  }
+}

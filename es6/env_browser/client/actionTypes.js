@@ -1,0 +1,10 @@
+
+export const ACTION_CHANGE_FILTER_CHECKED = Symbol('action_change_filter_checked')
+export const ACTION_CHANGE_FILTER_TEXT = Symbol('action_change_filter_text')
+export const ACTION_CHANGE_TODO_TITLE = Symbol('action_change_todo_title')
+export const ACTION_CHECK_TODO = Symbol('action_check_todo')
+export const ACTION_DELETE_DUPLICATES = Symbol('action_delete_duplicates')
+export const ACTION_DELETE_TODO = Symbol('action_delete_todo')
+export const ACTION_INIT = Symbol('action_init')
+export const ACTION_NEW_TODO = Symbol('action_new_todo')
+export const ACTION_UNCHECK_TODO = Symbol('action_uncheck_todo')

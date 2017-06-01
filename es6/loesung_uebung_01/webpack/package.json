@@ -1,0 +1,7 @@
+{
+  "name": "uebung_01_webpack",
+  "private": true,
+  "scripts": {
+    "webpack": "../../node_modules/.bin/webpack"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "uebung_01_node_loader_runner",
+  "private": true,
+  "scripts": {
+    "index": "AUFRUF_NODE_ESML"
+  }
+}

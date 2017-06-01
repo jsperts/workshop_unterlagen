@@ -1,0 +1,7 @@
+{
+  "name": "uebung_01_eslint",
+  "private": true,
+  "scripts": {
+    "eslint": "../../node_modules/.bin/eslint ."
+  }
+}
