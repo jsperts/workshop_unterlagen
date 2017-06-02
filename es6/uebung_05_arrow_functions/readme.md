@@ -3,7 +3,7 @@
   * Arrow-Functions
 
 ### Vorbereitung:
-* Die Implementierung (die Dateien aus dem src/-Ordner) aus der vorherigen Übung hier in den src/-Ordner kopieren
+* Die Implementierung (den gesamten src-Ordner) aus der vorherigen Übung hierher kopieren
 * Falls die vorige Implementierung nicht abgeschlossen wurde, können auch die Dateien aus der Lösung zur vorigen
   Übung kopiert werden
 

@@ -60,7 +60,7 @@
   }
   ```
 
-  * die Funktion erhält folgende Parameter: __(id)__
+  * die Funktion erhält folgende Parameter: __(prevState, id)__
     
 * Den Event-Handler zum Entfernen des Häkchens implementieren
   * dies geschieht analog zu den beiden vorhergehenen
