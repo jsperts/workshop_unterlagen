@@ -1,3 +1,8 @@
 {
-  "color": []
+  "color": [
+    {
+      "data": "Please type your colorgreen",
+      "id": 1
+    }
+  ]
 }

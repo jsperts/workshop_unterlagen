@@ -2,9 +2,6 @@ module.exports = function(config) {
   var appBase    = 'dist/';       // transpiled app JS and map files
   var appSrcBase = 'src/app/';       // app source TS files
 
-  var testBase    = 'dist/';       // transpiled test JS and map files
-  var testSrcBase = 'src/app/';       // test source TS files
-
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
@@ -39,13 +36,10 @@ module.exports = function(config) {
 
       // transpiled application & spec code paths loaded via module imports
       { pattern: appBase + '**/*.js', included: false, watched: true },
-      { pattern: testBase + '**/*.spec.js', included: false, watched: true },
 
       // Paths for debugging with source maps in dev tools
       { pattern: appSrcBase + '**/*.ts', included: false, watched: false },
       { pattern: appBase + '**/*.js.map', included: false, watched: false },
-      { pattern: testSrcBase + '**/*.spec.ts', included: false, watched: false },
-      { pattern: testBase + '**/*.js.map', included: false, watched: false }
     ],
 
     reporters: ['progress'],
