@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0",
     "name": "angular2-exercises"
   },
   "apps": [
@@ -19,7 +18,6 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "mobile": false,
       "styles": [
         "styles.css"
       ],
@@ -42,6 +40,9 @@
     },
     {
       "project": "src/tsconfig.spec.json"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json"
     }
   ],
   "test": {
@@ -51,9 +52,6 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {
-      "inlineTemplate": false,
-      "spec": true
-    }
+    "component": {}
   }
 }
