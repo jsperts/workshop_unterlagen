@@ -6,7 +6,7 @@ export interface ShapeStyle {
 abstract class Shape {
   public name: string;
   protected color: string;
-  static numberOfShapes: number = 0;
+  static numberOfShapes = 0;
 
   constructor(color: string, name: string) {
     this.color = color;

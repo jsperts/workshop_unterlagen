@@ -19,7 +19,7 @@ class Diamond extends Square {
       background,
       transform: 'rotate(45deg)'
     };
-  };
+  }
 }
 
 export default Diamond;

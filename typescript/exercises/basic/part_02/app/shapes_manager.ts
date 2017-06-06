@@ -148,7 +148,7 @@ ShapesManager.prototype.addShape =
 
 ShapesManager.prototype._filterByName = function (name: string) {
   return this.shapes.filter(function (shape) {
-    return shape.name === name
+    return shape.name === name;
   });
 };
 
