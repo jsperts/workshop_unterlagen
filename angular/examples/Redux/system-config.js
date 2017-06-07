@@ -26,7 +26,7 @@
       'rxjs': 'npm:rxjs',
       'dexie': 'npm:dexie/dist/dexie.js',
       'redux': 'npm:redux/dist/redux.js',
-      '@angular-redux/store': 'npm:@angular-redux/store/lib',
+      '@angular-redux/store': 'npm:@angular-redux/store/lib/src',
 
       main: 'dist/main.js'
     },
