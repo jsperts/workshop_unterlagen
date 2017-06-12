@@ -33,6 +33,7 @@ describe('AddColorComponent', () => {
 
     fixture.detectChanges();
 
+    // Use whenStable, ngModel update is async
     fixture.whenStable().then(() => {
       expect(input.nativeElement.value).toBe('Please type your color');
       done();

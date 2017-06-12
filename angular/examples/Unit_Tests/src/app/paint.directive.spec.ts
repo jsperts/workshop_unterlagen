@@ -14,7 +14,6 @@ class TestComponent {
 }
 
 describe('PaintDirective', () => {
-  let comp: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
 
@@ -24,7 +23,6 @@ describe('PaintDirective', () => {
     });
 
     fixture = TestBed.createComponent(TestComponent);
-    comp = fixture.componentInstance;
   });
 
   it('should change the background color of the element to be the given color', () => {
