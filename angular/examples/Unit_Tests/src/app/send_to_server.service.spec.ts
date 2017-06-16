@@ -44,7 +44,7 @@ describe('SendToServerService', () => {
     });
   }));
 
-  it('should return the error object if some error occurres', (done) => {
+  it('should return the error object if some error occurs', (done) => {
     backend.connections.subscribe((c: MockConnection) => c.mockError(new Error('Some error occurred!')));
 
     uut.send('green').subscribe(() => {}, (error) => {
