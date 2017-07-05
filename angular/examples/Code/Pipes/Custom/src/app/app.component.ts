@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
         </ul>
       </div>
       <div class="col-xs-6">
-        <h2>Impure Filter</h2>
+        <h2>Pure Filter</h2>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let item of (data | pureFilter)">{{item.name}}</li>
         </ul>
