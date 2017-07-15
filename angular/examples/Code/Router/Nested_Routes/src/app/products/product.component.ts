@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 import {Subscription} from 'rxjs';
 
 import {ProductsService} from './products.service';
@@ -20,9 +20,11 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('init');
-    this.subscription = this.route.params.subscribe((params) => {
-      this.product = this.productsService.getProduct(Number(params['id']));
-    });
+    // unsubscribe is not strictly needed with ActivatedRoute
+    this.subscription = this.route.paramMap
+          .subscribe((params: ParamMap) => {
+            this.product = this.productsService.getProduct(Number(params.get('id')));
+          });
   }
 
   ngOnDestroy() {
