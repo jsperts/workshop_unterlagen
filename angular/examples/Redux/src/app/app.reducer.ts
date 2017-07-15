@@ -1,22 +1,24 @@
-import { initialState } from './app.store';
-import { Action, actions } from './app.actions';
+import { Reducer } from 'redux';
 
-export function appReducer(state = initialState, { type, payload }: Action) {
-  switch (type) {
-    case actions.ADD: return { todos: [...state.todos, payload] };
+import { initialState, AppState } from './app.store';
+import { Actions, actions } from './app.actions';
+
+export const appReducer: Reducer<AppState> = function appReducer(state = initialState, action: Actions) {
+  switch (action.type) {
+    case actions.ADD: return { todos: [...state.todos, action.payload] };
     case actions.UPDATE: return { todos: [
-      ...state.todos.filter((todo) => todo.id !== payload.id),
+      ...state.todos.filter((todo) => todo.id !== action.payload.id),
       Object.assign(
         {},
         // object to update
-        state.todos.find((todo) => todo.id === payload.id),
-        { done: payload.done }
+        state.todos.find((todo) => todo.id === action.payload.id),
+        { done: action.payload.done }
       ),
     ] };
-    case actions.GET_ALL: return { todos: payload };
+    case actions.GET_ALL: return { todos: action.payload };
     case actions.REMOVE: return {
-      todos: state.todos.filter((todo) => todo.id !== payload)
+      todos: state.todos.filter((todo) => todo.id !== action.payload)
     };
     default: return state;
   }
-}
+};

@@ -4,7 +4,7 @@ import Dexie from 'dexie';
 import { DexieService } from './dexie.service';
 
 export interface Todo {
-  title: string;
+  title?: string;
   done: boolean;
 }
 
