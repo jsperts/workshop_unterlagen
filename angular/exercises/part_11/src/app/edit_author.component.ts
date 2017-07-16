@@ -26,7 +26,7 @@ export class EditAuthorComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.params['id']);
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.getSubscription = this.authorsService.getAuthor(id)
       .subscribe((author) => { this.author = author; });
   }

@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.product = this.productsService.getProduct(
-        Number(this.route.snapshot.params['id'])
+        Number(this.route.snapshot.paramMap.get('id'))
     );
   }
 }
