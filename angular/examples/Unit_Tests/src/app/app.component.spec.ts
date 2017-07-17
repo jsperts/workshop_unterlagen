@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
 import { AppComponent } from './app.component';
 import { SendToServerService } from './send_to_server.service';
 
@@ -6,9 +9,7 @@ describe('AppComponent', () => {
 
   const sendToServerServiceStub = <SendToServerService>({
     send(c: string) {
-      return {
-        subscribe(cb: (c: string) => void) { cb(c); }
-      };
+      return Observable.of(c);
     },
   });
 
