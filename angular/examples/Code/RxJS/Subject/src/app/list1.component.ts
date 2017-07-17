@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 
@@ -14,7 +14,7 @@ import { ListService } from './list.service';
     </ul>
   `,
 })
-export class List1Component {
+export class List1Component implements OnInit {
   obs$: Observable<Array<number>>;
 
   constructor(private list: ListService) {}
