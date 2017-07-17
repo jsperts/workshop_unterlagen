@@ -63,7 +63,7 @@ export class ChildComponent implements OnInit, OnChanges, AfterContentInit, Afte
   }
 
   ngDoCheck() {
-    this.hooks.push('ngDoCheck' + ' ' + this.callCounter.contentInit);
+    this.hooks.push('ngDoCheck' + ' ' + this.callCounter.doCheck);
     console.log('doCheck', this.callCounter.doCheck, [...this.hooks]);
     this.callCounter.doCheck++;
   }
