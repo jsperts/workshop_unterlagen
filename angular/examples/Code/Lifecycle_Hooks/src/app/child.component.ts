@@ -70,7 +70,7 @@ export class ChildComponent implements OnInit, OnChanges, AfterContentInit, Afte
 
   ngAfterContentInit() {
     this.hooks.push('ngAfterContentInit' + ' ' + this.callCounter.contentInit);
-    console.log('content inti', this.callCounter.contentInit, [...this.hooks]);
+    console.log('content init', this.callCounter.contentInit, [...this.hooks]);
     this.callCounter.contentInit++;
   }
 
