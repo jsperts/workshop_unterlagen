@@ -50,7 +50,7 @@ export class AppComponent implements OnInit, OnDestroy {
         .filter((id) => id === 'inner')
         .do((v) => console.log('after filter value:', v))
         .map(() => 1)
-        .takeUntil(Observable.fromPromise(promise)) // Careful: order matters!
+        .takeUntil(Observable.fromPromise(promise))
         .do((v) => console.log('after takeUntil value:', v));
 
     this.stopReduceSubscription = clicks$
