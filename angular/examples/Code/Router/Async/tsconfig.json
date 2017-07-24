@@ -17,7 +17,8 @@
     "lib": ["es6", "dom"],
     "typeRoots": [
       "../../../node_modules/@types"
-    ]
+    ],
+    "strictNullChecks": true
   },
 
   "files": [
