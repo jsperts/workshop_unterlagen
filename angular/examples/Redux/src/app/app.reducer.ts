@@ -4,7 +4,7 @@ import { initialState, AppState } from './app.store';
 import { Actions, actions } from './app.actions';
 import { TodoWithID } from './todos.service';
 
-export const appReducer: Reducer<AppState> = function appReducer(state = initialState, action: Actions) {
+export const appReducer: Reducer<AppState> = function(state = initialState, action: Actions) {
   switch (action.type) {
     case actions.ADD: return { todos: [...state.todos, action.payload] };
     case actions.UPDATE: return { todos: [

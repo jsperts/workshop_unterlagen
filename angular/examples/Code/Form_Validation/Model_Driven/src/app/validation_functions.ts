@@ -1,7 +1,7 @@
 import { ValidatorFn, AsyncValidatorFn, FormGroup, FormControl, ValidationErrors } from '@angular/forms';
 
 export function equals(): ValidatorFn {
-  return function equals(group: FormGroup) {
+  return (group: FormGroup) => {
     const keys = Object.keys(group.value);
     const allEqual = keys
         .map((key) => group.value[key])
@@ -11,7 +11,7 @@ export function equals(): ValidatorFn {
 }
 
 export function usernameExists(): AsyncValidatorFn {
-  return function usernameExists(control: FormControl) {
+  return (control: FormControl) => {
     // Must return Promise or Observable
     return new Promise<ValidationErrors | null>((resolve) => {
       setTimeout(() => {
