@@ -7,7 +7,7 @@ These examples are part of our [Angular + TypeScript Workshop](https://jsperts.d
 First install the TypeScript compiler globally:
 
 ```
-npm install -g typescript
+npm install -g typescript@2.3.4
 ```
 
 Now install all dependencies with:
