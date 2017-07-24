@@ -2,6 +2,7 @@ import { Reducer } from 'redux';
 
 import { initialState, AppState } from './app.store';
 import { Actions, actions } from './app.actions';
+import { TodoWithID } from './todos.service';
 
 export const appReducer: Reducer<AppState> = function appReducer(state = initialState, action: Actions) {
   switch (action.type) {
@@ -11,7 +12,8 @@ export const appReducer: Reducer<AppState> = function appReducer(state = initial
       Object.assign(
         {},
         // object to update
-        state.todos.find((todo) => todo.id === action.payload.id),
+        // We will always find an object here, use assertion to exclude undefined
+        <TodoWithID>state.todos.find((todo) => todo.id === action.payload.id),
         { done: action.payload.done }
       ),
     ] };

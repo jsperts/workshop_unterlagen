@@ -1,4 +1,4 @@
-import { ValidatorFn, AsyncValidatorFn, FormGroup, FormControl } from '@angular/forms';
+import { ValidatorFn, AsyncValidatorFn, FormGroup, FormControl, ValidationErrors } from '@angular/forms';
 
 export function equals(): ValidatorFn {
   return function equals(group: FormGroup) {
@@ -13,7 +13,7 @@ export function equals(): ValidatorFn {
 export function usernameExists(): AsyncValidatorFn {
   return function usernameExists(control: FormControl) {
     // Must return Promise or Observable
-    return new Promise((resolve) => {
+    return new Promise<ValidationErrors | null>((resolve) => {
       setTimeout(() => {
         if (control.value === 'Max') {
           resolve({
