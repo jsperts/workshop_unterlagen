@@ -25,8 +25,7 @@
   "devDependencies": {
     "codelyzer": "3.1.2",
     "json-server": "0.11.2",
-    "tslint": "5.5.0",
-    "typescript": "2.4.2"
+    "tslint": "5.5.0"
   },
   "private": true
 }
