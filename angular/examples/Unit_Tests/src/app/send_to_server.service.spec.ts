@@ -1,29 +1,27 @@
 import { async, TestBed } from '@angular/core/testing';
 
-import { MockBackend, MockConnection } from '@angular/http/testing';
-
-import {
-    HttpModule, Http, XHRBackend, Response, ResponseOptions
-} from '@angular/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 import { SendToServerService } from './send_to_server.service';
 
 describe('SendToServerService', () => {
   let uut: SendToServerService;
-  let backend: MockBackend;
-  let http: Http;
+  let http: HttpClient;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpModule ],
-      providers: [
-        { provide: XHRBackend, useClass: MockBackend }
-      ]
+      imports: [ HttpClientTestingModule ],
     });
 
-    http = TestBed.get(Http);
-    backend = TestBed.get(XHRBackend);
+    http = TestBed.get(HttpClient);
+    httpMock = TestBed.get(HttpTestingController);
     uut = new SendToServerService(http);
+  });
+
+  afterEach(() => {
+    httpMock.verify();
   });
 
   it('should send data to /color', () => {
@@ -34,22 +32,27 @@ describe('SendToServerService', () => {
     expect(postSpy).toHaveBeenCalledWith('/color', {data: 'green'});
   });
 
-  it('should return the request color', async(() => {
-    const options = new ResponseOptions({status: 200});
-    const response = new Response(options);
-    backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
-
+  it('should return the request color', () => {
+    // Send request
     uut.send('green').subscribe((c) => {
       expect(c).toBe('green');
     });
-  }));
 
-  it('should return the error object if some error occurs', (done) => {
-    backend.connections.subscribe((c: MockConnection) => c.mockError(new Error('Some error occurred!')));
+    const request = httpMock.expectOne('/color');
 
+    // Send response
+    request.flush({});
+  });
+
+  it('should return the error object if some error occurs', () => {
+    // Send request
     uut.send('green').subscribe(() => {}, (error) => {
-      expect(error.message).toBe('Some error occurred!');
-      done();
+      expect(error.status).toBe(500);
     });
+
+    const request = httpMock.expectOne('/color');
+
+    // Send response
+    request.flush({}, { status: 500, statusText: 'Internal Error' });
   });
 });
