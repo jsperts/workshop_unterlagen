@@ -98,7 +98,7 @@ export class AppComponent implements OnInit, OnDestroy {
         .subscribe(
             () => {},
             (e) => {
-              console.log('Error:', e);
+              console.log(e);
             }
         );
   }
