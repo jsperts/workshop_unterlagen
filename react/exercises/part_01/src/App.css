@@ -1,0 +1,15 @@
+.glyphicon.glyphicon-remove {
+  margin-right: 6px;
+}
+
+.glyphicon {
+  cursor: pointer;
+}
+
+.contact-form {
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+}

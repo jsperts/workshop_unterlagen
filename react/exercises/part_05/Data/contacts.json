@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "type": "Business",
+      "tel": "123",
+      "email": "jane@doe.invalid"
+    },
+    {
+      "id": 3,
+      "name": "John Doe",
+      "type": "Business",
+      "tel": "123",
+      "email": "john@doe.invalid"
+    },
+    {
+      "name": "as",
+      "email": "as",
+      "tel": "as",
+      "type": "Business",
+      "id": 4
+    }
+  ]
+}
