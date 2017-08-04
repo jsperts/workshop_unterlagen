@@ -1,56 +1,49 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MockBackend, MockConnection } from '@angular/http/testing';
-
-import {
-  HttpModule, Http, XHRBackend, Response, ResponseOptions
-} from '@angular/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 import { AuthorsService, Author, NewAuthor } from './authors.service';
 import { SearchService } from './search.service';
 
 describe('AuthorsService', () => {
   let uut: AuthorsService;
-  let backend: MockBackend;
-  let http: Http;
+  let http: HttpClient;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpModule ],
-      providers: [
-        { provide: XHRBackend, useClass: MockBackend },
-      ]
+      imports: [ HttpClientTestingModule ],
     });
 
-    http = TestBed.get(Http);
-    backend = TestBed.get(XHRBackend);
+    http = TestBed.get(HttpClient);
+    httpMock = TestBed.get(HttpTestingController);
     const searchService = new SearchService();
     uut = new AuthorsService(searchService, http);
   });
 
-  it('should return the authors (getAuthors method)', (done) => {
+  it('should return the authors (getAuthors method)', () => {
     const authors: Array<Author> = [{ _id: 1, name: 'Dummy', birthYear: 1034, books: [] }];
-    const options = new ResponseOptions({ status: 200, body: authors });
-    const response = new Response(options);
-    backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
 
     uut.getAuthors().subscribe((res) => {
       expect(res).toEqual(authors);
-      done();
     });
+
+    const request = httpMock.expectOne('http://127.0.0.1:3000/authors');
+
+    request.flush(authors);
   });
 
-  it('should return the authors minus the deleted one (deleteAuthor method)', (done) => {
+  it('should return the authors minus the deleted one (deleteAuthor method)', () => {
     uut.data = [{ _id: 1, name: 'Dummy', birthYear: 1034, books: [] }];
-
-    const options = new ResponseOptions({ status: 200 });
-    const response = new Response(options);
-    backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
 
     uut.deleteAuthor(1).subscribe((res) => {
       expect(res).toEqual([]);
-      done();
     });
+
+    const request = httpMock.expectOne('http://127.0.0.1:3000/authors/1');
+
+    request.flush({});
   });
 
   it('should return the authors matching the query string', () => {

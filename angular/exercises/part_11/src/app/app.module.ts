@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { routing } from './app.routes';
 
@@ -27,11 +26,10 @@ import { SearchService } from './shared';
     EditAuthorComponent,
     AuthorsFormComponent,
   ],
-  imports: [ BrowserModule, FormsModule, HttpModule, routing ],
+  imports: [ BrowserModule, FormsModule, HttpClientModule, routing ],
   providers: [
     AuthorsService,
     SearchService,
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [ AppComponent ]
 })

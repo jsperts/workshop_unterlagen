@@ -15,7 +15,7 @@ describe('EditAuthorComponent', () => {
   };
   const activatedRouteStub = {
     snapshot: {
-      params: { id: '1' },
+      paramMap: { get() {return '1'; } },
     },
   };
   const authorID1: Author = {

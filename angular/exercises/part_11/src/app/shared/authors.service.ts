@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
 
+import 'rxjs/add/observable/of';
+
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
 import { SearchService } from './search.service';
@@ -22,32 +24,17 @@ export class AuthorsService {
   data: Array<Author> = [];
   private serverUrl = 'http://127.0.0.1:3000/authors';
 
-  constructor(private searchService: SearchService, private http: Http) {}
+  constructor(private searchService: SearchService, private http: HttpClient) {}
 
   getAuthors() {
-    return new Observable<Array<Author>>((observer: Observer<Array<Author>>) => {
-      this.http.get(this.serverUrl)
-        .map((resp) => resp.json())
-        .subscribe(
-          (data) => { this.data = data; observer.next(this.data); },
-          (e) => { observer.error(e); },
-          () => { observer.complete(); }
-        );
-    });
+    return this.http.get<Array<Author>>(this.serverUrl)
+        .do((data) => { this.data = data; });
   }
 
   deleteAuthor(id: number) {
-    return new Observable<Array<Author>>((observer: Observer<Array<Author>>) => {
-      this.http.delete(`${this.serverUrl}/${id}`)
-        .subscribe(
-          () => {
-            this.data = this.data.filter((elem) => elem._id !== id);
-            observer.next(this.data);
-          },
-          (e) => { observer.error(e); },
-          () => { observer.complete(); }
-        );
-    });
+    return this.http.delete(`${this.serverUrl}/${id}`)
+        .map(() => this.data.filter((elem) => elem._id !== id))
+        .do((data) => this.data = data);
   }
 
   searchAuthors(queryString: string) {
@@ -56,12 +43,12 @@ export class AuthorsService {
 
   addAuthor(newAuthor: NewAuthor) {
     return this.http
-      .post(this.serverUrl, newAuthor);
+        .post(this.serverUrl, newAuthor);
   }
 
   updateAuthor(updatedAuthor: Author) {
     return this.http
-      .put(`${this.serverUrl}/${updatedAuthor._id}`, updatedAuthor);
+        .put(`${this.serverUrl}/${updatedAuthor._id}`, updatedAuthor);
   }
 
   private getAuthorFromArray(id: number) {
@@ -69,18 +56,11 @@ export class AuthorsService {
   }
 
   getAuthor(id: number) {
-    return new Observable<Author>((observer: Observer<Author>) => {
-      if (this.data.length !== 0) {
-        observer.next(this.getAuthorFromArray(id));
-        observer.complete();
-      } else {
-        this.getAuthors()
-          .subscribe(
-            () => { observer.next(this.getAuthorFromArray(id)); },
-            (e) => { observer.error(e); },
-            () => { observer.complete(); }
-          );
-      }
-    });
+    if (this.data.length !== 0) {
+      return Observable.of(this.getAuthorFromArray(id));
+    } else {
+      return this.getAuthors()
+          .map(() => this.getAuthorFromArray(id));
+    }
   }
 }

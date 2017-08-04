@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
+import { HttpClient } from '@angular/common/http';
 
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
 import { SearchService } from './search.service';
@@ -19,32 +18,17 @@ export class AuthorsService {
   data: Array<Author> = [];
   private serverUrl = 'http://127.0.0.1:3000/authors';
 
-  constructor(private searchService: SearchService, private http: Http) {}
+  constructor(private searchService: SearchService, private http: HttpClient) {}
 
   getAuthors() {
-    return new Observable<Array<Author>>((observer: Observer<Array<Author>>) => {
-      this.http.get(this.serverUrl)
-        .map((resp) => resp.json())
-        .subscribe(
-          (data) => { this.data = data; observer.next(this.data); },
-          (e) => { observer.error(e); },
-          () => { observer.complete(); }
-        );
-    });
+    return this.http.get<Array<Author>>(this.serverUrl)
+        .do((data) => { this.data = data; });
   }
 
   deleteAuthor(id: number) {
-    return new Observable<Array<Author>>((observer: Observer<Array<Author>>) => {
-      this.http.delete(`${this.serverUrl}/${id}`)
-        .subscribe(
-          () => {
-            this.data = this.data.filter((elem) => elem._id !== id);
-            observer.next(this.data);
-          },
-          (e) => { observer.error(e); },
-          () => { observer.complete(); }
-        );
-    });
+    return this.http.delete(`${this.serverUrl}/${id}`)
+        .map(() => this.data.filter((elem) => elem._id !== id))
+        .do((data) => this.data = data);
   }
 
   searchAuthors(queryString: string) {

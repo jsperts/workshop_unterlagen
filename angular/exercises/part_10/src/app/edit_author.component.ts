@@ -10,6 +10,6 @@ export class EditAuthorComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = <string>this.route.snapshot.paramMap.get('id');
   }
 }

@@ -21,8 +21,11 @@ describe('AuthorsFormComponent', () => {
   });
 
   it('should add a book to the list when the addBook is called', () => {
-    uut.authorToEdit = <Author>{
-      books: []
+    uut.authorToEdit = {
+      _id: 1,
+      name: 'Dummy',
+      books: [],
+      birthYear: 1950
     };
     uut.bookToAdd = 'new book';
     uut.addBook();
