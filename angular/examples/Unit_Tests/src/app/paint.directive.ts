@@ -1,13 +1,13 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[paint]'
 })
 export class PaintDirective implements OnInit {
   @Input() color: string;
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.elementRef.nativeElement.style.backgroundColor = this.color;
+    this.renderer.setStyle(this.elementRef.nativeElement, 'backgroundColor', this.color);
   }
 }
