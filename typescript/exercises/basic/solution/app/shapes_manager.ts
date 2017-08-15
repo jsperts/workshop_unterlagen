@@ -5,7 +5,7 @@ import Diamond from './diamond';
 import Circle from './circle';
 
 // Type alias
-type shapeCtor = new (...args: any[]) => Shape;
+type shapeCtor = new (...args: Array<any>) => Shape;
 // Generics
 const nameToShape: Map<string, shapeCtor> = new Map<string, shapeCtor>();
 
