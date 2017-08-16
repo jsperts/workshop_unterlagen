@@ -3,7 +3,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 
-import { EditAuthorComponent } from './edit_author.component';
+import { EditAuthorComponent } from './edit-author.component';
 import { AuthorsService, Author } from './shared';
 
 describe('EditAuthorComponent', () => {

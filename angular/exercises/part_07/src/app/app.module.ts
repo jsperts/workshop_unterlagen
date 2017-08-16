@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
-import { AuthorsListComponent } from './authors_list.component';
+import { AuthorsListComponent } from './authors-list.component';
 import { SearchComponent } from './search.component';
 import { AuthorsService } from './shared/';
 import { SearchService } from './shared';

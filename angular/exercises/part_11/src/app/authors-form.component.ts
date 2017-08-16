@@ -4,7 +4,7 @@ import { Author, NewAuthor } from './shared';
 
 @Component({
   selector: 'app-authors-form',
-  templateUrl: './authors_form.component.html',
+  templateUrl: './authors-form.component.html',
 })
 export class AuthorsFormComponent {
   @Input() title: string;

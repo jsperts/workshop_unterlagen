@@ -3,7 +3,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { RouterModule, Router } from '@angular/router';
 
-import { AddAuthorComponent } from './add_author.component';
+import { AddAuthorComponent } from './add-author.component';
 import { AuthorsService, NewAuthor } from './shared';
 
 describe('AddAuthorComponent', () => {

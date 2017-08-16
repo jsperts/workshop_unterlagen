@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 
 import { RouterModule, Router } from '@angular/router';
 
-import { AuthorsListComponent } from './authors_list.component';
+import { AuthorsListComponent } from './authors-list.component';
 import { Author } from './shared';
 
 describe('AuthorsListComponent', () => {

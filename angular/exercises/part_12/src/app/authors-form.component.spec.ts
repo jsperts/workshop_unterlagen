@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { Author } from './shared';
-import { AuthorsFormComponent } from './authors_form.component';
+import { AuthorsFormComponent } from './authors-form.component';
 
 describe('AuthorsFormComponent', () => {
   let uut: AuthorsFormComponent;

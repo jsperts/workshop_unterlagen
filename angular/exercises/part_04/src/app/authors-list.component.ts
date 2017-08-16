@@ -4,7 +4,7 @@ import { AuthorsService, Author } from './shared';
 
 @Component({
   selector: 'app-authors-list',
-  templateUrl: './authors_list.component.html'
+  templateUrl: './authors-list.component.html'
 })
 export class AuthorsListComponent {
   authors: Array<Author> = [];

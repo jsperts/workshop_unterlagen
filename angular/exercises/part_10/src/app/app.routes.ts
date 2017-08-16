@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './main.component';
-import { AddAuthorComponent } from './add_author.component';
-import { EditAuthorComponent } from './edit_author.component';
+import { AddAuthorComponent } from './add-author.component';
+import { EditAuthorComponent } from './edit-author.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },

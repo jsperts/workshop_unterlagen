@@ -7,11 +7,11 @@ import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
-import { AuthorsListComponent } from './authors_list.component';
+import { AuthorsListComponent } from './authors-list.component';
 import { SearchComponent } from './search.component';
-import { AddAuthorComponent } from './add_author.component';
-import { EditAuthorComponent } from './edit_author.component';
-import { AuthorsFormComponent } from './authors_form.component';
+import { AddAuthorComponent } from './add-author.component';
+import { EditAuthorComponent } from './edit-author.component';
+import { AuthorsFormComponent } from './authors-form.component';
 
 import { AuthorsService } from './shared/';
 import { SearchService } from './shared';
