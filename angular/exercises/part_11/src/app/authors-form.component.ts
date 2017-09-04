@@ -26,10 +26,10 @@ export class AuthorsFormComponent {
   }
 
   addBook() {
-    this.authorToEdit.books.push(this.bookToAdd);
+    this.authorToEdit.books = [...this.authorToEdit.books, this.bookToAdd];
   }
 
   removeBook(index: number) {
-    this.authorToEdit.books.splice(index, 1);
+    this.authorToEdit.books = this.authorToEdit.books.filter((_, i) => i !== index);
   }
 }

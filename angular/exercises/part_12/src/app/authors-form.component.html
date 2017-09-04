@@ -42,7 +42,7 @@
       <div>
         <ul class="list-group">
           <li class="list-group-item active">Books:</li>
-          <li class="list-group-item" *ngFor="let book of authorToEdit.books; let i = $index">
+          <li class="list-group-item" *ngFor="let book of authorToEdit.books; index as i">
             <span>{{book}}</span>
             <span
               class="glyphicon glyphicon-remove pull-right"
