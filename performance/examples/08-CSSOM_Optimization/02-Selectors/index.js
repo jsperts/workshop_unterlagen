@@ -10,10 +10,18 @@
   var lastItemId = 'lastItem';
   var lastItemClass = 'last';
 
+  let list = [];
+
   for (var i = 0; i < numOfElements; i++) {
     var div = document.createElement('div');
     container.appendChild(div);
-    div.className = 'box';
+    const class2 = ' counter' + i;
+
+    if (false && i < 200) {
+      list.push(class2);
+    }
+
+    div.className = 'box' + list.join('');
     if (i === numOfElements - 1) {
       div.id = lastItemId;
       div.className = 'box ' + lastItemClass;
@@ -77,6 +85,7 @@
   function printMarksForNested() {
     perf.measure('measure_nested', 'mark_nested_start', 'mark_nested_end');
     perf.measure('measure_class', 'mark_class_start', 'mark_class_end');
+    perf.measure('measure_class2', 'mark_class_start2', 'mark_class_end2');
 
     perf.clearMarks();
     var measures = perf.getEntriesByType('measure');
@@ -98,12 +107,16 @@
 
   getNested.addEventListener('click', function () {
     perf.mark('mark_class_start');
-    document.querySelector('.nested');
+    document.querySelector('a.nested');
     perf.mark('mark_class_end');
 
     perf.mark('mark_nested_start');
     document.querySelector('div div span a.nested');
     perf.mark('mark_nested_end');
+
+    perf.mark('mark_class_start2');
+    document.querySelector('a.nested');
+    perf.mark('mark_class_end2');
 
     printMarksForNested();
   });
