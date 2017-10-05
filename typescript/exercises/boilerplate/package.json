@@ -1,0 +1,22 @@
+{
+  "name": "ts_boilerplate",
+  "version": "1.0.0",
+  "description": "TypeScript Schulung Boilerplate",
+  "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
+  "license": "MIT",
+  "dependencies": {
+    "systemjs": "0.20.13"
+  },
+  "devDependencies": {
+    "http-server": "0.10.0",
+    "tslint": "5.4.2",
+    "typescript": "2.3.4"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -c-1 -p 8080",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint": "tslint -c tslint.json app/*.ts"
+  },
+  "private": true
+}
