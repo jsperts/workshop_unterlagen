@@ -19,6 +19,6 @@ describe('ContactForm', () => {
       },
     };
     const wrapper = shallow(<ContactForm {...props} />);
-    expect(wrapper.getNodes()).toMatchSnapshot();
+    expect(wrapper.getElements()).toMatchSnapshot();
   });
 });

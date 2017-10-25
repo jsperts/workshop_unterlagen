@@ -6,6 +6,6 @@ import Header from './Header';
 describe('Header', () => {
   test('should match the snapshot', () => {
     const wrapper = shallow(<Header />);
-    expect(wrapper.getNodes()).toMatchSnapshot();
+    expect(wrapper.getElements()).toMatchSnapshot();
   });
 });
