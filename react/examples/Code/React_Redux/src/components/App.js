@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ClickContainer from '../containers/click';
+import ClickContainer from '../containers/Click';
 
 function App() {
   return <ClickContainer />;
