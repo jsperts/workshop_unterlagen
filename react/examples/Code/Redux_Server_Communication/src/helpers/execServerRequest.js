@@ -2,7 +2,6 @@ import 'whatwg-fetch';
 
 const commonOpts = {
   credentials: 'include', // send cookies
-  mode: 'no-cors',
 };
 
 function prepareJSONData(data) {
