@@ -16,6 +16,6 @@ describe('Click', () => {
 
   test('Should match the snapshot', () => {
     const wrapper = shallow(<Click />);
-    expect(wrapper.getNodes()).toMatchSnapshot();
+    expect(wrapper.getElements()).toMatchSnapshot();
   });
 });
