@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store'
 import { EffectsModule } from '@ngrx/effects';
 
-import { initialState } from './app.store';
 import { appReducer } from './app.reducer';
 import { AppActions } from './app.actions';
 
@@ -24,7 +23,7 @@ import { DexieService } from './dexie.service';
     imports: [
         BrowserModule,
         FormsModule,
-        StoreModule.forRoot({app: appReducer}, initialState),
+        StoreModule.forRoot({app: appReducer}),
         EffectsModule.forRoot([AppActions])
     ],
     providers: [

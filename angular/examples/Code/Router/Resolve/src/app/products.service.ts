@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -11,10 +11,10 @@ const products = [
 
 @Injectable()
 export class ProductsService implements Resolve<Array<any>> {
-  resolve() {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     console.log('resolve');
 
-    return new Promise((resolve) => {
+    return new Promise<Array<any>>((resolve) => {
       setTimeout(() => {
         resolve(products);
       }, 2000)  ;
