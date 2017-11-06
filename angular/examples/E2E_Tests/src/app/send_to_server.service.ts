@@ -9,7 +9,7 @@ export class SendToServerService {
   constructor(private http: HttpClient) {}
 
   send(data: string) {
-    return this.http.post('/color', {data: data})
+    return this.http.post('http://localhost:4201/color', {data: data})
         .map(() => data); // status 200-299
   }
 }
