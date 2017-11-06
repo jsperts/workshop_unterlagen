@@ -5,12 +5,12 @@
   "author": "JSperts <workshops@jsperts.de> (https://jsperts.de)",
   "license": "MIT",
   "dependencies": {
-    "systemjs": "0.20.13"
+    "systemjs": "0.20.19"
   },
   "devDependencies": {
     "http-server": "0.10.0",
-    "tslint": "5.4.2",
-    "typescript": "2.3.4"
+    "tslint": "5.8.0",
+    "typescript": "2.4.2"
   },
   "scripts": {
     "start": "http-server -a localhost -c-1 -p 8080",
