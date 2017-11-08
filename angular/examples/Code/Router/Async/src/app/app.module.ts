@@ -1,6 +1,5 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent }  from './app.component';
 import { AboutComponent } from './about.component';
@@ -16,7 +15,6 @@ import { routing } from './app.routes';
   imports: [ BrowserModule, routing ],
   declarations: [ AppComponent, AboutComponent, HomeComponent, LoginComponent ],
   providers: [
-      { provide: LocationStrategy, useClass: HashLocationStrategy },
       CanLoadGuardService,
       AuthService
   ],

@@ -1,4 +1,4 @@
-import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules, ExtraOptions } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { AboutComponent } from './about.component';
@@ -18,4 +18,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, }
 ];
 
-export const routing = RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules });
+const routingOptions: ExtraOptions = {
+  preloadingStrategy: PreloadAllModules,
+  useHash: true,
+};
+export const routing = RouterModule.forRoot(routes, routingOptions);
