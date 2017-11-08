@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import { _throw } from 'rxjs/observable/throw';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable()
 export class DataService {
@@ -15,26 +13,34 @@ export class DataService {
   getData() {
     return this.http
         .get(this.url)
-        .catch((errorResponse) => this.handleResponseError(errorResponse));
+        .pipe(
+            catchError((errorResponse) => this.handleResponseError(errorResponse))
+        );
   }
 
   sendData(name: string) {
     return this.http
         .post(this.url, { name })
-        .catch((errorResponse) => this.handleResponseError(errorResponse));
+        .pipe(
+            catchError((errorResponse) => this.handleResponseError(errorResponse))
+        );
   }
 
   deleteData(id: number) {
     return this.http
         .delete(`${this.url}/${id}`)
-        .map(() => id)
-        .catch((errorResponse) => this.handleResponseError(errorResponse));
+        .pipe(
+            map(() => id),
+            catchError((errorResponse) => this.handleResponseError(errorResponse))
+        );
   }
 
   getWithError() {
     return this.http
         .get('dummy_url')
-        .catch((errorResponse) => this.handleResponseError(errorResponse));
+        .pipe(
+            catchError((errorResponse) => this.handleResponseError(errorResponse))
+        );
   }
 
   getWithQuery() {
@@ -54,6 +60,6 @@ export class DataService {
     } else {
       errorString = 'Some error occurred';
     }
-    return Observable.throw(errorString);
+    return _throw(errorString);
   }
 }

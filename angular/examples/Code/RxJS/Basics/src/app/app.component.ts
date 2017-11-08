@@ -1,14 +1,11 @@
 import { Component, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/observable/fromPromise';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/reduce';
-import 'rxjs/add/operator/scan';
-import 'rxjs/add/operator/takeUntil';
+
+import { fromPromise } from 'rxjs/observable/fromPromise';
+import { fromEvent } from 'rxjs/observable/fromEvent';
+
+import { tap, map, filter, reduce, scan, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -42,20 +39,23 @@ export class AppComponent implements OnInit, OnDestroy {
       setTimeout(resolve, 5000);
     });
 
-    const clicks$ = Observable
-        .fromEvent<MouseEvent>(this.element.nativeElement, 'click')
-        .do((v) => console.log('after clicks$ value:', v))
-        .map((e: MouseEvent) => (<Element>e.target).id || 'someOtherID')
-        .do((v) => console.log('after map value:', v))
-        .filter((id) => id === 'inner')
-        .do((v) => console.log('after filter value:', v))
-        .map(() => 1)
-        .takeUntil(Observable.fromPromise(promise))
-        .do((v) => console.log('after takeUntil value:', v));
+    const clicks$ = fromEvent<MouseEvent>(this.element.nativeElement, 'click')
+        .pipe(
+            tap((v) => console.log('after clicks$ value:', v)),
+            map((e: MouseEvent) => (<Element>e.target).id || 'someOtherID'),
+            tap((v) => console.log('after map value:', v)),
+            filter((id) => id === 'inner'),
+            tap((v) => console.log('after filter value:', v)),
+            map(() => 1),
+            takeUntil(fromPromise(promise)),
+            tap((v) => console.log('after takeUntil value:', v))
+        );
 
     this.stopReduceSubscription = clicks$
-        .reduce((acc: number, current: number) => acc + current, 0)
-        .do((v) => console.log('after reduce value:', v))
+        .pipe(
+            reduce((acc: number, current: number) => acc + current, 0),
+            tap((v) => console.log('after reduce value:', v))
+        )
         .subscribe(
             (value: number) => { this.reduceValue = value; },
             () => { console.log('error reduce'); },
@@ -63,8 +63,10 @@ export class AppComponent implements OnInit, OnDestroy {
         );
 
     this.stopScanSubscription = clicks$
-        .scan((acc: number, current: number) => acc + current, 0)
-        .do((v) => console.log('after scan value:', v))
+        .pipe(
+            scan((acc: number, current: number) => acc + current, 0),
+            tap((v) => console.log('after scan value:', v))
+        )
         .subscribe(
             (value: number) => { this.scanValue = value; },
             () => { console.log('error scan'); },

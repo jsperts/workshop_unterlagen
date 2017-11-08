@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mapTo';
-import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/do'
+
+import { fromPromise } from 'rxjs/observable/fromPromise';
+import { mergeMap, map, mapTo, tap } from 'rxjs/operators';
 
 import { TodosService, Todo, TodoWithID } from './todos.service';
 
@@ -70,35 +74,46 @@ export class Removed implements Action {
 export class AppActions {
   @Effect() getAll$ = this.actions$
       .ofType(GET_ALL)
-      .mergeMap(() => Observable.fromPromise(this.todosService.getAll()))
-      .map((data: Array<TodoWithID>) => new GotAll(data));
+      .pipe(
+          mergeMap(() => fromPromise(this.todosService.getAll())),
+          map((data: Array<TodoWithID>) => new GotAll(data))
+      );
 
   @Effect() update$ = this.actions$
       .ofType(UPDATE)
-      .mergeMap((action: Update) => Observable
-          .fromPromise(this.todosService.update(action.payload.id, {done: action.payload.done}))
-          .map(() => ({
-            id: action.payload.id,
-            done: action.payload.done,
-          }))
-      )
-      .map((todo: TodoWithID) => new Updated(todo));
+      .pipe(
+          mergeMap((action: Update) => fromPromise(this.todosService.update(action.payload.id, {done: action.payload.done}))
+              .pipe(
+                  map(() => ({
+                    id: action.payload.id,
+                    done: action.payload.done,
+                  }))
+              )
+          ),
+          map((todo: TodoWithID) => new Updated(todo))
+      );
 
   @Effect() add$ = this.actions$
       .ofType(ADD)
-      .mergeMap((action: Add) => Observable
-          .fromPromise(this.todosService.add(action.payload))
-          .map((id) => Object.assign({id}, action.payload))
-      )
-      .map((todo: TodoWithID) => new Added(todo));
+      .pipe(
+          mergeMap((action: Add) => fromPromise(this.todosService.add(action.payload))
+            .pipe(
+                  map((id) => Object.assign({id}, action.payload))
+            )
+          ),
+          map((todo: TodoWithID) => new Added(todo))
+      );
 
   @Effect() remove$ = this.actions$
       .ofType(REMOVE)
-      .mergeMap((action: Remove) => Observable
-          .fromPromise(this.todosService.remove(action.payload))
-          .mapTo(action.payload)
-      )
-      .map((id: TodoWithID['id']) => new Removed(id));
+      .pipe(
+          mergeMap((action: Remove) => fromPromise(this.todosService.remove(action.payload))
+            .pipe(
+                  mapTo(action.payload)
+            )
+          ),
+          map((id: TodoWithID['id']) => new Removed(id))
+      );
 
   constructor(private todosService: TodosService,
               private actions$: Actions) {

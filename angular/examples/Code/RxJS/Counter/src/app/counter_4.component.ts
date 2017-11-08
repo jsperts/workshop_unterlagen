@@ -6,13 +6,12 @@ import {
     AfterViewInit,
     OnDestroy
 } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/takeUntil';
-import 'rxjs/add/operator/map';
+
+import { fromEvent } from 'rxjs/observable/fromEvent';
+import { merge } from 'rxjs/observable/merge';
+
+import { switchMap, map, takeUntil } from 'rxjs/operators';
 
 import { Counter3Service } from './counter_3.service';
 
@@ -37,15 +36,15 @@ export class Counter4Component implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     const [startButton, stopButton, resetButton] = this.buttons.toArray();
-    const start$ = Observable.fromEvent(startButton.nativeElement, 'click');
-    const stop$ = Observable.fromEvent(stopButton.nativeElement, 'click');
-    const reset$ = Observable.fromEvent(resetButton.nativeElement, 'click');
+    const start$ = fromEvent(startButton.nativeElement, 'click');
+    const stop$ = fromEvent(stopButton.nativeElement, 'click');
+    const reset$ = fromEvent(resetButton.nativeElement, 'click');
 
-    const inner$ = () => this.counterService.start(this.value).takeUntil(stop$);
+    const inner$ = () => this.counterService.start(this.value).pipe(takeUntil(stop$));
 
-    this.subscription = Observable.merge(
-            start$.switchMap(inner$), // Was flatMapLatest
-            reset$.map((_) => 0)
+    this.subscription = merge(
+            start$.pipe(switchMap(inner$)), // Was flatMapLatest
+            reset$.pipe(map((_) => 0))
         )
         .subscribe((value) => {
           this.value = value;

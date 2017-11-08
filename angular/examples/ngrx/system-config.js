@@ -24,6 +24,7 @@
 
       // other libraries
       'rxjs': 'npm:rxjs',
+      'rxjs/operators': 'npm:rxjs/operators',
       'dexie': 'npm:dexie/dist/dexie.js',
       'redux': 'npm:redux/dist/redux.js',
       '@ngrx/store': 'npm:@ngrx/store/bundles/store.umd.js',
@@ -37,6 +38,10 @@
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       rxjs: {
+        defaultExtension: 'js'
+      },
+      'rxjs/operators': {
+        main: 'index',
         defaultExtension: 'js'
       },
       'dist/app': {

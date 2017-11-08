@@ -1,12 +1,8 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/retry';
-import 'rxjs/add/operator/distinctUntilChanged';
+
+import { fromEvent } from 'rxjs/observable/fromEvent';
+import { map, switchMap, debounceTime, retry, distinctUntilChanged } from 'rxjs/operators';
 
 import { DataService } from './data.service';
 
@@ -28,13 +24,17 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   constructor(private dataService: DataService) {}
 
   ngAfterViewInit() {
-    const keyup$ = Observable
-        .fromEvent<KeyboardEvent>(this.inputElement.nativeElement, 'keyup')
-        .debounceTime(250)
-        .map((e) => (<HTMLInputElement>e.target).value)
-        .distinctUntilChanged();
+    const keyup$ = fromEvent<KeyboardEvent>(this.inputElement.nativeElement, 'keyup')
+        .pipe(
+            debounceTime(250),
+            map((e) => (<HTMLInputElement>e.target).value),
+            distinctUntilChanged()
+        );
 
-    const query = keyup$.switchMap((q) => this.dataService.getData(q).retry(2));
+    const query = keyup$
+        .pipe(
+            switchMap((q) => this.dataService.getData(q).pipe(retry(2)))
+        );
     query.subscribe((result) => {
       this.results = result;
     });

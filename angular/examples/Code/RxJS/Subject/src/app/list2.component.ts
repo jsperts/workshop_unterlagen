@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
+
+import { tap } from 'rxjs/operators';
 
 import { ListService } from './list.service';
 
@@ -21,6 +22,8 @@ export class List2Component implements OnInit {
 
   ngOnInit() {
     this.obs$ = this.list.get()
-        .do(() => console.log('list 2'));
+        .pipe(
+            tap(() => console.log('list 2'))
+        );
   }
 }
