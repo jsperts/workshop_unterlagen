@@ -19,11 +19,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      // [defaultValue, synchronous validators, async validators]
-      username: ['', Validators.required, usernameExists()],
+      username: this.fb.control('', Validators.required, usernameExists()),
       passwords: this.fb.group({
-        password: ['', [Validators.required, Validators.minLength(6)]],
-        passwordRepeat: ['']
+        // Async validators use composeAsync
+        password: this.fb.control('', Validators.compose([Validators.required, Validators.minLength(6)])),
+        passwordRepeat: this.fb.control(''),
       }, {
         validator: equals()
       }),

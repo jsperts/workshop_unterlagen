@@ -22,15 +22,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      username: [''], // FormControl
+      username: this.fb.control(''), // FormControl
       passwords: this.fb.group({ // FormGroup
-        password: [''],
-        passwordRepeat: ['']
+        password: this.fb.control(''),
+        passwordRepeat: this.fb.control(''),
       }),
-      gender: [this.genders[0].value],
-      country: ['Germany'],
-      language: [this.languages[2]],
-      privacy: [false],
+      gender: this.fb.control(this.genders[0].value),
+      country: this.fb.control('Germany'),
+      language: this.fb.control(this.languages[2]),
+      privacy: this.fb.control(false),
     });
   }
 
