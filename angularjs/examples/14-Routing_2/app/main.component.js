@@ -34,7 +34,7 @@ Main.$inject = ['$scope', '$route', '$window'];
 
 const component = {
   template: `
-    <a href="#/comp1?name=comp1">Component 1</a> <a href="#/comp2?name=comp2">Component 2</a>
+    <a href="#!/comp1?name=comp1">Component 1</a> <a href="#!/comp2?name=comp2">Component 2</a>
     <div>Route status: {{$ctrl.status}}</div>
     <div>
       <pre>Previous: {{$ctrl.previous.params.name}}</pre>

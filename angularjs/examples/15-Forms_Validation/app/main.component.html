@@ -14,8 +14,7 @@
       <input type="password"
              name="password"
              ng-minlength="6"
-             ng-model="$ctrl.user.pass"
-             ng-model-options="{updateOn: 'blur'}"/>
+             ng-model="$ctrl.user.pass"/>
       <span ng-if="$ctrl.loginForm.password.$invalid">Error</span>
     </label>
   </div>
@@ -33,7 +32,7 @@
       </span>
     <br/>
       <span ng-if="$ctrl.user.pass != undefined">
-        Password: {{$ctrl.pass.name}}
+        Password: {{$ctrl.user.pass}}
       </span>
       <span ng-if="$ctrl.user.pass == undefined">
         Password: undefined

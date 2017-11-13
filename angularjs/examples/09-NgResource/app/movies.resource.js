@@ -1,5 +1,5 @@
 function movies($resource) {
-  const url = 'http://127.0.0.1:8081/api/v1/movies/:id';
+  const url = 'http://127.0.0.1:8081/movies/:id';
   const paramDefaults = {
     id: '@id'
   };

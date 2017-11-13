@@ -1,6 +1,6 @@
 class Main {
   constructor($http) {
-    this.url = 'http://127.0.0.1:8081/api/v1/movies/';
+    this.url = 'http://127.0.0.1:8081/movies/';
     this.movies = [];
     this.$http = $http;
   }

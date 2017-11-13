@@ -17,7 +17,7 @@ function expression() {
     template: '<button type="button">Call Now!</button><p>myExpr: {{myExpr()}}</p>',
     link: function (scope, element) {
       element.find('button').on('click', function () {
-        // Achtung Event-Handlers brauchen $apply wenn die was in der View ändern
+        // Achtung Event-Handlers brauchen $apply, wenn diese was in der View ändern
         scope.$apply(function () {
           scope.myFn({name: 'Directive'});
         });
