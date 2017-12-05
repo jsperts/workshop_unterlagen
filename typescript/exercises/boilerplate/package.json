@@ -16,7 +16,7 @@
     "start": "http-server -a localhost -c-1 -p 8080",
     "build": "tsc",
     "watch": "tsc --watch",
-    "lint": "tslint -c tslint.json app/*.ts"
+    "lint": "tslint -c tslint.json src/*.ts"
   },
   "private": true
 }
