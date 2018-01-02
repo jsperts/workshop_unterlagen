@@ -52,14 +52,31 @@ export class DataService {
     return this.http.get(this.url, { params });
   }
 
+  // Explanation in https://angular.io/guide/http#error-handling does not match what the HttpClient code actually does
   handleResponseError(response: HttpErrorResponse) {
     let errorString = '';
 
-    if (response.status === 500) {
-      errorString = 'Internal Server Error';
+    if (response instanceof HttpErrorResponse) {
+      // JSON parse error
+      if (response.error.error instanceof Error) {
+        errorString = `JSON parse error. Body: ${response.error.text}`;
+      // Connection error
+      } else if (response.error instanceof ProgressEvent) { // xhr.onerror callback
+        errorString = `Connection Error: Error ${response.error}`;
+      // Status code >= 300
+      } else {
+        console.log('Body', response.error); // Server data, same as body of HttpResponse
+        if (response.status === 500) {
+          errorString = 'Internal Server Error';
+        } else {
+          errorString = 'Some error occurred';
+        }
+      }
+    // Exception in RxJS Operator
     } else {
-      errorString = 'Some error occurred';
+      errorString = 'Some exception occurred';
     }
+
     return _throw(errorString);
   }
 }
