@@ -1,15 +1,55 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+
+import { Author, AuthorsService } from './shared';
 
 @Component({
-  template: `<h1>Edit author {{id}}</h1>`
+  template: `
+    <app-authors-form
+      title="Edit Author"
+      [author]="author"
+      (submit)="onSubmit($event)"
+      (cancel)="onCancel()"
+    ></app-authors-form>
+  `
 })
-export class EditAuthorComponent implements OnInit {
-  id: string;
+export class EditAuthorComponent implements OnInit, OnDestroy {
+  author: Author;
+  private submitSubscription: Subscription;
+  private getSubscription: Subscription;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authorsService: AuthorsService
+  ) {}
 
   ngOnInit() {
-    this.id = <string>this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.getSubscription = this.authorsService.getAuthor(id)
+      .subscribe((author) => { this.author = author; });
+  }
+
+  onSubmit(updatedAuthor: Author) {
+    this.submitSubscription = this.authorsService
+      .updateAuthor(updatedAuthor)
+      .subscribe(() => {
+        this.router.navigate(['']);
+      });
+  }
+
+  onCancel() {
+    this.router.navigate(['']);
+  }
+
+  ngOnDestroy() {
+    if (this.submitSubscription) {
+      this.submitSubscription.unsubscribe();
+    }
+
+    if (this.getSubscription) {
+      this.getSubscription.unsubscribe();
+    }
   }
 }

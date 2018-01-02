@@ -5,7 +5,7 @@ import { AuthorsService, Author } from './shared';
 @Component({
   selector: 'app-main',
   template: `
-    <app-search (search)="searchAuthors()"></app-search>
+    <app-search (search)="searchAuthors($event)"></app-search>
     <app-authors-list [authors]="authors" (delete)="deleteAuthor($event)"></app-authors-list>
   `
 })
@@ -16,8 +16,8 @@ export class MainComponent {
     this.authors = authorsService.getAuthors();
   }
 
-  searchAuthors() {
-    console.log('search');
+  searchAuthors(queryString: string) {
+    console.log('search', queryString);
   }
 
   deleteAuthor(id: number) {

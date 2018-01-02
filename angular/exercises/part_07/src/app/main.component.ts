@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { AuthorsService, Author } from './shared';
 
@@ -9,11 +9,13 @@ import { AuthorsService, Author } from './shared';
     <app-authors-list [authors]="authors" (delete)="deleteAuthor($event)"></app-authors-list>
   `
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   authors: Array<Author> = [];
 
-  constructor(private authorsService: AuthorsService) {
-    this.authors = authorsService.getAuthors();
+  constructor(private authorsService: AuthorsService) {}
+
+  ngOnInit() {
+    this.authors = this.authorsService.getAuthors();
   }
 
   searchAuthors(queryString: string) {

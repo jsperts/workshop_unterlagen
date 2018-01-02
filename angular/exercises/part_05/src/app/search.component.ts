@@ -9,13 +9,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
       </div>
       <div class="panel-body">
         <div class="col-sm-8">
-          <input class="form-control" type="text"/>
+          <input class="form-control" type="text" #queryInput/>
         </div>
         <div>
           <button
             class="btn btn-primary col-sm-4"
             type="button"
-            (click)="searchAuthors()"
+            (click)="searchAuthors(queryInput.value)"
           >Search</button>
         </div>
       </div>
@@ -25,7 +25,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class SearchComponent {
   @Output() search = new EventEmitter();
 
-  searchAuthors() {
-    this.search.emit();
+  searchAuthors(queryString: string) {
+    this.search.emit(queryString);
   }
 }

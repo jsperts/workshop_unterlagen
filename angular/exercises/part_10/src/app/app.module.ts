@@ -11,6 +11,7 @@ import { AuthorsListComponent } from './authors-list.component';
 import { SearchComponent } from './search.component';
 import { AddAuthorComponent } from './add-author.component';
 import { EditAuthorComponent } from './edit-author.component';
+import { AuthorsFormComponent } from './authors-form.component';
 
 import { AuthorsService } from './shared/';
 import { SearchService } from './shared';
@@ -23,6 +24,7 @@ import { SearchService } from './shared';
     SearchComponent,
     AddAuthorComponent,
     EditAuthorComponent,
+    AuthorsFormComponent,
   ],
   imports: [ BrowserModule, FormsModule, HttpClientModule, routing ],
   providers: [

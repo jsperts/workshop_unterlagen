@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Author } from './shared';
 
@@ -10,12 +11,14 @@ export class AuthorsListComponent {
   @Input() authors: Array<Author>;
   @Output() delete = new EventEmitter();
 
+  constructor(private router: Router) {}
+
   addAuthor() {
-    console.log('add');
+    this.router.navigate(['add']);
   }
 
   editAuthor(id: number) {
-    console.log('edit');
+    this.router.navigate(['edit', String(id)]);
   }
 
   deleteAuthor(id: number) {

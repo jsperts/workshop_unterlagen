@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 
 import { SearchService } from './search.service';
 
@@ -9,36 +13,22 @@ export interface Author {
   books: Array<string>;
 }
 
-const authors: Array<Author> = [{
-  _id: 1,
-  name: 'Ian Fleming',
-  birthYear: 1908,
-  books: ['Dr. No', 'Goldfinger', 'Thunderball']
-}, {
-  _id: 2,
-  name: 'Agatha Christie',
-  birthYear: 1890,
-  books: ['Murder on the Orient Express', 'Death on the Nile']
-}, {
-  _id: 3,
-  name: 'Dan Brown',
-  birthYear: 1964,
-  books: ['Digital Fortress', 'Angels and Demons', 'The Da Vinci Code']
-}, {
-  _id: 4,
-  name: 'Isaac Asimov',
-  birthYear: 1920,
-  books: ['The Neutrino', 'The Human Brain']
-}];
-
 @Injectable()
 export class AuthorsService {
-  data = authors;
+  data: Array<Author> = [];
+  private serverUrl = 'http://127.0.0.1:3000/authors';
 
-  constructor(private searchService: SearchService) {}
+  constructor(private searchService: SearchService, private http: HttpClient) {}
 
   getAuthors() {
-    return this.data;
+    return this.http.get<Array<Author>>(this.serverUrl)
+        .do((data) => { this.data = data; });
+  }
+
+  deleteAuthor(id: number) {
+    return this.http.delete(`${this.serverUrl}/${id}`)
+        .map(() => this.data.filter((elem) => elem._id !== id))
+        .do((data) => this.data = data);
   }
 
   searchAuthors(queryString: string) {

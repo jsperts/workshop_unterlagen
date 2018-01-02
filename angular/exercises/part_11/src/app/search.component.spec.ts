@@ -18,22 +18,15 @@ describe('SearchComponent', () => {
     uut = fixture.componentInstance;
   });
 
-  it('should emit search with the queryString on submit', () => {
-    const form = fixture.debugElement.query(By.css('form'));
-    uut.queryString = 'test';
+  it('should emit search with the queryString on button click', () => {
+    const input = fixture.debugElement.query(By.css('input'));
+    input.nativeElement.value = 'test';
+
+    const btn = fixture.debugElement.query(By.css('button'));
 
     uut.search.subscribe((queryString: string) => {
       expect(queryString).toBe('test');
     });
-    form.triggerEventHandler('submit', null);
-  });
-
-  it('should connect the queryString member with the input field', () => {
-    const input = fixture.debugElement.query(By.css('input'));
-
-    // Trigger a model change simulating the user writing 'some string'
-    input.triggerEventHandler('ngModelChange', 'some string');
-
-    expect(uut.queryString).toBe('some string');
+    btn.triggerEventHandler('click', null);
   });
 });

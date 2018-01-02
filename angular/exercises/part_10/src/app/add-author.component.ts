@@ -1,8 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+
+import { NewAuthor, AuthorsService } from './shared';
 
 @Component({
-  template: `<h1>Add author</h1>`
+  template: `
+    <app-authors-form
+      title="Add Author"
+      [author]="authorTemplate"
+      (submit)="onSubmit($event)"
+      (cancel)="onCancel()"
+    ></app-authors-form>
+  `
 })
-export class AddAuthorComponent {
+export class AddAuthorComponent implements OnDestroy {
+  authorTemplate: NewAuthor = {
+    name: '',
+    birthYear: 1950,
+    books: []
+  };
+  private subscription: Subscription;
 
+  constructor(
+    private router: Router,
+    private authorsService: AuthorsService
+  ) {}
+
+  onSubmit(newAuthor: NewAuthor) {
+    this.subscription = this.authorsService
+      .addAuthor(newAuthor)
+      .subscribe(() => {
+        this.router.navigate(['']);
+      });
+  }
+
+  onCancel() {
+    this.router.navigate(['']);
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }
