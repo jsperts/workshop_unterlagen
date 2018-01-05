@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { deleteContact } from '../actions';
 import ContactsList from '../components/ContactsList';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   contacts: state.contacts,
 });
 
@@ -13,13 +13,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(deleteContact(id));
   },
   onEdit(id) {
-    ownProps.history.push('/edit/' + id);
-  }
+    ownProps.history.push(`/edit/${id}`);
+  },
 });
 
-const ContactsListContainer = withRouter(connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ContactsList));
+const ContactsListContainer = withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ContactsList),
+);
 
 export default ContactsListContainer;

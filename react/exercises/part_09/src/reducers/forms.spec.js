@@ -4,7 +4,7 @@ import { FIELD_UPDATED, INIT_FORM } from '../events';
 describe('forms Reducer', () => {
   test('Should initialize form data', () => {
     const formName = 'testForm';
-    const state = { [formName]: { data: {} }};
+    const state = { [formName]: { data: {} } };
     const data = { name: 'foo', email: 'bar' };
     const action = {
       type: INIT_FORM,
@@ -25,7 +25,7 @@ describe('forms Reducer', () => {
   test('Should update a field', () => {
     const formName = 'testForm';
     const fieldName = 'name';
-    const state = { [formName]: { data: { [fieldName]: 'foo' } }};
+    const state = { [formName]: { data: { [fieldName]: 'foo' } } };
     const newValue = 'bar';
     const action = {
       type: FIELD_UPDATED,

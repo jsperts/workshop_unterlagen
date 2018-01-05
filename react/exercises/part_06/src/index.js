@@ -7,12 +7,14 @@ import './index.css';
 import AppContainer from './containers/App';
 import { getContacts } from './actions';
 
-import store from './store'
+import store from './store';
 
 store.dispatch(getContacts());
 
-const root = (<Provider store={store}>
-  <AppContainer />
-</Provider>);
+const root = (
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>
+);
 
 ReactDOM.render(root, document.getElementById('root'));

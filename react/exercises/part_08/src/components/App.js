@@ -10,20 +10,26 @@ import AddContactContainer from '../containers/AddContact';
 import ContactsListContainer from '../containers/ContactsList';
 
 function App({ showAddContact, onShowAddContact }) {
-  return (<div className="container">
-    <Header />
-    <main>
-      <Switch>
-        <Route path="/edit/:id" component={EditContactContainer} />
-        <Route path="/" render={() => <div>
-            <NavBar onAddContact={onShowAddContact} />
-            { showAddContact && <AddContactContainer /> }
-            <ContactsListContainer />
-          </div>}
-        />
-      </Switch>
-    </main>
-  </div>);
+  return (
+    <div className="container">
+      <Header />
+      <main>
+        <Switch>
+          <Route path="/edit/:id" component={EditContactContainer} />
+          <Route
+            path="/"
+            render={() => (
+              <div>
+                <NavBar onAddContact={onShowAddContact} />
+                {showAddContact && <AddContactContainer />}
+                <ContactsListContainer />
+              </div>
+            )}
+          />
+        </Switch>
+      </main>
+    </div>
+  );
 }
 
 App.defaultProps = {
@@ -32,7 +38,7 @@ App.defaultProps = {
 
 App.propTypes = {
   showAddContact: PropTypes.bool,
-  onShowAddContact: PropTypes.func,
+  onShowAddContact: PropTypes.func.isRequired,
 };
 
 export default App;

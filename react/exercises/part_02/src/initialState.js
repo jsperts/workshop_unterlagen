@@ -4,22 +4,22 @@ const contacts = [
     name: 'Max Mustermann',
     type: 'Private',
     tel: '123',
-    email: 'max@mustermann.invalid'
+    email: 'max@mustermann.invalid',
   },
   {
     id: 2,
     name: 'Jane Doe',
     type: 'Business',
     tel: '123',
-    email: 'jane@doe.invalid'
+    email: 'jane@doe.invalid',
   },
   {
     id: 3,
     name: 'John Doe',
     type: 'Business',
     tel: '123',
-    email: 'john@doe.invalid'
-  }
+    email: 'john@doe.invalid',
+  },
 ];
 
 const initialState = {

@@ -9,7 +9,9 @@ describe('EditContact', () => {
       onEdit() {},
       formData: {},
     };
-    const wrapper = shallow(<EditContact {...props} />, { disableLifecycleMethods: true });
+    const wrapper = shallow(<EditContact {...props} />, {
+      disableLifecycleMethods: true,
+    });
     expect(wrapper.getElement()).toBe(null);
   });
 });

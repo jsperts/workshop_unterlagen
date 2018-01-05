@@ -3,19 +3,18 @@ import { connect } from 'react-redux';
 import { deleteContact } from '../actions';
 import ContactsList from '../components/ContactsList';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   contacts: state.contacts,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onDelete(id) {
     dispatch(deleteContact(id));
   },
 });
 
-const ContactsListContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ContactsList);
+const ContactsListContainer = connect(mapStateToProps, mapDispatchToProps)(
+  ContactsList,
+);
 
 export default ContactsListContainer;

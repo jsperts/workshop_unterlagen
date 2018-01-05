@@ -8,14 +8,16 @@ import './index.css';
 import AppContainer from './containers/App';
 import { getContacts } from './actions';
 
-import store from './store'
+import store from './store';
 
 store.dispatch(getContacts());
 
-const root = (<Provider store={store}>
-  <BrowserRouter>
-    <AppContainer />
-  </BrowserRouter>
-</Provider>);
+const root = (
+  <Provider store={store}>
+    <BrowserRouter>
+      <AppContainer />
+    </BrowserRouter>
+  </Provider>
+);
 
 ReactDOM.render(root, document.getElementById('root'));

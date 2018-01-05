@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "3.3.7",
+    "enzyme": "3.1.0",
+    "enzyme-adapter-react-16": "1.0.2",
     "immutability-helper": "2.4.0",
     "prop-types": "15.6.0",
     "react": "16.0.0",
@@ -24,8 +26,6 @@
     "lint:fix": "eslint --fix src/"
   },
   "devDependencies": {
-    "enzyme": "3.1.0",
-    "enzyme-adapter-react-16": "1.0.2",
     "eslint": "4.14.0",
     "eslint-config-airbnb": "16.1.0",
     "eslint-config-prettier": "2.9.0",

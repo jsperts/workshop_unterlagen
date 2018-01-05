@@ -5,9 +5,9 @@ import initialState from './initialState';
 import rootReducer from './reducers';
 
 const store = createStore(
-    rootReducer,
-    initialState,
-    applyMiddleware(thunkMiddleware),
+  rootReducer,
+  initialState,
+  applyMiddleware(thunkMiddleware),
 );
 
 export default store;

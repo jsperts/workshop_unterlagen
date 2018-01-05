@@ -13,7 +13,7 @@ describe('Button', () => {
     expect(onClick).toHaveBeenCalled();
   });
 
-  test('Should set the button\'s text to the given label', () => {
+  test("Should set the button's text to the given label", () => {
     const label = 'foo bar';
 
     const wrapper = shallow(<Button label={label} />);

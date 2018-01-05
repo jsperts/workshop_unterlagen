@@ -8,14 +8,16 @@ import NavBar from './NavBar';
 import ContactsListContainer from '../containers/ContactsList';
 
 function App({ showAddContact, onShowAddContact, onHideAddContact }) {
-  return (<div className="container">
-    <Header />
-    <main>
-      <NavBar onAddContact={onShowAddContact} />
-      { showAddContact && <ContactForm onCancel={onHideAddContact} /> }
-      <ContactsListContainer />
-    </main>
-  </div>);
+  return (
+    <div className="container">
+      <Header />
+      <main>
+        <NavBar onAddContact={onShowAddContact} />
+        {showAddContact && <ContactForm onCancel={onHideAddContact} />}
+        <ContactsListContainer />
+      </main>
+    </div>
+  );
 }
 
 App.defaultProps = {
@@ -24,8 +26,8 @@ App.defaultProps = {
 
 App.propTypes = {
   showAddContact: PropTypes.bool,
-  onShowAddContact: PropTypes.func,
-  onHideAddContact: PropTypes.func,
+  onShowAddContact: PropTypes.func.isRequired,
+  onHideAddContact: PropTypes.func.isRequired,
 };
 
 export default App;
