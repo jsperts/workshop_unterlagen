@@ -1,6 +1,6 @@
 # Example code for React
 
-These examples are part of our [React Workshop](https://jsperts.de/schulungen/react)
+These examples are part of our [React Workshop](https://jsperts.de/in-house-schulungen/react)
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 # Exercises for React
 
-These exercises are part of our [React Workshop](https://jsperts.de/schulungen/react)
+These exercises are part of our [React Workshop](https://jsperts.de/in-house-schulungen/react)
 
 ## Prerequisites
 

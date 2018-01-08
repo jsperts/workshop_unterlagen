@@ -1,6 +1,6 @@
 # Exercises for Angular
 
-These exercises are part of our [Angular + TypeScript Workshop](https://jsperts.de/schulungen/angular-typescript)
+These exercises are part of our [Angular + TypeScript Workshop](https://jsperts.de/in-house-schulungen/angular-typescript)
 
 ## Prerequisites
 
