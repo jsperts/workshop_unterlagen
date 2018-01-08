@@ -8,6 +8,10 @@ describe('EditContact', () => {
     const props = {
       onEdit() {},
       formData: {},
+      onCancel() {},
+      onSubmit() {},
+      onUpdateField() {},
+      match: {},
     };
     const wrapper = shallow(<EditContact {...props} />, {
       disableLifecycleMethods: true,

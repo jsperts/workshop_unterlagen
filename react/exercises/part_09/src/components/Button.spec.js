@@ -16,7 +16,7 @@ describe('Button', () => {
   test("Should set the button's text to the given label", () => {
     const label = 'foo bar';
 
-    const wrapper = shallow(<Button label={label} />);
+    const wrapper = shallow(<Button label={label} onClick={() => {}} />);
     const text = wrapper.find('button').text();
 
     expect(text).toBe(label);
