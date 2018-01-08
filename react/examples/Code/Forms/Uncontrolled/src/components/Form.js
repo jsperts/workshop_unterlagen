@@ -15,7 +15,9 @@ class Form extends Component {
 
     const data = Object
         .keys(this.myRefs)
-        .reduce((map, key) => Object.assign(map, { [key]: this.myRefs[key].value }), {});
+        .reduce((map, key) => Object.assign(map, {
+          [key]: this.myRefs[key].type === 'checkbox' ? this.myRefs[key].checked : this.myRefs[key].value
+        }), {});
 
     this.props.onSubmit(data);
   }
