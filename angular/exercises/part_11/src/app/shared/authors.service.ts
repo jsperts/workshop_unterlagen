@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/add/observable/of';
-
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
+import { of } from 'rxjs/observable/of';
+import { tap, map } from 'rxjs/operators';
 
 import { SearchService } from './search.service';
 
@@ -28,13 +25,17 @@ export class AuthorsService {
 
   getAuthors() {
     return this.http.get<Array<Author>>(this.serverUrl)
-        .do((data) => { this.data = data; });
+        .pipe(
+            tap((data) => { this.data = data; })
+        );
   }
 
   deleteAuthor(id: number) {
     return this.http.delete(`${this.serverUrl}/${id}`)
-        .map(() => this.data.filter((elem) => elem._id !== id))
-        .do((data) => this.data = data);
+        .pipe(
+            map(() => this.data.filter((elem) => elem._id !== id)),
+            tap((data) => this.data = data)
+        );
   }
 
   searchAuthors(queryString: string) {
@@ -57,10 +58,12 @@ export class AuthorsService {
 
   getAuthor(id: number) {
     if (this.data.length !== 0) {
-      return Observable.of(this.getAuthorFromArray(id));
+      return of(this.getAuthorFromArray(id));
     } else {
       return this.getAuthors()
-          .map(() => this.getAuthorFromArray(id));
+          .pipe(
+              map(() => this.getAuthorFromArray(id))
+          );
     }
   }
 }

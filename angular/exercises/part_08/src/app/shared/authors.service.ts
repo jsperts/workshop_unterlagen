@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
+import {tap, map} from 'rxjs/operators';
 
 import { SearchService } from './search.service';
 
@@ -22,13 +21,17 @@ export class AuthorsService {
 
   getAuthors() {
     return this.http.get<Array<Author>>(this.serverUrl)
-        .do((data) => { this.data = data; });
+        .pipe(
+            tap((data) => { this.data = data; })
+        );
   }
 
   deleteAuthor(id: number) {
     return this.http.delete(`${this.serverUrl}/${id}`)
-        .map(() => this.data.filter((elem) => elem._id !== id))
-        .do((data) => this.data = data);
+        .pipe(
+          map(() => this.data.filter((elem) => elem._id !== id)),
+          tap((data) => this.data = data)
+        );
   }
 
   searchAuthors(queryString: string) {
