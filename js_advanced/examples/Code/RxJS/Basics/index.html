@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.png" type="image/x-icon"/>
+
+  <title>Basics</title>
+  <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+    .box {border: 2px black solid;}
+    .box--inner {height: 200px;}
+    .box--outer {height: 300px;}
+  </style>
+</head>
+<body class="container">
+<div class="jumbotron"><h1>Basics</h1></div>
+
+<div class="row" id="clickContainer">
+  <h2>Inner box clicks (reduce): <span id="innerReduce">0</span></h2>
+  <h2>Inner box clicks (scan): <span id="innerScan">0</span></h2>
+  <div class="col-xs-12 box box--outer">
+    <div class="col-xs-12" style="height: 50px;"></div>
+    <div id="inner" class="col-xs-offset-4 col-xs-4 box box--inner">
+      Inner box
+    </div>
+  </div>
+</div>
+
+<script src="./dist/app.js"></script>
+
+</body>
+</html>
