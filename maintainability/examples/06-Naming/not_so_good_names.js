@@ -35,6 +35,6 @@ class AllPersonsInTheWorld {
   }
 
   getPerson(id) {
-    return this.humanity.find((p) => p.id === id);
+    return this.apitwArr.find((p) => p.id === id);
   }
 }
