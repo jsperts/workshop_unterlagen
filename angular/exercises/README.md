@@ -7,7 +7,7 @@ These exercises are part of our [Angular + TypeScript Workshop](https://jsperts.
 All exercises use [angular-cli](https://github.com/angular/angular-cli) so you first need to install that globally:
 
 ```
-npm install -g angular-cli
+npm install -g @angular/cli
 ```
 
 Now install (in each directory) all dependencies with:
