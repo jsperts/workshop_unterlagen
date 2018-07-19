@@ -23,7 +23,8 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
       // other libraries
-      'rxjs': 'npm:rxjs',
+      'rxjs': 'npm:rxjs/index.js',
+      'rxjs/internal': 'npm:rxjs/internal',
       'rxjs/operators': 'npm:rxjs/operators',
       'dexie': 'npm:dexie/dist/dexie.js',
       'redux': 'npm:redux/dist/redux.js',
@@ -38,6 +39,9 @@
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       rxjs: {
+        defaultExtension: 'js'
+      },
+      'rxjs/internal': {
         defaultExtension: 'js'
       },
       'rxjs/operators': {

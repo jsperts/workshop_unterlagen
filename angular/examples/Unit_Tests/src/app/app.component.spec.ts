@@ -1,4 +1,4 @@
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 
 import { AppComponent } from './app.component';
 import { SendToServerService } from './send_to_server.service';

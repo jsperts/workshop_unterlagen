@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, createFeatureSelector } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { TodoWithID, Todo } from './todos.service';
 import { GetAll, Add, Update, Remove } from './app.actions';
 import { AppState } from './app.store';
-import { appReducer } from './app.reducer';
 
 @Component({
   selector: 'app-root',

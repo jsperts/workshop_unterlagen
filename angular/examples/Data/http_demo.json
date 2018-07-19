@@ -33,6 +33,10 @@
     {
       "data": "green",
       "id": 3
+    },
+    {
+      "data": "Please type your color",
+      "id": 4
     }
   ]
 }

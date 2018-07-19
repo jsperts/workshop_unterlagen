@@ -1,7 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-
-import { fromEvent } from 'rxjs/observable/fromEvent';
+import { Subscription, fromEvent } from 'rxjs';
 import { map, switchMap, debounceTime, retry, distinctUntilChanged } from 'rxjs/operators';
 
 import { DataService } from './data.service';

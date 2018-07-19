@@ -6,11 +6,7 @@ import {
     AfterViewInit,
     OnDestroy
 } from '@angular/core';
-import { Subscription } from 'rxjs';
-
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { merge } from 'rxjs/observable/merge';
-
+import { Subscription, fromEvent, merge } from 'rxjs';
 import { switchMap, map, takeUntil } from 'rxjs/operators';
 
 import { Counter3Service } from './counter_3.service';

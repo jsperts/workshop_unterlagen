@@ -1,9 +1,5 @@
 import { Component, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-
-import { fromPromise } from 'rxjs/observable/fromPromise';
-import { fromEvent } from 'rxjs/observable/fromEvent';
+import { Observable, Subscription, from, fromEvent } from 'rxjs';
 
 import { tap, map, filter, reduce, scan, takeUntil } from 'rxjs/operators';
 
@@ -47,7 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
             filter((id) => id === 'inner'),
             tap((v) => console.log('after filter value:', v)),
             map(() => 1),
-            takeUntil(fromPromise(promise)),
+            takeUntil(from(promise)),
             tap((v) => console.log('after takeUntil value:', v))
         );
 

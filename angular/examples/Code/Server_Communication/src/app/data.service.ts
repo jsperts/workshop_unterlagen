@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
-
-import { _throw } from 'rxjs/observable/throw';
+import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+
+export interface ServerData {
+  id: number;
+  name: string;
+}
 
 @Injectable()
 export class DataService {
@@ -12,7 +16,7 @@ export class DataService {
 
   getData() {
     return this.http
-        .get(this.url)
+        .get<Array<ServerData>>(this.url)
         .pipe(
             catchError((errorResponse) => this.handleResponseError(errorResponse))
         );
@@ -20,7 +24,7 @@ export class DataService {
 
   sendData(name: string) {
     return this.http
-        .post(this.url, { name })
+        .post<ServerData>(this.url, { name })
         .pipe(
             catchError((errorResponse) => this.handleResponseError(errorResponse))
         );
@@ -77,6 +81,6 @@ export class DataService {
       errorString = 'Some exception occurred';
     }
 
-    return _throw(errorString);
+    return throwError(errorString);
   }
 }

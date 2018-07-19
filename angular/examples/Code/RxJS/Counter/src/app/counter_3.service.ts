@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { interval } from 'rxjs/observable/interval';
+import { interval } from 'rxjs';
 import { scan } from 'rxjs/operators';
 
 @Injectable()

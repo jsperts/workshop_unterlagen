@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-
+import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { ListService } from './list.service';

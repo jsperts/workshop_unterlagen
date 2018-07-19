@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { Counter3Service } from './counter_3.service';
 

@@ -1,16 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
-import { Observable } from 'rxjs/Observable';
-
-import 'rxjs/add/observable/fromPromise';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mapTo';
-import 'rxjs/add/operator/do'
-
-import { fromPromise } from 'rxjs/observable/fromPromise';
-import { mergeMap, map, mapTo, tap } from 'rxjs/operators';
+import { from } from 'rxjs';
+import { mergeMap, map, mapTo } from 'rxjs/operators';
 
 import { TodosService, Todo, TodoWithID } from './todos.service';
 
@@ -75,14 +67,14 @@ export class AppActions {
   @Effect() getAll$ = this.actions$
       .ofType(GET_ALL)
       .pipe(
-          mergeMap(() => fromPromise(this.todosService.getAll())),
+          mergeMap(() => from(this.todosService.getAll())),
           map((data: Array<TodoWithID>) => new GotAll(data))
       );
 
   @Effect() update$ = this.actions$
       .ofType(UPDATE)
       .pipe(
-          mergeMap((action: Update) => fromPromise(this.todosService.update(action.payload.id, {done: action.payload.done}))
+          mergeMap((action: Update) => from(this.todosService.update(action.payload.id, {done: action.payload.done}))
               .pipe(
                   map(() => ({
                     id: action.payload.id,
@@ -96,7 +88,7 @@ export class AppActions {
   @Effect() add$ = this.actions$
       .ofType(ADD)
       .pipe(
-          mergeMap((action: Add) => fromPromise(this.todosService.add(action.payload))
+          mergeMap((action: Add) => from(this.todosService.add(action.payload))
             .pipe(
                   map((id) => Object.assign({id}, action.payload))
             )
@@ -107,7 +99,7 @@ export class AppActions {
   @Effect() remove$ = this.actions$
       .ofType(REMOVE)
       .pipe(
-          mergeMap((action: Remove) => fromPromise(this.todosService.remove(action.payload))
+          mergeMap((action: Remove) => from(this.todosService.remove(action.payload))
             .pipe(
                   mapTo(action.payload)
             )

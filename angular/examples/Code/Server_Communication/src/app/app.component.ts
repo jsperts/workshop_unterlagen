@@ -1,6 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
-import {DataService} from './data.service';
+import {Subscription} from 'rxjs';
+
+import {DataService, ServerData} from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ import {DataService} from './data.service';
   providers: [DataService],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  data: Array<{ id: number; name: string; }> = [];
+  data: Array<ServerData> = [];
   getSubscription: Subscription;
   addSubscription: Subscription;
   deleteSubscription: Subscription;

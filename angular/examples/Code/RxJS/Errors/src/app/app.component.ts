@@ -1,9 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { _throw } from 'rxjs/observable/throw';
-import { of } from 'rxjs/observable/of';
-
+import { fromEvent, throwError, of } from 'rxjs';
 import { catchError, map, scan, switchMap } from 'rxjs/operators';
 
 @Component({
@@ -71,7 +67,7 @@ export class AppComponent implements AfterViewInit {
     // With rethrow
     withError$
         .pipe(
-            catchError((e) => _throw(NaN))
+            catchError((e) => throwError(NaN))
         )
         .subscribe({
           next: (v) => { this.withRethrow = v; },
