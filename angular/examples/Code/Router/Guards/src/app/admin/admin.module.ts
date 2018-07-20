@@ -1,9 +1,9 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { routing } from './admin.routes';
+import { AdminRoutingModule } from './admin-routing.module';
 
-import { AuthGuardService } from './auth_guard.service';
+import { AuthGuardService } from './auth-guard.service';
 import { AllSavedGuardService } from './all_saved_guard.service';
 import { AuthService } from './auth.service';
 
@@ -13,7 +13,7 @@ import { ManageUsersComponent } from './manage_users.component';
 import { LoginComponent } from './login.component';
 
 @NgModule({
-  imports: [ CommonModule, routing ],
+  imports: [ CommonModule, AdminRoutingModule ],
   declarations: [
     AdminComponent,
     ManageProductsComponent,

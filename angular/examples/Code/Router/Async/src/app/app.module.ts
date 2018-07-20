@@ -9,10 +9,10 @@ import { LoginComponent } from './login.component';
 import { AuthService } from './auth.service';
 import { CanLoadGuardService } from './can_load_guard.service';
 
-import { routing } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [ BrowserModule, routing ],
+  imports: [ BrowserModule, AppRoutingModule ],
   declarations: [ AppComponent, AboutComponent, HomeComponent, LoginComponent ],
   providers: [
       CanLoadGuardService,

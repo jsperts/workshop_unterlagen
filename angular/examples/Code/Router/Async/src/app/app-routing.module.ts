@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules, ExtraOptions } from '@angular/router';
 
 import { HomeComponent } from './home.component';
@@ -22,4 +23,9 @@ const routingOptions: ExtraOptions = {
   preloadingStrategy: PreloadAllModules,
   useHash: true,
 };
-export const routing = RouterModule.forRoot(routes, routingOptions);
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, routingOptions)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
