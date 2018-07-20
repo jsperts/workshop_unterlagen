@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { List1Component } from './list1.component';
@@ -9,4 +10,8 @@ const routes: Routes = [
   { path: 'list2', component: List2Component },
 ];
 
-export const routing = RouterModule.forRoot(routes);
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}

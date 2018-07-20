@@ -19,7 +19,9 @@ reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, v
 dolorem eum fugiat quo voluptas nulla pariatur?`;
 
 const text = [...text1.split(' '), ...text2.split(' ')];
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class DataService {
   getData(query: string) {
     console.log('Query', query);

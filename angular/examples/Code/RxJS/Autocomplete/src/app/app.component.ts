@@ -11,8 +11,7 @@ import { DataService } from './data.service';
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let res of results">{{ res }}</li>
     </ul>
-  `,
-  providers: [ DataService ],
+  `
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   results: Array<string> = [];

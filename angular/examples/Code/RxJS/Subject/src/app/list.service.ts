@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ListService {
   private _subject: BehaviorSubject<Array<number>>;
   private _arr: Array<number> = [];

@@ -12,7 +12,9 @@ export interface TodoWithID extends Todo {
   id: number;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TodosService {
   table: Dexie.Table<TodoWithID, number>;
 

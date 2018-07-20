@@ -8,7 +8,9 @@ export interface ServerData {
   name: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class DataService {
   url = 'http://localhost:8081/data';
 

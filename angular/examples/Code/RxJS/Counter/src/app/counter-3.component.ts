@@ -1,38 +1,41 @@
 import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import { Counter1Service } from './counter_1.service';
+import { Counter3Service } from './counter-3.service';
 
 @Component({
-  selector: 'counter-1',
+  selector: 'counter-3',
   template: `
-    <h1>Counter 1</h1>
+    <h1>Counter 3</h1>
     <div>Counter: {{value}}</div>
     <div class="btn-group">
       <button type="button" class="btn btn-primary" (click)="start()">Start</button>
       <button type="button" class="btn btn-danger" (click)="stop()">Stop</button>
     </div>
   `,
-  providers: [Counter1Service],
+  providers: [Counter3Service]
 })
-export class Counter1Component implements OnDestroy {
+export class Counter3Component implements OnDestroy {
   value = 0;
+  private stopCounter: Subscription;
   private isRunning = false;
-  private stopCounter: () => void;
-  constructor(private counter: Counter1Service) {}
+  constructor(private counterService: Counter3Service) {}
 
   start() {
     if (!this.isRunning) {
       this.isRunning = true;
-      this.stopCounter = this.counter.start(this.value, (value: number) => {
-        this.value = value;
-      });
+      this.stopCounter = this.counterService
+          .start(this.value)
+          .subscribe((value) => {
+            this.value = value;
+          });
     }
   }
 
   stop() {
     if (this.stopCounter) {
       this.isRunning = false;
-      this.stopCounter();
+      this.stopCounter.unsubscribe();
     }
   }
 

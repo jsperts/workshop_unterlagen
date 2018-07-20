@@ -3,7 +3,9 @@ import { CanLoad, Router, Route } from '@angular/router';
 
 import { AuthService } from './auth.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CanLoadGuardService implements CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
 

@@ -19,7 +19,6 @@ import {DataService, ServerData} from './data.service';
       </li>
     </ul>
   `,
-  providers: [DataService],
 })
 export class AppComponent implements OnInit, OnDestroy {
   data: Array<ServerData> = [];

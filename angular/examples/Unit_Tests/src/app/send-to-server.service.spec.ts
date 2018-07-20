@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 
-import { SendToServerService } from './send_to_server.service';
+import { SendToServerService } from './send-to-server.service';
 
 describe('SendToServerService', () => {
   let uut: SendToServerService;

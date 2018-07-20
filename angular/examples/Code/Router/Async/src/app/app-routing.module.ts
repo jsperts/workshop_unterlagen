@@ -5,7 +5,7 @@ import { HomeComponent } from './home.component';
 import { AboutComponent } from './about.component';
 import { LoginComponent } from './login.component';
 
-import { CanLoadGuardService } from './can_load_guard.service';
+import { CanLoadGuardService } from './can-load-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

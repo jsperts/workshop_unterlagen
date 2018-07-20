@@ -26,10 +26,6 @@ import { DexieService } from './dexie.service';
         StoreModule.forRoot({app: appReducer}),
         EffectsModule.forRoot([AppActions])
     ],
-    providers: [
-        TodosService,
-        DexieService,
-    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

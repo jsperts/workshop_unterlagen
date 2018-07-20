@@ -2,7 +2,7 @@ import { By } from '@angular/platform-browser';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
-import { AddColorComponent } from './add_color.component';
+import { AddColorComponent } from './add-color.component';
 
 describe('AddColorComponent', () => {
   let uut: AddColorComponent;

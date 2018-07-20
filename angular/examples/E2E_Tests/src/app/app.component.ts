@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SendToServerService } from './send_to_server.service';
+import { SendToServerService } from './send-to-server.service';
 
 @Component({
   selector: 'app-root',

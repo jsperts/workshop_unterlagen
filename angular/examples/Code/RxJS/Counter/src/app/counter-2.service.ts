@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class Counter2Service {
   start(initialValue: number) {
     console.log('initialize');

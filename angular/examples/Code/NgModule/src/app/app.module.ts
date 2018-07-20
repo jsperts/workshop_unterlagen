@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { UserListModule } from './user_list';
+import { UserListModule } from './user-list';
 
 import { AppComponent }  from './app.component';
 

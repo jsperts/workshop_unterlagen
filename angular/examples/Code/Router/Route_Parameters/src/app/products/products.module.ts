@@ -6,11 +6,8 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products.component';
 import { ProductComponent } from './product.component';
 
-import { ProductsService } from './products.service';
-
 @NgModule({
   imports: [ CommonModule, ProductsRoutingModule ],
-  declarations: [ ProductsComponent, ProductComponent ],
-  providers: [ ProductsService ]
+  declarations: [ ProductsComponent, ProductComponent ]
 })
 export class ProductsModule { }

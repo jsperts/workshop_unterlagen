@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 // Must be defined as barrel in system-config.js
-import { UserListService } from './user_list';
+import { UserListService } from './user-list';
 
 @Component({
   selector: 'app-root',

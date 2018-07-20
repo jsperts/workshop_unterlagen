@@ -1,7 +1,7 @@
 import { of } from 'rxjs';
 
 import { AppComponent } from './app.component';
-import { SendToServerService } from './send_to_server.service';
+import { SendToServerService } from './send-to-server.service';
 
 describe('AppComponent', () => {
   let uut: AppComponent;

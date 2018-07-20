@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AllSavedGuardService } from './all_saved_guard.service';
+import { AllSavedGuardService } from './all-saved-guard.service';
 
 import { AdminComponent } from './admin.component';
-import { ManageProductsComponent } from './manage_products.component';
-import { ManageUsersComponent } from './manage_users.component';
+import { ManageProductsComponent } from './manage-products.component';
+import { ManageUsersComponent } from './manage-users.component';
 
 const routes: Routes = [
   {

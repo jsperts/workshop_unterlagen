@@ -1,7 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {Subscription} from 'rxjs';
 
-import {Counter2Service} from './counter_2.service';
+import {Counter2Service} from './counter-2.service';
 
 @Component({
   selector: 'counter-2',
@@ -13,7 +13,6 @@ import {Counter2Service} from './counter_2.service';
       <button type="button" class="btn btn-danger" (click)="stop()">Stop</button>
     </div>
   `,
-  providers: [Counter2Service]
 })
 export class Counter2Component implements OnDestroy {
   value = 0;

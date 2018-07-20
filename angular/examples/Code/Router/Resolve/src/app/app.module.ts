@@ -6,14 +6,10 @@ import { AppComponent }  from './app.component';
 import { AboutComponent } from './about.component';
 import { HomeComponent } from './home.component';
 import { ProductsComponent } from './products.component';
-import { ProductsService } from './products.service';
 
 @NgModule({
   imports: [ BrowserModule, AppRoutingModule ],
   declarations: [ AppComponent, AboutComponent, HomeComponent, ProductsComponent ],
-  providers: [
-      ProductsService,
-  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -4,7 +4,9 @@ import { CanDeactivate } from '@angular/router';
 export interface HasChangesComponent {
   hasChanges: () => boolean;
 }
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AllSavedGuardService implements CanDeactivate<HasChangesComponent> {
   canDeactivate(component: HasChangesComponent) {
     console.log('canDeactivate');

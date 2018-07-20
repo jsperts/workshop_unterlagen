@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 const data = ['data 1', 'data 2', 'data 3'];
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class DataService {
   data: Array<string> = data;
   getData(): Array<string> {

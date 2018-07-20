@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   imports: [ BrowserModule, AppRoutingModule, ProductsModule ],
   declarations: [ AppComponent, AboutComponent, HomeComponent ],
-  providers: [],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@ import {
     Validators,
 } from '@angular/forms';
 
-import { equals, usernameExists } from './validation_functions';
+import { equals, usernameExists } from './validation-functions';
 
 @Component({
   selector: 'app-root',

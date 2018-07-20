@@ -9,7 +9,7 @@ import {
 import { Subscription, fromEvent, merge } from 'rxjs';
 import { switchMap, map, takeUntil } from 'rxjs/operators';
 
-import { Counter3Service } from './counter_3.service';
+import { Counter3Service } from './counter-3.service';
 
 @Component({
   selector: 'counter-4',

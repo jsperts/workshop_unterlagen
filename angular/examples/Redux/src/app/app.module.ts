@@ -10,10 +10,6 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './app-todo-list.component';
 import { AddTodoComponent } from './app-add-todo.component';
 
-import { TodosService } from './todos.service';
-import { AppActions } from './app.actions';
-import { DexieService } from './dexie.service';
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -24,11 +20,6 @@ import { DexieService } from './dexie.service';
         BrowserModule,
         FormsModule,
         NgReduxModule,
-    ],
-    providers: [
-        TodosService,
-        AppActions,
-        DexieService,
     ],
     bootstrap: [AppComponent]
 })

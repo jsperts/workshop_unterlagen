@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SendToServerService {
   constructor(private http: HttpClient) {}
 

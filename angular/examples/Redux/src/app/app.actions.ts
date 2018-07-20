@@ -52,7 +52,9 @@ const createUpdateAction = createAction<TodoWithID>(actions.UPDATE);
 const createRemoveAction = createAction<TodoWithID['id']>(actions.REMOVE);
 const createGetAction = createAction<Array<TodoWithID>>(actions.GET_ALL);
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AppActions {
   constructor(private todosService: TodosService,
               private ngRedux: NgRedux<AppState>) {

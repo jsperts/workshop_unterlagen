@@ -9,7 +9,9 @@ const products = [
   { id: 5, name: 'Product 5' },
 ];
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductsService implements Resolve<Array<any>> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     console.log('resolve');

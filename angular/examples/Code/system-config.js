@@ -45,7 +45,7 @@
         main: 'index',
         defaultExtension: 'js'
       },
-      'dist/app/user_list': {
+      'dist/app/user-list': {
         main: 'index',
         defaultExtension: 'js'
       }

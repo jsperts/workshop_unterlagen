@@ -8,7 +8,9 @@ const products = [
   { id: 5, name: 'Product 5' },
 ];
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductsService {
   getProducts() {
     return products;

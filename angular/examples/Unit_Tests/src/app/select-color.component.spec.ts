@@ -2,7 +2,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { SelectColorComponent } from './select_color.component';
+import { SelectColorComponent } from './select-color.component';
 
 describe('SelectColorComponent', () => {
   let uut: SelectColorComponent;

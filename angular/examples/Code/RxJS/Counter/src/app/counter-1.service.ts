@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class Counter1Service {
   start(initialValue: number, cb: (v: number) => void) {
     let counter = initialValue;
