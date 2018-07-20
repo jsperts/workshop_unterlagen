@@ -12,7 +12,9 @@ export interface Author {
   books: Array<string>;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthorsService {
   data: Array<Author> = [];
   private serverUrl = 'http://127.0.0.1:3000/authors';

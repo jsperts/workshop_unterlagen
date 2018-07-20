@@ -29,7 +29,9 @@ const authors: Array<Author> = [{
   books: ['The Neutrino', 'The Human Brain']
 }];
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthorsService {
   data = authors;
 

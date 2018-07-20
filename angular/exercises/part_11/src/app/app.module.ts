@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { routing } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
@@ -12,9 +12,6 @@ import { SearchComponent } from './search.component';
 import { AddAuthorComponent } from './add-author.component';
 import { EditAuthorComponent } from './edit-author.component';
 import { AuthorsFormComponent } from './authors-form.component';
-
-import { AuthorsService } from './shared/';
-import { SearchService } from './shared';
 
 @NgModule({
   declarations: [
@@ -26,11 +23,7 @@ import { SearchService } from './shared';
     EditAuthorComponent,
     AuthorsFormComponent,
   ],
-  imports: [ BrowserModule, FormsModule, HttpClientModule, routing ],
-  providers: [
-    AuthorsService,
-    SearchService,
-  ],
+  imports: [ BrowserModule, FormsModule, HttpClientModule, AppRoutingModule ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

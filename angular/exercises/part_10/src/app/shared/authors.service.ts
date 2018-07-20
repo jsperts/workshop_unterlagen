@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 
 import { SearchService } from './search.service';
@@ -16,7 +16,9 @@ export interface Author extends NewAuthor {
   _id: number;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthorsService {
   data: Array<Author> = [];
   private serverUrl = 'http://127.0.0.1:3000/authors';

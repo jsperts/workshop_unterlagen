@@ -7,13 +7,10 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
 import { AuthorsListComponent } from './authors-list.component';
 import { SearchComponent } from './search.component';
-import { AuthorsService } from './shared/';
-import { SearchService } from './shared';
 
 @NgModule({
   declarations: [ AppComponent, MainComponent, AuthorsListComponent, SearchComponent ],
   imports: [ BrowserModule, FormsModule, HttpClientModule ],
-  providers: [ AuthorsService, SearchService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
