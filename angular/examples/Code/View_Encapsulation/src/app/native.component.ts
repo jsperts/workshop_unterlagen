@@ -7,6 +7,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
     <h1>Native</h1>
     <div class="box box-with-background"></div>
   `,
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.Native // Native replaced by ShadowDom in v6.1+
 })
 export class NativeComponent {}
